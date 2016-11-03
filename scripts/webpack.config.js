@@ -1,4 +1,5 @@
 const webpack = require('atool-build/lib/webpack');
+const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
 const { join, basename } = require('path');
 const { sync } = require('glob');
 
@@ -20,6 +21,10 @@ module.exports = (webpackConfig) => {
   webpackConfig.entry = Object.assign({}, webpackConfig.entry, newEntries);
 
   webpackConfig.output.sourceMapFilename= '[name].map.js';
+
+  webpackConfig.babel.plugins.push('lodash');
+
+  webpackConfig.plugins.push(new LodashModuleReplacementPlugin());
 
   return webpackConfig;
 };

@@ -5,7 +5,7 @@ module.exports = (webpackConfig) => {
   webpackConfig = config(webpackConfig);
   webpackConfig.plugins.push(new webpack.DefinePlugin({
     'process.env.NODE_ENV': JSON.stringify('development'),
-    'process.api': '/',
+    'process.api': JSON.stringify('/'),
     production: false
   }));
 

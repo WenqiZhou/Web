@@ -5,6 +5,18 @@
   "private": true,
   "main": "index.js",
   "scripts": {
+    "clean": "rm -rf *.json.gzip",
+    "start": "dora --port 61101 --plugins \"webpack?config=scripts/webpack.config.development.js,webpack-hmr,livereload?enableJs=true&injectHost=127.0.0.1,browser-history?index=/views/index.html\"",
+    "build": "atool-build --config scripts/webpack.config.production.js -o ./assets/build && npm run clean",
+    "build:analyze": "atool-build --config scripts/webpack.config.analyze.js -o ./assets/build --verbose && npm run clean",
+    "post": "echo no maven command",
+    "pages": "npm run pages:checkout && npm run pages:build && npm run pages:cleanall && npm run pages:publish",
+    "pages:checkout": "git add . && git stash && git checkout gh-pages && git add . && git checkout master ./",
+    "pages:build": "atool-build --config scripts/webpack.config.production.js -o ./",
+    "pages:cleanall": "npm run clean && rm -rf assets/ config/ libs/ scripts/ server/ src/ views/",
+    "pages:publish": "git add . && git commit -m 'update pages' --amend -n && git push -f",
+    "postpages:publish": "git checkout master && git stash pop",
+    "lint": "eslint --ext .js,.jsx libs/ server/ src/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -47,6 +59,7 @@
     "babel-core": "^6.18.2",
     "babel-eslint": "^7.1.0",
     "babel-plugin-import": "^1.0.1",
+    "babel-plugin-lodash": "^3.2.9",
     "babel-plugin-transform-runtime": "^6.15.0",
     "babel-runtime": "^6.18.0",
     "dora": "^0.4.3",
@@ -61,9 +74,13 @@
     "eslint-plugin-jsx-a11y": "^2.2.3",
     "eslint-plugin-react": "^6.5.0",
     "extract-text-webpack-plugin": "^1.0.1",
+    "lodash-webpack-plugin": "^0.10.3",
     "pre-commit": "^1.1.3",
     "webpack": "^1.13.3",
     "webpack-bundle-analyzer": "^1.3.0",
     "webpack-dev-server": "^1.16.2"
-  }
+  },
+  "pre-commit": [
+    "lint"
+  ]
 }
