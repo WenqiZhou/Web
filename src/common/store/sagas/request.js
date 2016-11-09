@@ -5,14 +5,20 @@ import { REQUEST, REQUEST_START, REQUEST_FINISH, REQUEST_ERROR, REQUEST_CLEAR } 
 import requests from '../requests';
 import ApiTypes from '../requests/types';
 
-function* requestDispatcher({ key, data, callback }) {
+/**
+ * 请求转发
+ * @param key 请求的key
+ * @param callback 回调函数
+ * @param props 所有需要转发的数据
+ */
+function* requestDispatcher({ key, callback, ...props }) {
   callback = typeof callback === 'function' ? callback : response => response;
 
   yield put({
     type: REQUEST_START,
     key: ApiTypes[key]
   });
-  const { response = {}, error } = yield requests(key, data).then(resp => {
+  const { response = {}, error } = yield requests({ key, ...props }).then(resp => {
     return { response: callback(resp) };
   }).catch(err => {
     return { error: callback(undefined, err) };
@@ -34,6 +40,7 @@ function* requestDispatcher({ key, data, callback }) {
   }
 }
 
+// 监听请求
 export default function* request() {
   yield* takeEvery(REQUEST, requestDispatcher)
 }
