@@ -38,5 +38,12 @@
   },
   "ecmaFeatures": {
     "experimentalObjectRestSpread": true
+  },
+  "settings": {
+    "import/resolver": {
+      "webpack": {
+        "config": "./scripts/webpack.config.eslint.js"
+      }
+    }
   }
 }
