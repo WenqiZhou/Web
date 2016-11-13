@@ -1,0 +1,27 @@
+@import "theme/default/base";
+
+@{mobile} {
+  display: none;
+}
+
+@{desktop} {
+  display: block;
+}
+
+@media all and(max-width: 999px) {
+  @{desktop} {
+    display: none;
+  }
+}
+
+@media all and (min-width: 1000px) {
+  @{desktop} {
+    display: block;
+  }
+}
+
+@media all and (max-width: 999px) {
+  @{mobile} {
+    display: block;
+  }
+}

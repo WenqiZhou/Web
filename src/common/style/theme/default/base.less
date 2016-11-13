@@ -1,0 +1,34 @@
+// Prefix
+@bnb-prefix: .bnb;
+
+@desktop: .desktop; // desktop
+@desktop-prefix: e(%(".%s-%s", @bnb-prefix, @desktop)); // desktop-only
+@mobile: .mobile; // mobile
+@mobile-prefix: e(%(".%s-%s", @bnb-prefix, @mobile)); // mobile-only
+
+// Color
+@primary-color: #fe393d;
+@primary-color-clicked: #ec282c;
+@secondary-color: #00cfd1;
+@body-background: #ffffff;
+@background-color-base: #f0f0f0; // basic gray background
+@line-color: #cacaca;
+
+@heading-color: #030000;
+@text-color: #383838;
+@text-color-secondary: #ffffff;
+
+// fonts
+@font-family: -apple-system BlinkMacSystemFont 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;
+@code-family: Consolas, Menlo, Courier, monospace;
+
+// font-size 1x
+@font-size-base: 12px;
+@text-font-size: 18px;
+@contents-font-size: 22px;
+@subtitle-font-size: 26px;
+@title-font-size: 30px;
+@heading-font-size: 48px;
+@banner-font-size: 56px;
+
+@heading-font-weight: medium;
