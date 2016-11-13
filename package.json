@@ -13,7 +13,7 @@
     "pages": "npm run pages:checkout && npm run pages:build && npm run pages:cleanall && npm run pages:publish",
     "pages:checkout": "git add . && git stash && git checkout gh-pages && git add . && git checkout master ./",
     "pages:build": "atool-build --config scripts/webpack.config.production.js -o ./",
-    "pages:cleanall": "npm run clean && rm -rf assets/ config/ libs/ scripts/ server/ src/ views/",
+    "pages:cleanall": "npm run clean && rm -rf config/ libs/ scripts/ server/ src/ views/",
     "pages:publish": "git add . && git commit -m 'update pages' --amend -n && git push -f",
     "postpages:publish": "git checkout master && git stash pop",
     "lint": "eslint --ext .js,.jsx libs/ server/ src/",
