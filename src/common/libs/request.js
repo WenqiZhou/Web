@@ -3,9 +3,7 @@ import { REQUEST } from '../store/types';
 
 const { fetch } = require('autofetch');
 
-fetch.baseHost((url) => {
-  return `${process.api.replace(/\/$/, '')}/${url.replace(/^\//, '')}`;
-});
+fetch.baseHost(process.api);
 fetch.callback((response) => {
   if (!response.ok) {
     throw new Error(response.statusText, response.status);
@@ -13,13 +11,12 @@ fetch.callback((response) => {
   return response.json();
 });
 
-export const request = (key, data, callback) => {
+export const request = ({ key, ...options }) => {
   store.dispatch({
     type: REQUEST,
     key,
-    data,
-    callback
-  })
+    ...options
+  });
 };
 
 export default fetch;

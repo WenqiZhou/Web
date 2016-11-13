@@ -4,7 +4,7 @@
 
 export const HOMEPAGE = {
   method: 'GET',
-  path: '/homepage',
+  path: '//mainpage',
   headers: {
     'User-Uin': {
       source: 'User-Uin',

@@ -23,7 +23,7 @@ function* requestDispatcher({ key, callback, ...props }) {
   }).catch(err => {
     return { error: callback(undefined, err) };
   });
-  if (error || response.code !== 200 || response.msg) {
+  if (error || response.ret !== 0) {
     yield put({
       type: REQUEST_ERROR,
       key: ApiTypes[key],
@@ -35,7 +35,7 @@ function* requestDispatcher({ key, callback, ...props }) {
       type: REQUEST_FINISH,
       key: ApiTypes[key],
       error: error || response.msg,
-      data: response.data
+      data: { ...response, ret: undefined }
     });
   }
 }
