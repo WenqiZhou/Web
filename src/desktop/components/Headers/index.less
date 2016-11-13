@@ -1,0 +1,66 @@
+@import "../../../common/style/theme/default/base";
+
+@banner-prefix: banner-anim;
+@navbar-prefix: nav;
+
+.banner-height(@counter: 0) when (@counter < 2) {
+  @media screen and (min-height: (700px + 150px*@counter)) {
+    .@{banner-prefix} {
+      height: (700px + 150px*(@counter - 1));
+    }
+  }
+  .banner-height(@counter + 1);
+}
+@{desktop} {
+  header {
+    width: 100%;
+    height: auto;
+    position: relative;
+    top: 0;
+    left: 0;
+
+    .@{banner-prefix} {
+      position: relative;
+      height: 402px;
+
+      &-elem {
+        background-size: cover;
+        background-position: center 0;
+        background-repeat: no-repeat;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+      }
+
+      &-arrow {
+        position: absolute;
+        width: 33px;
+        height: 76px;
+        top: calc(~"50% - 38px") !important;
+        cursor: pointer;
+
+        &.prev {
+          left: 82px;
+        }
+
+        &.next {
+          right: 82px;
+        }
+      }
+    }
+
+    .banner-height();
+
+    @{navbar-prefix} {
+      top: 0;
+      position: absolute;
+      background: transparent;
+      color: @heading-color;
+
+      .fixed {
+        position: fixed;
+        background: #ffffff;
+      }
+    }
+  }
+}
