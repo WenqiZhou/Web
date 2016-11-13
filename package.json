@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "clean": "rm -rf *.json.gzip",
-    "start": "dora --port 61101 --plugins \"webpack?config=scripts/webpack.config.development.js,webpack-hmr,livereload?enableJs=true&injectHost=127.0.0.1,browser-history?index=/views/index.html\"",
+    "start": "dora --port 61101 --plugins \"webpack?config=scripts/webpack.config.development.js,webpack-hmr,livereload?enableJs=true&injectHost=127.0.0.1\"",
     "build": "atool-build --config scripts/webpack.config.production.js -o ./assets/build && npm run clean",
     "build:analyze": "atool-build --config scripts/webpack.config.analyze.js -o ./assets/build --verbose && npm run clean",
     "post": "echo no maven command",
@@ -31,7 +31,7 @@
   "homepage": "https://github.com/11bnb/Web#readme",
   "dependencies": {
     "async-validator": "^1.6.6",
-    "autofetch": "^1.0.4",
+    "autofetch": "^1.1.1",
     "classnames": "^2.2.5",
     "handlebars": "^4.0.5",
     "koa": "^1.2.4",
@@ -51,6 +51,7 @@
     "react-redux": "^4.4.5",
     "react-router": "^3.0.0",
     "react-router-redux": "^4.0.6",
+    "react-visibility-sensor": "^3.4.0",
     "redux": "^3.6.0",
     "redux-actions": "^0.13.0",
     "redux-saga": "^0.12.1",
@@ -61,6 +62,7 @@
     "atool-build": "^0.9.0",
     "babel-core": "^6.18.2",
     "babel-eslint": "^7.1.0",
+    "babel-plugin-add-module-exports": "^0.2.1",
     "babel-plugin-import": "^1.0.1",
     "babel-plugin-lodash": "^3.2.9",
     "babel-plugin-transform-runtime": "^6.15.0",
