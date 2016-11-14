@@ -31,7 +31,7 @@
   "homepage": "https://github.com/11bnb/Web#readme",
   "dependencies": {
     "async-validator": "^1.6.6",
-    "autofetch": "^1.1.1",
+    "autofetch": "^1.1.5",
     "classnames": "^2.2.5",
     "handlebars": "^4.0.5",
     "koa": "^1.2.4",

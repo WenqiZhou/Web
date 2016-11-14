@@ -10,6 +10,9 @@ fetch.callback((response) => {
   }
   return response.json();
 });
+fetch.headers({
+  'Client-Version': '1.0.3.5'
+});
 
 export const request = ({ key, ...options }) => {
   store.dispatch({
