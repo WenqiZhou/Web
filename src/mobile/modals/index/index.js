@@ -6,10 +6,12 @@ import { request } from '../../../common/libs/request';
 import { HOMEPAGE } from '../../../common/store/requests/types';
 import Items from '../../components/IndexItem'
 
-const MobileEventItem = (props) => React.createElement(
-  Items[`${EventType[props.data.type].replace(/_/, '')}Item`],
-  props
-);
+const MobileEventItem = (props) => {
+  return React.createElement(
+    Items[`${EventType[props.data.type].replace(/_/g, '')}Item`],
+    props
+  );
+};
 
 
 @connect(({ request: req }) => {
