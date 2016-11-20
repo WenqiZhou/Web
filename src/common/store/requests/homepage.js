@@ -9,6 +9,10 @@ export const HOMEPAGE = {
     'User-Uin': {
       source: 'User-Uin',
       default: '100000'
+    },
+    'Client-Token': {
+      source: 'User-Uin',
+      default: null
     }
   }
 };

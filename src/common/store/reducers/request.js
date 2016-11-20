@@ -3,7 +3,7 @@ import Types from '../types';
 
 const currentRequests = {};
 
-const request = handleActions({
+const Request = handleActions({
   [Types.REQUEST_START](state, { key }) {
     currentRequests[key] = true;
     return {
@@ -37,4 +37,4 @@ const request = handleActions({
   loading: false
 });
 
-export default request;
+export default Request;

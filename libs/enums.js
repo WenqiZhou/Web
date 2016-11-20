@@ -8,3 +8,16 @@ export const EventType = {
   6: 'ACTIVITY_NEW_TYPE',
   7: 'END_TYPE'
 };
+
+// export const BigHouseType = {
+//   NONE        = 0;
+//   APARTMENT   = 1; // 公寓
+//   VILLA       = 2; // 别墅
+// }
+//
+// export const CommentVisibleType = {
+//   DEFUALT     = 0;
+//   VISIBLE     = 1; // 可见
+//   INVISIBLE   = 2; // 不可见
+// }
+//

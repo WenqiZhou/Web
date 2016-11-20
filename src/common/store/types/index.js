@@ -23,7 +23,9 @@ const Types = [
   'REQUEST_START',
   'REQUEST_FINISH',
   'REQUEST_ERROR',
-  'REQUEST_CLEAN'
+  'REQUEST_CLEAN',
+  // Search
+  'SEARCH_TRACE_ID'
 ];
 
 const types = (() => {

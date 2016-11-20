@@ -14,9 +14,9 @@ const MobileEventItem = (props) => {
 };
 
 
-@connect(({ request: req }) => {
+@connect(({ Request }) => {
   return {
-    HOMEPAGE: ((req.HOMEPAGE || {}).data || {}).items || []
+    HOMEPAGE: ((Request.HOMEPAGE || {}).data || {}).items || []
   };
 })
 export default class MobileIndex extends Component {
