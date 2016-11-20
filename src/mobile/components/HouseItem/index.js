@@ -17,7 +17,7 @@ export default class HouseItem extends Component {
         </div>
         <div className="info">
           <div className="title">
-            title
+            {data.title}
           </div>
           <div className="description">
             desc
