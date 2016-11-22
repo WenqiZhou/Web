@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { SearchBar } from '../../components/Headers';
 import { EventType } from '../../../../libs/enums';
 import { request } from '../../../common/libs/request';
 import { HOMEPAGE } from '../../../common/store/requests/types';
@@ -14,7 +13,7 @@ const MobileEventItem = (props) => {
 };
 
 
-@connect(({ Request }) => {
+@connect(({ Request, ...stores }) => {
   return {
     HOMEPAGE: ((Request.HOMEPAGE || {}).data || {}).items || []
   };
@@ -29,7 +28,6 @@ export default class MobileIndex extends Component {
   render() {
     return (
       <div className="mobile index">
-        <SearchBar />
         <main>
           {
             this.props.HOMEPAGE.map((item, index) => (

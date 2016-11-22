@@ -21,3 +21,10 @@ export const EventType = {
 //   INVISIBLE   = 2; // 不可见
 // }
 //
+
+export const HouseType = {
+  0: '整套房子',
+  1: '整套房子',
+  2: '独立房间',
+  3: '床位出租'
+};

@@ -11,11 +11,13 @@ export default class HouseItemImage extends Component {
             <Element
               key={index}
               prefixCls="house-images"
-              style={{
-                height: ((310 / 375) * document.body.clientWidth)
-              }}
             >
-              <img src={`${imageUrl}_750`} alt="img" />
+              <Element.BgElement
+                key={`bg_${index}`}
+                style={{
+                  backgroundImage: `url(${imageUrl}_750)`
+                }}
+              />
             </Element>
           ))
         }

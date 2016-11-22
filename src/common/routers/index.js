@@ -17,13 +17,13 @@ const Routes = ({ history }) => (
   <Router history={history} {...customerProps}>
     <Route path="/" component={App}>
       <IndexRoute components={require('../models/index/index')} />
-    </Route>
-    <Route path="/s">
-      <IndexRoute component={require('../models/search')} />
-    </Route>
-    <Route path="/rooms">
-      <IndexRoute component={require('../models/search')} />
-      <Route path="/rooms/:id" />
+      <Route path="/s">
+        <IndexRoute component={require('../models/search')} />
+      </Route>
+      <Route path="/rooms">
+        <IndexRoute component={require('../models/search')} />
+        <Route path="/rooms/:id" />
+      </Route>
     </Route>
     <Route path="*" component={require('../models/error/404')} />
   </Router>
