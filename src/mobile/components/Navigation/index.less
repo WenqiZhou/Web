@@ -1,0 +1,54 @@
+@import "../../style/base";
+
+.mobile {
+  nav {
+    height: 40px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+    background: @body-background;
+    z-index: 1000;
+    box-shadow: 0 2px 0 0 rgba(215, 219, 219, 0.004);
+
+    .icon.menu {
+      width: 23px;
+      height: 100%;
+      left: 16px;
+      top: 0;
+      position: absolute;
+    }
+
+    button {
+      width: 228px;
+      height: 31px;
+      line-height: 31px;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      position: absolute;
+      margin: auto;
+      text-align: center;
+      border: solid 1px @line-color;
+      border-radius: 1px;
+
+      .icon {
+        width: 13px;
+        height: 13px;
+        vertical-align: middle;
+      }
+      .description {
+        padding-left: 9px;
+        font-size: 16px;
+        vertical-align: middle;
+      }
+    }
+    & + * {
+      top: 40px;
+      width: 100%;
+      position: absolute;
+    }
+  }
+}
