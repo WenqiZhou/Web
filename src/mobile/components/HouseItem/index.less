@@ -1,8 +1,8 @@
 @import "../../style/base";
 
 .house {
-
   &.item {
+    cursor: pointer;
     width: 100%;
 
     .images {
@@ -81,7 +81,7 @@
       position: relative;
       display: inline-block;
       //line-height: 1;
-      padding: 22px 0 0 20px;
+      padding: 22px 15px 0 20px;
 
       .avatar {
         right: 16px;
@@ -101,21 +101,40 @@
 
       .left {
         .title {
-          font-size: 16.5px;
-          height: 1em;
+          font-size: 16px;
+          height: 1.1em;
           white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
           color: @text-color;
         }
         .description {
-          font-size: 14px;
-          font-weight: 200;
+          font-size: 12px;
           line-height: 1;
           color: #82898d;
           margin-top: 10px;
         }
-        width: calc(~'100% - 80px');
+        height: 40px;
+        width: calc(~'100% - 60px');
         overflow: hidden;
         word-break: keep-all;
+        display: inline-block;
+      }
+
+      .likes {
+        height: 40px;
+        padding-top: 25px;
+        display: inline-block;
+        font-size: 14px;
+        line-height: 15px;
+        width: 60px;
+        color: #82898d;
+        .icon {
+          width: 14px;
+          height: 15px;
+          display: inline-block;
+          margin-right: 5px;
+        }
       }
     }
   }

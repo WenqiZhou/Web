@@ -17,7 +17,7 @@ export default class HouseList extends Component {
       <div className="house list">
         {
           data.length > 0 ? data.map((item, index) => (
-            <HouseItem key={`search_list_${index}`} data={item} />
+            <HouseItem href={`/room/${item.house_id}`} key={`search_list_${index}`} data={item} />
           )) : HouseListEmpty
         }
       </div>

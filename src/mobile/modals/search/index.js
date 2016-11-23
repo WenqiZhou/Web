@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { request } from '../../../common/libs/request';
 import { SEARCH } from '../../../common/store/requests/types';
 import HouseList from '../../components/HouseList';
+import '../../style/search.less';
 
 @connect(({ search, Request }) => {
   return {
@@ -40,6 +41,9 @@ export default class MobileSearch extends Component {
       <div className="mobile search">
         <div className="results">
           <HouseList data={this.props.SEARCH} />
+          <button className="filter button">
+            筛选条件
+          </button>
         </div>
       </div>
     )
