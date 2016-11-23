@@ -7,7 +7,12 @@ import { go } from '../../../common/libs/utils';
 import './index.less';
 
 export default class HouseItem extends Component {
-  handleClick = (url) => () => go(url);
+  handleClick = (url) => (e) => {
+    if (e.target.className.match(/(next|prev)/)) {
+      return;
+    }
+    go(url);
+  };
 
   render() {
     const { data, href } = this.props;
