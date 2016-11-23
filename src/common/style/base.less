@@ -9,8 +9,60 @@
 
 button {
   border: none;
-  background: none;
+  background: @primary-color;
   outline: none;
+  border-radius: 1.5px;
+  color: #ffffff;
+  text-align: center;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+  padding: 5px 8px;
+}
+
+button:hover,
+button:active {
+  background: @primary-color-clicked;
+}
+
+button:disabled,
+button.disabled {
+  background: @disabled-color !important;
+  cursor: default;
+}
+
+button.clearfix {
+  border: none;
+  background: none;
+  color: inherit;
+  box-shadow: none;
+  padding: 0;
+  line-height: 1;
+}
+
+button.fixed {
+  background: #ffffff;
+  color: #000000;
+  border: solid 1px #ececec;
+}
+
+button.fixed:hover,
+button.fixed:active {
+  box-shadow: 0 0 7px 3px rgba(201, 201, 201, 0.004);
+}
+
+button.page {
+  background: #ffffff;
+  border: solid 1px #b7b7b7;
+  width: 50px;
+  height: 25px;
+  .mobile & {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+button.page:hover,
+button.page:active {
+  background: #e8ebe8;
 }
 
 img {
