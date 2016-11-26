@@ -1,3 +1,4 @@
+import template from 'string-template';
 import fetch from '../../libs/request';
 import Store from '../../store';
 
@@ -10,7 +11,11 @@ const requests = keys.reduce((memo, key) => {
   const mod = context(key);
   key = key.match(/([^/]+)\.js$/)[1];
 
-  Object.keys(mod).filter(k => k !== 'prefix').forEach((k) => {
+  Object.keys(mod).filter(k => k.toLowerCase() !== 'prefix').forEach((k) => {
+    // 判断请求类型是否重复
+    if (memo[k]) {
+      throw new Error(`Duplicate Request Type: ${k} in ${key}`)
+    }
     memo[k] = mod[k];
     types[k] = k;
   });
@@ -18,10 +23,11 @@ const requests = keys.reduce((memo, key) => {
   return memo;
 }, {});
 
-const request = ({ profile, headers = {}, query = {}, data = {} }) => {
+const request = ({ profile, headers = {}, query = {}, data = {}, params = {} }) => {
   // 需要处理profile.headers中的数据
   // 这些数据默认是需要手动处理的
-  const { path, headers: profileHeaders, params } = profile;
+  const { path, headers: profileHeaders, params: profileParams } = profile;
+  let realPath = path;
 
   headers = new Headers(headers);
 
@@ -69,7 +75,45 @@ const request = ({ profile, headers = {}, query = {}, data = {} }) => {
     });
   }
 
-  return fetch(path, {
+  // 判断地址中是否需要进行模板替换
+  if (path.match(/\{(.*)}/)) {
+    // 进行字符串模板替换
+    const parsedProfileParams = Object.keys(profileParams || {}).reduce((previous, key) => {
+      if (params[key]) return profileParams;
+
+      const param = profileParams[key];
+      let source;
+      let value;
+      if (typeof param === 'string') {
+        source = value = param;
+      } else if (typeof param === 'object') {
+        source = param.source;
+        value = param.default;
+      } else {
+        throw new Error(`Url params profile of ${key} must be String or Object`);
+      }
+
+      // 获取source中的数据,没有则返回value
+      value = source.split('.')
+        .reduce((previousValue, currentKey, index, array) => {
+          const v = previousValue[currentKey];
+          return v || (index === array.length - 1) ? v : {};
+        }, Store.getState()) || value;
+
+      previous[key] = value;
+
+      return previous;
+    }, {});
+
+    params = {
+      ...parsedProfileParams,
+      ...params
+    };
+
+    realPath = template(realPath, params);
+  }
+
+  return fetch(realPath, {
     method: profile.method || 'GET',
     headers,
     query: {
