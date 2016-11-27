@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { SearchBar } from '../../components/Navigation';
 import Items from '../../components/IndexItem'
 import { EventType } from '../../../../libs/enums';
 
@@ -11,6 +12,7 @@ const MobileEventItem = (props) => {
 
 const MobileIndex = ({ data = [] }) => (
   <div className="mobile index">
+    <SearchBar />
     <main>
       {
         data.map((item, index) => (

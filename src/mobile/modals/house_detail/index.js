@@ -1,28 +1,17 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { goBack } from '../../../common/libs/utils';
-import { request } from '../../../common/libs/request';
-import { HouseDetail } from '../../../common/store/requests/types';
+import { SearchBar } from '../../components/Navigation';
 import '../../style/house_detail.less';
+import HouseBanner from './HouseBanner';
 
-@connect(({ Request }) => {
-  console.log(Request)
-  return {};
-})
 export default class MobileHouseDetail extends Component {
-  componentWillMount() {
-    request({
-      key: HouseDetail,
-      params: {
-        id: this.props.params.id
-      }
-    })
-  }
-
   render() {
+    const { data } = this.props;
     return (
       <div className="house detail">
-        123
+        <SearchBar />
+        <main>
+          <HouseBanner list={data.images || []} />
+        </main>
       </div>
     );
   }

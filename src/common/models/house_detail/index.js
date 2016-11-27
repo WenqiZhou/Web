@@ -1,12 +1,42 @@
 import React, { Component } from 'react';
-import DesktopHouseDetail from '../../../desktop/modals/house_detail';
-import MobileHouseDetail from '../../../mobile/modals/house_detail';
+import { connect } from 'react-redux';
+import DesktopHouseDetail from '$desktop/modals/house_detail';
+import MobileHouseDetail from '$mobile/modals/house_detail';
+import { request } from '../../../common/libs/request';
+import { HOUSE_DETAIL } from '../../../common/store/requests/types';
 
-const HouseDetail = (props) => (
-  <div>
-    <DesktopHouseDetail {...props} />
-    <MobileHouseDetail {...props} />
-  </div>
-);
+@connect(({ Request }) => {
+  return {
+    loading: Request.loading,
+    HOUSE_DETAIL: (Request.HOUSE_DETAIL || {}).data || {}
+  };
+})
+export default class HouseDetail extends Component {
+  componentWillMount() {
+    this.getData();
+  }
 
-export default HouseDetail;
+  getData = () => {
+    request({
+      key: HOUSE_DETAIL,
+      params: {
+        id: this.props.params.id
+      }
+    });
+  };
+
+  render() {
+    const data = this.props.HOUSE_DETAIL[this.props.params.id] || {};
+    const props = {
+      data: data.house || {},
+      similar: data.similar || {}
+    };
+
+    return (
+      <div>
+        <DesktopHouseDetail {...props} />
+        <MobileHouseDetail {...props} />
+      </div>
+    );
+  }
+}
