@@ -1,0 +1,23 @@
+@import "../../style/base";
+.house {
+  .price {
+    height: 39px;
+    line-height: 39px;
+    padding: 0 16px;
+    background: rgba(55, 56, 58, 1);
+    position: absolute;
+    left: 0;
+    bottom: 15px;
+    font-size: @heading-font-size;
+    color: @text-color-secondary;
+    z-index: 999;
+
+    & > .unit {
+      width: 15px;
+      height: 50%;
+      display: inline-block;
+      background-size: 12px;
+      background-position: left;
+    }
+  }
+}
