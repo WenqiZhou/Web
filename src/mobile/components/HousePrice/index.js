@@ -1,4 +1,5 @@
 import React from 'react';
+import './index.less';
 
 const HousePrice = ({ price }) => (
   <div className="house price">

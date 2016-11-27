@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import classnames from 'classnames';
 import HouseItemImage from './image';
+import HousePrice from '../HousePrice';
 import { HouseType } from '../../../../libs/enums';
-import Starts from '../../../common/components/star';
+import Starts from '../../../common/components/Stars';
 import { go } from '../../../common/libs/utils';
 import './index.less';
 
@@ -20,10 +21,7 @@ export default class HouseItem extends Component {
       <section onClick={this.handleClick(href)} className="house item">
         <div style={{ position: 'relative' }}>
           <HouseItemImage images={data.images} />
-          <div className="price">
-            <span className="icon mobile unit CNY" />
-            {data.price}
-          </div>
+          <HousePrice price={data.price} />
         </div>
         <div className="info">
           <div className="avatar">
