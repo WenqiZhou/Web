@@ -1,21 +1,26 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import MobileIndex from '$mobile/modals/index';
 import DesktopIndex from '$desktop/modals/index';
-import { EventType } from '../../../../libs/enums';
+import { request } from '../../../common/libs/request';
+import { HOMEPAGE } from '../../../common/store/requests/types';
 
+@connect(({ Request, ...stores }) => {
+  return {
+    HOMEPAGE: ((Request.HOMEPAGE || {}).data || {}).items || []
+  };
+})
 export default class Index extends Component {
-  // // 由于使用通用的数据接口,因此在入口文件中刷新数据
-  // componentDidMount() {
-  //   request({
-  //     key: HOMEPAGE
-  //   });
-  // }
-
+  componentDidMount() {
+    request({
+      key: HOMEPAGE
+    });
+  }
   render() {
     return (
       <div>
-        <DesktopIndex />
-        <MobileIndex />
+        <DesktopIndex data={this.props.HOMEPAGE} />
+        <MobileIndex data={this.props.HOMEPAGE} />
       </div>
     )
   }

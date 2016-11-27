@@ -1,4 +1,4 @@
-import { push, replace } from 'react-router-redux';
+import { push, replace, goBack as reduxGoBack } from 'react-router-redux';
 import store from '../store';
 import { WINDOW_TITLE, USER_TOKEN, WINDOW_CUSTOMER_ROUTE } from '../store/types';
 
@@ -16,6 +16,8 @@ export const setTitle = (title) => (store ? store.dispatch({
 export const redirect = (url) => store.dispatch(redirect(url || '/'));
 
 export const go = (url) => store.dispatch(push(url || '/'));
+
+export const goBack = () => store.dispatch(reduxGoBack());
 
 export const setPath = (path) => store.dispatch({
   type: WINDOW_CUSTOMER_ROUTE,

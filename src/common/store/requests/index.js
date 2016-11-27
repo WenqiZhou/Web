@@ -112,7 +112,6 @@ const request = ({ profile, headers = {}, query = {}, data = {}, params = {} }) 
 
     realPath = template(realPath, params);
   }
-
   return fetch(realPath, {
     method: profile.method || 'GET',
     headers,

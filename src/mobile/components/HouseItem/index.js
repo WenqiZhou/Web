@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import classnames from 'classnames';
 import HouseItemImage from './image';
 import { HouseType } from '../../../../libs/enums';
-import Starts from '../../../common/components/start';
+import Starts from '../../../common/components/star';
 import { go } from '../../../common/libs/utils';
 import './index.less';
 

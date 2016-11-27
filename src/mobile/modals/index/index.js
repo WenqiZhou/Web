@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { EventType } from '../../../../libs/enums';
-import { request } from '../../../common/libs/request';
-import { HOMEPAGE } from '../../../common/store/requests/types';
 import Items from '../../components/IndexItem'
+import { EventType } from '../../../../libs/enums';
 
 const MobileEventItem = (props) => {
   return React.createElement(
@@ -12,30 +9,16 @@ const MobileEventItem = (props) => {
   );
 };
 
+const MobileIndex = ({ data = [] }) => (
+  <div className="mobile index">
+    <main>
+      {
+        data.map((item, index) => (
+          <MobileEventItem key={index} data={item} />
+        ))
+      }
+    </main>
+  </div>
+);
 
-@connect(({ Request, ...stores }) => {
-  return {
-    HOMEPAGE: ((Request.HOMEPAGE || {}).data || {}).items || []
-  };
-})
-export default class MobileIndex extends Component {
-  componentDidMount() {
-    request({
-      key: HOMEPAGE
-    });
-  }
-
-  render() {
-    return (
-      <div className="mobile index">
-        <main>
-          {
-            this.props.HOMEPAGE.map((item, index) => (
-              <MobileEventItem key={index} data={item} />
-            ))
-          }
-        </main>
-      </div>
-    );
-  }
-}
+export default MobileIndex;

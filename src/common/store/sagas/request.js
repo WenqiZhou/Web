@@ -27,14 +27,14 @@ function* requestDispatcher({ key, callback, ...props }) {
     yield put({
       type: REQUEST_ERROR,
       key: ApiTypes[key],
-      error: error || response.msg,
+      error: error || response,
       data: response.data
     });
   } else {
     yield put({
       type: REQUEST_FINISH,
       key: ApiTypes[key],
-      error: error || response.msg,
+      error: error || response,
       data: { ...response, ret: undefined }
     });
   }

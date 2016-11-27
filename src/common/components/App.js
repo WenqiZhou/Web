@@ -1,20 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import DesktopApp from '../../desktop/components/App';
-import MobileApp from '../../mobile/components/App';
+import classnames from 'classnames';
+import env from '../libs/os';
 import '../style'
 
-@connect()
 export default class App extends Component {
   render() {
     return (
-      <div>
-        <DesktopApp>
-          {this.props.children}
-        </DesktopApp>
-        <MobileApp>
-          {this.props.children}
-        </MobileApp>
+      <div className={classnames(env)}>
+        {this.props.children}
       </div>
     )
   }
