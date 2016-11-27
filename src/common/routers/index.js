@@ -20,10 +20,7 @@ const Routes = ({ history }) => (
       <Route path="/s">
         <IndexRoute component={require('../models/search')} />
       </Route>
-      <Route path="/rooms">
-        <IndexRoute component={require('../models/search')} />
-        <Route path="/rooms/:id" />
-      </Route>
+      <Route path="/house/:id" component={require('../models/house_detail')} />
     </Route>
     <Route path="*" component={require('../models/error/404')} />
   </Router>

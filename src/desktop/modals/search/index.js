@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../../style/search.less';
 
-export default class DesktopRoomsList extends Component {
+export default class DesktopSearch extends Component {
   render() {
     return (
       <div className="desktop search">
