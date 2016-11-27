@@ -120,7 +120,7 @@ const request = ({ profile, headers = {}, query = {}, data = {}, params = {} }) 
       xxx: ''
     },
     data
-  }).then(profile.callback || (response => response));
+  }).then(profile.callback({ headers, query, params }) || (response => response));
 };
 
 const dispatcher = ({ key, ...props }) => {
