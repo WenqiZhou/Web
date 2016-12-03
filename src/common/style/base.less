@@ -7,6 +7,10 @@
   font-family: @font-family;
 }
 
+body {
+  background-color: @background-color-base;
+}
+
 button {
   border: none;
   background: @primary-color;
@@ -67,6 +71,7 @@ button.page:active {
 
 img {
   width: 100%;
+  max-height: 100%; // 如果出现图片高度被压缩就注释这行
 }
 
 img {
