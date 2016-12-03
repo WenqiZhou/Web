@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import classnames from 'classnames';
 import env from '../libs/os';
 import '../style'
+import '../../mobile/libs/scale';
 
 export default class App extends Component {
   render() {
