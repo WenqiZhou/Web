@@ -28,3 +28,9 @@ export const HouseType = {
   2: '独立房间',
   3: '床位出租'
 };
+
+export const LandLordDesc = {
+  new_verified_id: '实名认证',
+  is_landlord: '个人房东',
+  landlord_verified: '认证房东'
+};

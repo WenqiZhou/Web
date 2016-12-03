@@ -1,2 +1,145 @@
 @import "./base";
 
+.house.detail {
+  main {
+    width: 100%;
+    padding-bottom: 1rem;
+  }
+
+  section {
+    max-width: 100%;
+    padding: .533333rem .44rem 0;
+    font-size: .4rem;
+    color: #555555;
+
+    .title {
+      color: #555555;
+      font-size: .44rem;
+    }
+
+    p {
+      color: #959595;
+      font-size: .4rem;
+    }
+
+    &.dividing {
+      background: url("/assets/images/image_mobile_divided.png") bottom center no-repeat;
+      background-size: calc(~"100% - .88rem");
+    }
+
+    &.borded {
+      border-bottom: solid 1px #eeeeee;
+    }
+
+    &.landlord {
+      padding-bottom: .533333rem;
+      text-align: center;
+      background-color: @body-background;
+      .title {
+        padding: 0 1rem;
+        width: 100%;
+        font-size: .6rem;
+        line-height: 1.2;
+      }
+
+      p {
+        line-height: .4rem;
+        font-size: .36rem;
+        margin: .24rem 0;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      a.icon {
+        width: .4rem;
+        height: .4rem;
+        display: inline-block;
+        position: relative;
+        vertical-align: bottom;
+
+        &.like {
+          margin-left: .24rem;
+          margin-bottom: 2px;
+        }
+      }
+
+      .avatar {
+        width: 1.653333rem;
+        height: 1.653333rem;
+        border-radius: 50%;
+        margin: .246667rem auto .5rem;
+        overflow: hidden;
+      }
+    }
+
+    &.volume {
+      background-color: @body-background;
+      text-align: left;
+      margin: 0;
+      ul {
+        li {
+          padding-left: 1.333333rem;
+          display: flex;
+          margin-bottom: .69rem;
+          .icon {
+            width: .6rem;
+            height: .6rem;
+            background-position: top center;
+            display: inline-block;
+
+            & + div {
+              display: inline-block;
+              margin-left: .52rem;
+              flex: 1;
+            }
+          }
+
+          .title {
+            line-height: 1.4;
+          }
+
+          p {
+            line-height: 1.5;
+          }
+        }
+      }
+    }
+
+    &.description {
+      padding-bottom: .533333rem;
+      .title {
+        text-align: center;
+      }
+      p {
+        padding: .6rem .16rem .5rem;
+      }
+
+      img {
+        height: 5.653333rem;
+      }
+    }
+
+    &.source {
+      dl {
+        padding: .4rem 0 .2rem;
+
+        dt, dd {
+          width: 50%;
+          display: inline-block;
+        }
+
+        dd {
+          text-align: right;
+        }
+      }
+    }
+
+    &.devices {
+      dl {
+
+      }
+    }
+  }
+}
