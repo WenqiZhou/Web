@@ -5,10 +5,22 @@ const { fetch } = require('autofetch');
 
 fetch.baseHost(process.api);
 fetch.callback((response) => {
-  if (!response.ok) {
-    throw new Error(response.statusText, response.status);
-  }
-  return response.json();
+  return new Promise((recept, reject) => {
+    if (!response.ok) {
+      reject(response);
+    }
+    recept(response.text())
+  }).then((responseText) => {
+    if (responseText.match(/house_id/)) {
+      try {
+        return JSON.parse(responseText.replace(/"house_id": ?(\d*),/g, (a, b) => `"house_id": "${b}",`))
+      } catch (e) {
+        throw new Error(e);
+      }
+    } else {
+      return response.json();
+    }
+  });
 });
 fetch.headers({
   'Client-Version': '1.0.3.5'

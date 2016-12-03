@@ -16,7 +16,7 @@ export const SEARCH = {
       default: null
     }
   },
-  callback: (response) => {
+  callback: (origin) => (response) => {
     Store.dispatch({
       type: SEARCH_TRACE_ID,
       traceID: response.search_trace_id,

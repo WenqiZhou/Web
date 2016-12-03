@@ -5,6 +5,8 @@ import { REQUEST, REQUEST_START, REQUEST_FINISH, REQUEST_ERROR, REQUEST_CLEAR } 
 import requests from '../requests';
 import ApiTypes from '../requests/types';
 
+// 这个类在错误处理上还存在较大问题,需要处理
+
 /**
  * 请求转发
  * @param key 请求的key
