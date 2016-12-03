@@ -1,7 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 import BannerAnim, { Element, Arrow } from 'rc-banner-anim';
 import { viewer } from '../../components/ImageViewer';
-import './HouseBanner.less';
+import HousePrice from '../../components/HousePrice';
+import './index.less';
 
 export default class HouseBanner extends Component {
   static propTypes = {
@@ -22,7 +23,8 @@ export default class HouseBanner extends Component {
   render() {
     return (
       <div onClick={this.handleView} className="house banner">
-        <img src={`${(this.props.list[0] || {}).image_url}_750`} alt="加载中" />
+        <img src={`${(this.props.list[0] || {}).image_url || ''}_750`} alt="加载中" />
+        <HousePrice price={this.props.price} />
       </div>
     )
   }
