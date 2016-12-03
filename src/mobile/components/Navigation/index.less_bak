@@ -2,7 +2,7 @@
 
 .mobile {
   nav {
-    height: 1.066667rem;
+    height: 40px;
     width: 100%;
     top: 0;
     left: 0;
@@ -10,20 +10,20 @@
     position: fixed;
     background: @body-background;
     z-index: 1000;
-    box-shadow: 0 .053333rem 0 0 rgba(215, 219, 219, 0.004);
+    box-shadow: 0 2px 0 0 rgba(215, 219, 219, 0.004);
 
     .icon.menu {
-      width: .613333rem;
+      width: 23px;
       height: 100%;
-      left: .426667rem;
+      left: 16px;
       top: 0;
       position: absolute;
     }
 
     button {
-      width: 6.080000rem;
-      height: .826667rem;
-      line-height: .826667rem;
+      width: 228px;
+      height: 31px;
+      line-height: 31px;
       top: 0;
       left: 0;
       right: 0;
@@ -31,22 +31,22 @@
       position: absolute;
       margin: auto;
       text-align: center;
-      border: solid .026667rem @line-color;
-      border-radius: .026667rem;
+      border: solid 1px @line-color;
+      border-radius: 1px;
 
       .icon {
-        width: .346667rem;
-        height: .346667rem;
+        width: 13px;
+        height: 13px;
         vertical-align: middle;
       }
       .description {
-        padding-left: .240000rem;
-        font-size: .426667rem;
+        padding-left: 9px;
+        font-size: 16px;
         vertical-align: middle;
       }
     }
     & + * {
-      top: 1.066667rem;
+      top: 40px;
       width: 100%;
       position: absolute;
     }

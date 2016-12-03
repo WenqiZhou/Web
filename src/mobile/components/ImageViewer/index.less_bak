@@ -4,7 +4,7 @@
   right: 0;
   bottom: 0;
   width: 100%;
-  height: 6.160000rem;
+  height: 231px;
   margin: auto;
   position: absolute;
 
@@ -24,31 +24,31 @@
     }
 
     .arrow {
-      width: .666667rem;
-      height: 1.146667rem;
+      width: 25px;
+      height: 43px;
       position: absolute;
-      margin-top: -.573333rem;
+      margin-top: -21.5px;
       z-index: 1001;
       cursor: pointer;
       -webkit-tap-highlight-color: transparent;
       -webkit-user-select: none;
 
       &.prev {
-        left: .426667rem;
+        left: 16px;
       }
 
       &.next {
-        right: .426667rem;
+        right: 16px;
       }
     }
   }
 
   & > .close {
     top: 0;
-    right: .426667rem;
-    margin-top: -2.226667rem;
-    width: .640000rem;
-    height: .640000rem;
+    right: 16px;
+    margin-top: -83.5px;
+    width: 24px;
+    height: 24px;
     position: absolute;
   }
 }

@@ -31,7 +31,7 @@
           left: 0;
           right: 0;
           bottom: 0;
-          height: 1.546667rem;
+          height: 58px;
           margin: auto;
           line-height: 1;
 
@@ -41,9 +41,9 @@
           }
           .subtitle {
             font-size: @title-font-size;
-            max-width: 5.600000rem;
+            max-width: 210px;
             line-height: 1.2;
-            margin: .480000rem auto 0;
+            margin: 18px auto 0;
           }
         }
       }
