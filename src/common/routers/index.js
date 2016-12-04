@@ -22,6 +22,11 @@ const Routes = ({ history }) => (
       </Route>
       <Route path="/house/:id" component={require('../models/house_detail')} />
     </Route>
+    <Route path="/help">
+      <Route path="cb">
+        <Route path=":id" component={() => <span>退订政策</span>} />
+      </Route>
+    </Route>
     <Route path="*" component={require('../models/error/404')} />
   </Router>
 );
