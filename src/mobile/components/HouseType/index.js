@@ -1,13 +1,14 @@
 import React, { Component, createElement } from 'react';
+import { BedsTypes } from '../../../../libs/enums';
 
-const Beds = ({ bed_num: bedNum, beds }) => (
+const Beds = ({ bedNum, beds }) => (
   <li>
     <div className="icon mobile beds" />
     <div>
-      <div className="title">共{bedNum}张床</div>
+      <div className="title">{bedNum ? <span>共{bedNum}张</span> : '无'}床</div>
       {
         beds.map((bed, index) => (
-          <p key={index}>{bed.bed_type}：{bed.bed_num}张</p>
+          <p key={index}>{BedsTypes[bed.bed_type]}：{bed.bed_num}张</p>
         ))
       }
     </div>
