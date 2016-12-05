@@ -1,12 +1,12 @@
 import { push, replace, goBack as reduxGoBack } from 'react-router-redux';
-import store from '../store';
-import { WINDOW_TITLE, USER_TOKEN, WINDOW_CUSTOMER_ROUTE } from '../store/types';
+import store from '../../store';
+import { WINDOW_TITLE, USER_TOKEN, WINDOW_CUSTOMER_ROUTE } from '../../store/types';
 
 const _ = {
   merge: require('lodash/merge')
 };
 
-const { appname } = require('../../../config/config.json');
+const { appname } = require('../../../../config/config.json');
 
 export const setTitle = (title) => (store ? store.dispatch({
   type: WINDOW_TITLE,

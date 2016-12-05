@@ -1,5 +1,5 @@
 /* eslint import/prefer-default-export: 0 */
-import { goBack } from '../../libs/utils';
+import { goBack } from '../../libs/utils/utils';
 
 // 房屋信息相关接口
 export const HOUSE_DETAIL = {

@@ -5,6 +5,7 @@ import '../../style/house_detail.less';
 import HouseBanner from '../../components/HouseBanner';
 import HouseType from '../../components/HouseType';
 import { LandLordDesc } from '../../../../libs/enums';
+import { enterTime, leaveTime, getCp } from '../../../common/libs/utils/timeparse';
 
 export default class MobileHouseDetail extends Component {
   render() {
@@ -79,15 +80,15 @@ export default class MobileHouseDetail extends Component {
               <p>房源：</p>
               <dl>
                 <dt>入住时间</dt>
-                <dd>{data.enter_time}</dd>
+                <dd>{enterTime(data)}</dd>
                 <dt>退房时间</dt>
-                <dd>{data.leaving_time}</dd>
+                <dd>{leaveTime(data)}</dd>
                 <dt>最短住宿天数</dt>
-                <dd>{data.min_booking_days}</dd>
+                <dd>{data.min_booking_days || 1}天</dd>
                 <dt>退订政策</dt>
-                <dd>{data.cp}</dd>
+                <dd><a>{getCp(data)}</a></dd>
                 <dt>可租状态</dt>
-                <dd>{data.stock_num}</dd>
+                <dd><a>查看日历</a></dd>
               </dl>
             </section>
             <section className="dividing devices">

@@ -18,7 +18,7 @@ export class NavItem extends Component {
   }
 }
 NavItem.propTypes = {
-  children: PropTypes.element
+  children: PropTypes.node
 };
 
 @connect()

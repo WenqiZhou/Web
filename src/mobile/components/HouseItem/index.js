@@ -4,7 +4,7 @@ import HouseItemImage from './image';
 import HousePrice from '../HousePrice';
 import { HouseType } from '../../../../libs/enums';
 import Starts from '../../../common/components/Stars';
-import { go } from '../../../common/libs/utils';
+import { go } from '../../../common/libs/utils/utils';
 import './index.less';
 
 export default class HouseItem extends Component {
