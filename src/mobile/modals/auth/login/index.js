@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { redirect } from '../../../../common/libs/utils/utils';
 import Form from '../../../components/Form';
 import Input from '../../../components/Input';
+import { toast } from '../../../components/Toast';
 
 @connect((props, { location }) => {
   return {
