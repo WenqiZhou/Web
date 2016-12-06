@@ -1,5 +1,14 @@
 @import "./base";
 
+@keyframes login-anim {
+  from {
+    top: 100%;
+  }
+  to {
+    top: 0;
+  }
+}
+
 .mobile.auth {
   width: 100%;
   height: 100%;
@@ -8,8 +17,9 @@
   right: 0;
   bottom: 0;
   position: absolute;
-  background: url("https://m.11bnb.com/static/nh5/images/login/bc.png") center no-repeat;
+  background: transparent url("https://m.11bnb.com/static/nh5/images/login/bc.png") center no-repeat;
   background-size: cover;
+  animation: login-anim 1s ease;
 
   .logo {
     width: 4.48rem; //336px
@@ -20,7 +30,7 @@
   }
 
   .login.wrapper {
-    .buttons{
+    .buttons {
       width: 9.04rem; //678px
       height: .8rem; // 60px
       margin: .95rem auto .6rem; //71px 45px
