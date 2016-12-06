@@ -13,7 +13,7 @@ export const setTitle = (title) => (store ? store.dispatch({
   title: `${title ? `${title}-` : ''}${appname}`
 }) : undefined);
 
-export const redirect = (url) => store.dispatch(redirect(url || '/'));
+export const redirect = (url) => store.dispatch(replace(url || '/'));
 
 export const go = (url) => store.dispatch(push(url || '/'));
 
