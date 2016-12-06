@@ -22,6 +22,14 @@ const Routes = ({ history }) => (
       </Route>
       <Route path="/house/:id" component={require('../models/house_detail')} />
     </Route>
+    <Route path="/m/auth" component={require('../../mobile/modals/auth')}>
+      <IndexRedirect to="login" />
+      <Route path="login" component={require('../../mobile/modals/auth/login')}>
+        <IndexRedirect to="password" />
+        <Router path="password" />
+        <Router path="code" />
+      </Route>
+    </Route>
     <Route path="/help">
       <Route path="cb">
         <Route path=":id" component={() => <span>退订政策</span>} />
