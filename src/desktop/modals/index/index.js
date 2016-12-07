@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Header } from '../../components/Headers';
 import '../../style/index.less';
 
+import { loginModal } from '../../components/AuthModals/LoginModal';
+
 class EventSection extends Component {
   render() {
     return (
@@ -13,6 +15,10 @@ class EventSection extends Component {
 }
 
 export default class DesktopIndex extends Component {
+  componentDidMount() {
+    loginModal();
+  }
+
   render() {
     return (
       <div className="desktop index">
