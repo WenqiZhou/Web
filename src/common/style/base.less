@@ -22,7 +22,7 @@ button {
   padding: 5px 8px;
 }
 
-button:hover,
+//button:hover,
 button:active {
   background: @primary-color-clicked;
 }
@@ -48,9 +48,23 @@ button.fixed {
   border: solid 1px #ececec;
 }
 
-button.fixed:hover,
+//button.fixed:hover,
 button.fixed:active {
   box-shadow: 0 0 7px 3px rgba(201, 201, 201, 0.004);
+}
+
+button.ghost {
+  padding: 7px 15rem;
+  font-size: 14px;
+  line-height: 1;
+  width: auto;
+  background: transparent;
+  border: solid 1px #ffffff;
+  border-radius: 14px;
+}
+//button.ghost:hover,
+button.ghost:active {
+  background: rgba(255, 255, 255, .4);
 }
 
 button.page {
@@ -64,7 +78,7 @@ button.page {
   }
 }
 
-button.page:hover,
+//button.page:hover,
 button.page:active {
   background: #e8ebe8;
 }
