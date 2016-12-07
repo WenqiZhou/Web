@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
-import Form from '../../../components/Form';
-import Input from '../../../components/Input';
+import Form from '../../../../common/components/Form';
+import Input from '../../../../common/components/Input';
 import { toast } from '../../../components/Toast';
 import Code from '../../../../common/components/Code';
 
@@ -42,7 +42,7 @@ export default class MobileCodeLogin extends Component {
   render() {
     const { setRef } = this.props;
     return (
-      <div className="form">
+      <div>
         <Form
           ref={setRef}
         >
