@@ -1,0 +1,55 @@
+.mobile.auth {
+  .login.wrapper {
+    .buttons {
+      height: .8rem; // 60px
+      margin: .95rem auto .6rem; //71px 45px
+      position: relative;
+      border: solid 1px #fe393d;
+      overflow: hidden;
+      border-radius: .066667rem;
+      display: flex;
+
+      button {
+        width: 50%;
+        height: 100%;
+        border-radius: 0;
+        border: none;
+        background: transparent;
+        box-shadow: none;
+        color: #fe393d;
+        padding: 0;
+        flex: 1;
+
+        &.current {
+          background: #fe393d;
+          color: #ffffff;
+          transition: color .5s ease;
+        }
+      }
+    }
+
+    button {
+      display: block;
+    }
+
+    button.login {
+      height: 1.066667rem;
+      font-size: .4rem;
+      margin: .56rem auto 0;
+    }
+
+    button.register {
+      margin: 1.22666rem auto 0;
+      height: .72rem;
+      line-height: .72rem;
+      font-size: .373333rem;
+      padding: 0 .4rem;
+      width: auto;
+      border-radius: .36rem;
+    }
+
+    .third-login {
+      margin-top: 1.8rem
+    }
+  }
+}

@@ -17,7 +17,7 @@
   right: 0;
   bottom: 0;
   position: absolute;
-  background: transparent url("https://m.11bnb.com/static/nh5/images/login/bc.png") center no-repeat;
+  background: transparent url("/assets/images/image_mobile_login_background.png") center no-repeat;
   background-size: cover;
   animation: login-anim 1s ease;
 
@@ -29,39 +29,27 @@
     background-size: 100%;
   }
 
-  .login.wrapper {
-    .buttons {
-      width: 9.04rem; //678px
-      height: .8rem; // 60px
-      margin: .95rem auto .6rem; //71px 45px
-      position: relative;
-      border: solid 1px #fe393d;
-      overflow: hidden;
-      border-radius: .066667rem;
-      display: flex;
-
-      button {
-        width: 50%;
-        height: 100%;
-        border-radius: 0;
-        border: none;
-        background: transparent;
-        box-shadow: none;
-        color: #fe393d;
-        padding: 0;
-        flex: 1;
-
-        &.current {
-          background: #fe393d;
-          color: #ffffff;
-          transition: color .5s ease;
-        }
-      }
+  .login.wrapper,
+  .register.wrapper {
+    > * {
+      width: 9.04rem;
+      margin: 0 auto;
     }
 
-    .form {
-      width: 9.04rem; //336px
-      margin: 0 auto;
+    .help {
+      text-align: right;
+      margin-top: .226667rem;
+      font-size: .293333rem;
+      line-height: .4rem;
+      color: #ffffff;
+
+      &.left {
+        text-align: left;
+      }
+
+      &.center {
+        text-align: center;
+      }
     }
   }
 }

@@ -1,10 +1,12 @@
-import React, { Component } from 'react';
+import React, { Component, createElement } from 'react';
 import classnames from 'classnames';
 import { connect } from 'react-redux';
-import { redirect } from '../../../../common/libs/utils/utils';
-import Form from '../../../components/Form';
-import Input from '../../../components/Input';
+import { redirect, go, setTitle } from '../../../../common/libs/utils/utils';
 import { toast } from '../../../components/Toast';
+import MobilePasswordLogin from './password';
+import MobileCodeLogin from './code';
+import ThirdLogin from '../../../../common/components/ThirdLogin';
+import './index.less';
 
 @connect((props, { location }) => {
   return {
@@ -12,15 +14,28 @@ import { toast } from '../../../components/Toast';
   };
 })
 export default class MobileAuthLogin extends Component {
-  redirect = (path) => () => {
-    redirect(`/m/auth/login/${path}`)
-  };
+  componentDidMount() {
+    setTitle('登录');
+  }
 
-  form = null;
+  setRef = (element) => {
+    this.form = element;
+  };
 
   handleLogin = () => {
     const { getValues } = this.form;
     console.log(getValues());
+  };
+
+  form = null;
+
+  goRegister = () => {
+    go('/m/auth/signup')
+  };
+
+  redirect = (path) => () => {
+    if (path === this.props.path) return;
+    redirect(`/m/auth/login/${path}`)
   };
 
   render() {
@@ -44,16 +59,18 @@ export default class MobileAuthLogin extends Component {
               动态密码登录
             </button>
           </div>
-          <Form
-            ref={e => {
-              this.form = e
-            }}
-            className="form"
-          >
-            <Input icon="mobile global" readOnly value="中国 +86" />
-            <Input icon="mobile account" clearable type="text" key="mobile" placeholder="请输入邮箱／手机号" />
-            <Input icon="mobile password" clearable type="password" key="password" placeholder="请输入密码" />
-          </Form>
+          {
+            createElement(this.props.path !== 'code' ? MobilePasswordLogin : MobileCodeLogin, {
+              setRef: this.setRef
+            })
+          }
+          <button className="login" onClick={this.handleLogin}>
+            登录
+          </button>
+          <button className="register ghost" onClick={this.goRegister}>
+            立即注册
+          </button>
+          <ThirdLogin redirect="/" mobile />
         </div>
       </div>
     )
