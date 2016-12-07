@@ -11,12 +11,26 @@ ul.third-login {
 
   li {
     display: inline-block;
-    width: .96rem;
-    height: .96rem;
-    margin-left: .9rem;
+    width: 46px;
+    height: 46px;
+    margin-left: 56px;
+    position: relative;
+
+    a {
+      left: 0;
+      position: absolute;
+    }
 
     &:first-of-type {
       margin-left: 0;
     }
+  }
+}
+
+.mobile .third-login {
+  li {
+    width: .96rem;
+    height: .96rem;
+    margin-left: .9rem;
   }
 }

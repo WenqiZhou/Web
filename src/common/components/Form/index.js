@@ -148,7 +148,6 @@ export default class MobileForm extends Component {
   render() {
     return createElement('form', {
       className: classnames({
-        mobile: true,
         form: true,
         [this.props.className]: true
       }),
