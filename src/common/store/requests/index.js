@@ -99,7 +99,6 @@ const request = ({ profile, headers = {}, query = {}, data = {}, params = {} }) 
           const v = previousValue[currentKey];
           return v || (index === array.length - 1) ? v : {};
         }, Store.getState()) || value;
-
       previous[key] = value;
 
       return previous;

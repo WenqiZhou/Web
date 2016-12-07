@@ -18,7 +18,7 @@ fetch.callback((response) => {
         throw new Error(e);
       }
     } else {
-      return response.json();
+      return JSON.parse(responseText);
     }
   });
 });

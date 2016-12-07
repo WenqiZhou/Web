@@ -26,9 +26,11 @@ const Routes = ({ history }) => (
       <IndexRedirect to="login" />
       <Route path="login" component={require('../../mobile/modals/auth/login')}>
         <IndexRedirect to="password" />
-        <Router path="password" />
+        <Router path="password" component={require('../../mobile/modals/auth/login/password')} />
         <Router path="code" />
       </Route>
+      <Route path="signup" component={require('../../mobile/modals/auth/signup')} />
+      <Route path="forget" component={require('../../mobile/modals/auth/forget')} />
     </Route>
     <Route path="/help">
       <Route path="cb">
