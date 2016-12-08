@@ -9,6 +9,21 @@ export const EventType = {
   7: 'END_TYPE'
 };
 
+export const EventTypeDescription = {
+  1: {
+    name: '精彩主题',
+    description: '寻找你所喜爱的'
+  },
+  2: {
+    name: '热门城市',
+    description: '寻找你未曾相遇的风景'
+  },
+  3: {
+    name: '热门推荐',
+    description: '发现你和世界的另一面'
+  }
+};
+
 // export const BigHouseType = {
 //   NONE        = 0;
 //   APARTMENT   = 1; // 公寓
