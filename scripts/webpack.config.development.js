@@ -11,7 +11,7 @@ module.exports = (webpackConfig) => {
     production: false
   }));
 
-  webpackConfig.devtool = '#source-map';
+  webpackConfig.devtool = '#cheap-module-inline-source-map';
 
   return webpackConfig;
 };
