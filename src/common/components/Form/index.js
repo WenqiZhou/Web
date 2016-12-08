@@ -1,7 +1,7 @@
 // 移动端表单组件 具体表现形式为输入框连在一起 中间用divid分割 用于登录页以及个人资料修改
 // 表单只组件只会处理Input类型的type,包括select等也应该从Input继承
 // Input的onChange方法会传入两个参数,event与callback,使可以支持在校验前对数据做一次处理或者转存
-// 因为在onChange处理完以后 必须调用callback,传入处理后的value, 使表单能正常处理输入以及校验, 否则会输入无线
+// 因为在onChange处理完以后 必须调用callback,传入处理后的value, 使表单能正常处理输入以及校验, 否则会输入无效
 import React, { Component, PropTypes, cloneElement, createElement } from 'react';
 import classnames from 'classnames';
 import Input from '../Input';
