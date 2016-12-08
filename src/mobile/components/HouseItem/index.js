@@ -9,6 +9,7 @@ import './index.less';
 
 export default class HouseItem extends Component {
   handleClick = (url) => (e) => {
+    console.log(1)
     if (e.target.className.match(/(next|prev)/)) {
       return;
     }

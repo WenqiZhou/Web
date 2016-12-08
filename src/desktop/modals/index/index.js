@@ -16,7 +16,6 @@ class EventSection extends Component {
 
 export default class DesktopIndex extends Component {
   componentDidMount() {
-    loginModal();
   }
 
   render() {
@@ -27,7 +26,13 @@ export default class DesktopIndex extends Component {
           <img src="/assets/images/image_desktop_index_registe.png" alt="banner" />
         </div>
         <main>
-          main
+          <button
+            onClick={() => {
+              loginModal()
+            }}
+          >
+            登录测试
+          </button>
         </main>
       </div>
     )
