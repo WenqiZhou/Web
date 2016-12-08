@@ -18,11 +18,12 @@ const MobileIndex = ({ data = [] }) => (
       {
         data.map((item, index) => (
           <div
+            key={index}
             onClick={() => {
               go('/s')
             }}
           >
-            <MobileEventItem key={index} data={item} />
+            <MobileEventItem data={item} />
           </div>
         ))
       }

@@ -21,17 +21,6 @@ NavItem.propTypes = {
   children: PropTypes.node
 };
 
-@connect()
-export class NavBar extends Component {
-  render() {
-    return (
-      <nav>
-        <NavItem>首页</NavItem>
-      </nav>
-    )
-  }
-}
-
 export class Banner extends Component {
   render() {
     return (
@@ -64,7 +53,6 @@ export class Header extends Component {
     return (
       <header>
         <Banner />
-        <NavBar />
       </header>
     )
   }

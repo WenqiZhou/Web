@@ -16,11 +16,15 @@ export default class Index extends Component {
       key: HOMEPAGE
     });
   }
+
   render() {
+    const props = {
+      data: this.props.HOMEPAGE
+    };
     return (
       <div>
-        <DesktopIndex data={this.props.HOMEPAGE} />
-        <MobileIndex data={this.props.HOMEPAGE} />
+        <DesktopIndex {...props} />
+        <MobileIndex {...props} />
       </div>
     )
   }
