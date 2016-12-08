@@ -8,6 +8,7 @@
     "clean": "rm -rf *.json.gzip",
     "start": "dora --port 61101 --plugins \"webpack?config=scripts/webpack.config.development.js,webpack-hmr,livereload?enableJs=true&injectHost=127.0.0.1\"",
     "build": "npm run build:desktop && npm run build:mobile && npm run clean",
+    "build:test": "atool-build --config scripts/webpack.config.test.js -o ./dist && npm run clean",
     "build:desktop": "atool-build --config scripts/webpack.config.production.desktop.js -o ./dist",
     "build:mobile": "atool-build --config scripts/webpack.config.production.mobile.js -o ./dist",
     "build:analyze": "atool-build --config scripts/webpack.config.analyze.js -o ./dist --verbose && npm run clean",

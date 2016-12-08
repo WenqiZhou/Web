@@ -24,6 +24,7 @@ export default class MobileForm extends Component {
   }
 
   onChildrenInput = (key, callback) => (e) => {
+    e.preventDefault();
     const cb = (value) => {
       this.setState({
         fields: {
