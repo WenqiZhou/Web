@@ -1,10 +1,11 @@
-import React, { Component } from 'react';
+import React, { Component, createElement } from 'react';
 import ReactDom from 'react-dom';
 import classnames from 'classnames';
 import Modal from '../../Modal';
-import Form from '../../../../common/components/Form';
 import Input from '../../../../common/components/Input';
 import ThirdLogin from '../../../../common/components/ThirdLogin';
+import LoginModalPasswordLogin from './password';
+import LoginModalCodeLogin from './code';
 import './index.less';
 
 class LoginModal extends Component {
@@ -15,6 +16,12 @@ class LoginModal extends Component {
       current: 'password'
     };
   }
+
+  setRef = (ref) => {
+    this.form = ref;
+  };
+
+  form = null;
 
   toggleLogin = (target) => () => {
     if (target === this.state.current) {
@@ -34,14 +41,13 @@ class LoginModal extends Component {
             <button onClick={this.toggleLogin('password')} className={classnames({ current: this.state.current === 'password' })}>登录</button>
             <button onClick={this.toggleLogin('code')} className={classnames({ current: this.state.current === 'code' })}>手机动态码登录</button>
           </div>
-          <Form className="desktop form">
-            <Input type="text" key="user" placeholder="手机号/邮箱" />
-            <Input type="password" key="password" placeholder="密码" />
-            {
-              this.state.errorTime > 0 ? <Input hidden type="varify" key="varify" placeholder="图片识别码" /> : <span />
-            }
-          </Form>
-          <p className="helper" style={{ padding: '15px 0' }}>
+          {
+            createElement(this.state.current === 'password' ? LoginModalPasswordLogin : LoginModalCodeLogin, {
+              setRef: this.setRef,
+              errorTime: this.state.errorTime
+            })
+          }
+          <p className="helper" style={{ padding: '0 0 15px' }}>
             未注册的手机将自动创建依依账号
           </p>
           <button>登录</button>
