@@ -140,8 +140,7 @@ export default class MobileForm extends Component {
         value: val || '',
         handleClear: this.handleClear(key),
         ...props,
-        onChange: inputAble ? this.onChildrenInput(key, onChange) : () => {
-          }
+        onChange: inputAble ? this.onChildrenInput(key, onChange) : () => true
       }));
 
       return total;

@@ -19,7 +19,7 @@ export default class ThirdLogin extends Component {
 
   onClick = (type) => () => {
     const profile = Requests.SignUp;
-    console.log(profile)
+    console.log(profile, this.props.redirect);
   };
 
   render() {
