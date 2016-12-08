@@ -4,6 +4,7 @@
 // 因为在onChange处理完以后 必须调用callback,传入处理后的value, 使表单能正常处理输入以及校验, 否则会输入无线
 import React, { Component, PropTypes, cloneElement, createElement } from 'react';
 import classnames from 'classnames';
+import Input from '../Input';
 import './index.less';
 
 export default class MobileForm extends Component {
@@ -75,7 +76,7 @@ export default class MobileForm extends Component {
     }
 
     return items.reduce((total, current) => {
-      if (current.type.name !== 'Input') {
+      if (current.type.name !== Input.name) {
         total.children.push(current);
         return total;
       }
@@ -116,7 +117,7 @@ export default class MobileForm extends Component {
   // 提取出children中的信息写入
   renderChildren = (items = this.props.children) => {
     return items.reduce((total, element) => {
-      if (element.type.name !== 'Input') {
+      if (element.type.name !== Input.name) {
         total.push(element);
         return total;
       }
@@ -139,7 +140,8 @@ export default class MobileForm extends Component {
         value: val || '',
         handleClear: this.handleClear(key),
         ...props,
-        ...inputAble ? { onChange: this.onChildrenInput(key, onChange) } : {}
+        onChange: inputAble ? this.onChildrenInput(key, onChange) : () => {
+          }
       }));
 
       return total;
