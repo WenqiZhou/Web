@@ -73,3 +73,30 @@
     flex: 1;
   }
 }
+
+.input.wrapper {
+  input {
+    max-width: 100%;
+  }
+}
+
+.input-group {
+  display: flex;
+  margin: 20px 0 40px;
+
+  .input.wrapper {
+    display: block;
+    margin: 0 0 0 16px;
+    &:first-of-type {
+      margin-left: 0;
+    }
+
+    &.flex {
+      flex: 1;
+      input:only-child {
+        width: 100%;
+      }
+    }
+  }
+
+}
