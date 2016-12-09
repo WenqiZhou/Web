@@ -4,7 +4,7 @@ import { SearchBar } from '../../components/Navigation';
 import '../../style/search.less';
 
 const MobileSearch = ({ list }) => (
-  <div className="mobile search">
+  <div className="sm-only search">
     <SearchBar />
     <div className="results">
       <HouseList data={list} />

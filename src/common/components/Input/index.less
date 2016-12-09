@@ -1,13 +1,13 @@
-.mobile {
+.sm-only {
   .input.wrapper {
-    max-width: calc(~'100% - .72rem');
-    height: 1.16rem;
-    margin: 0 .36rem;
+    max-width: calc(~'100% - .27rem');
+    height: .435rem;
+    margin: 0 .135rem;
     display: flex;
 
     .icon {
-      width: .586667rem;
-      background-size: .426667rem;
+      width: .22rem;
+      background-size: .16rem;
     }
 
     input {
@@ -16,9 +16,9 @@
       flex: 1;
       border: none;
       outline: none;
-      padding: 0 .386667rem;
+      padding: 0 .14rem;
       color: #262626;
-      font-size: .346667rem;
+      font-size: .14rem;
 
       &::-webkit-input-placeholder {
         color: #bbbbbb;
@@ -26,9 +26,9 @@
     }
 
     .action {
-      font-size: .293333rem;
-      line-height: 1.16rem;
-      margin-left: .1rem;
+      font-size: .1rem;
+      line-height: .435rem;
+      margin-left: .0375rem;
       color: #fe393d;
 
       *.disabled,
@@ -46,7 +46,7 @@
   }
 }
 
-.mobile .form {
+.sm-only .form {
   .input.wrapper {
     border-bottom: solid 1px #cacaca;
 
@@ -56,7 +56,7 @@
   }
 }
 
-.desktop .input.wrapper {
+.lg-only .input.wrapper {
   width: 100%;
   max-width: 100%;
   height: 40px;

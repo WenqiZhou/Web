@@ -12,7 +12,7 @@ const MobileEventItem = (props) => {
 };
 
 const MobileIndex = ({ data = [] }) => (
-  <div className="mobile index">
+  <div className="mobile index sm-only">
     <SearchBar />
     <main>
       {

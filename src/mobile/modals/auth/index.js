@@ -2,7 +2,7 @@ import React from 'react';
 import '../../style/auth.less';
 
 const MobileAuthIndex = ({ children }) => (
-  <div className="mobile auth">
+  <div className="sm-only auth">
     {children}
   </div>
 );

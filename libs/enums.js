@@ -1,26 +1,28 @@
 /* eslint import/prefer-default-export: 0 */
 export const EventType = {
   0: 'START_TYPE',
-  1: 'ACTIVITY_TYPE',
+  1: 'ACTIVITY_TYPE', // 热门城市
   2: 'SEARCH_TYPE',
-  3: 'HOUSE_TYPE',
-  5: 'INVITE_TYPE',
-  6: 'ACTIVITY_NEW_TYPE',
+  3: 'HOUSE_TYPE', // 房源
+  5: 'INVITE_TYPE', // 邀请
+  6: 'ACTIVITY_NEW_TYPE', // 主题
   7: 'END_TYPE'
 };
 
 export const EventTypeDescription = {
   1: {
-    name: '精彩主题',
-    description: '寻找你所喜爱的'
-  },
-  2: {
     name: '热门城市',
     description: '寻找你未曾相遇的风景'
   },
+  2: {},
   3: {
     name: '热门推荐',
     description: '发现你和世界的另一面'
+  },
+  5: {},
+  6: {
+    name: '精彩主题',
+    description: '寻找你所喜爱的'
   }
 };
 

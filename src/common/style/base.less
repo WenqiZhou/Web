@@ -5,12 +5,20 @@
   padding: 0;
   box-sizing: border-box;
   font-family: @font-family;
+  cursor: default;
 }
 
+// 设置所有链接类型鼠标样式为pointer
+a, button, *[href] {
+  cursor: pointer;
+}
+
+// 默认背景演示
 body {
   background-color: @background-color-base;
 }
 
+// 默认按钮样式
 button {
   border: none;
   background: @primary-color;
@@ -20,74 +28,96 @@ button {
   text-align: center;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
   padding: 5px 8px;
-}
+  cursor: pointer;
 
-//button:hover,
-button:active {
-  background: @primary-color-clicked;
-}
+  &.clearfix {
+    border: none;
+    background: none;
+    color: inherit;
+    box-shadow: none;
+    padding: 0;
+    line-height: 1;
+  }
 
-button:disabled,
-button.disabled {
-  background: @disabled-color !important;
-  cursor: default;
-}
+  &.fixed {
+    background: #ffffff;
+    color: #000000;
+    border: solid 1px #ececec;
+  }
 
-button.clearfix {
-  border: none;
-  background: none;
-  color: inherit;
-  box-shadow: none;
-  padding: 0;
-  line-height: 1;
-}
+  &.ghost {
+    padding: 7px 15px;
+    font-size: inherit;
+    line-height: 1;
+    width: auto;
+    background: transparent;
+    border: solid 1px #ffffff;
+    border-radius: 14px;
+  }
 
-button.fixed {
-  background: #ffffff;
-  color: #000000;
-  border: solid 1px #ececec;
-}
-
-//button.fixed:hover,
-button.fixed:active {
-  box-shadow: 0 0 7px 3px rgba(201, 201, 201, 0.004);
-}
-
-button.ghost {
-  padding: 7px 15px;
-  font-size: inherit;
-  line-height: 1;
-  width: auto;
-  background: transparent;
-  border: solid 1px #ffffff;
-  border-radius: 14px;
-}
-//button.ghost:hover,
-button.ghost:active {
-  background: rgba(255, 255, 255, .4);
-}
-
-button.page {
-  background: #ffffff;
-  border: solid 1px #b7b7b7;
-  width: 50px;
-  height: 25px;
-  .mobile & {
-    width: 25px;
+  &.page {
+    background: #ffffff;
+    border: solid 1px #b7b7b7;
+    width: 50px;
     height: 25px;
+    .mobile & {
+      width: 25px;
+      height: 25px;
+    }
+  }
+
+  &:active {
+    background: @primary-color-clicked;
+  }
+
+  &.clearfix:active {
+    background: none;
+  }
+
+  &.fixed:active {
+    box-shadow: 0 0 7px 3px rgba(201, 201, 201, 0.004);
+  }
+
+  &.ghost:active {
+    background: rgba(255, 255, 255, .4);
+  }
+
+  &.page:active {
+    background: #e8ebe8;
+  }
+
+  &:disabled,
+  &.disabled {
+    background: @disabled-color !important;
+    cursor: default;
+  }
+
+  @media screen and (min-width: 767px) {
+    &:hover {
+      background: @primary-color-clicked;
+    }
+
+    &.fixed:hover {
+      box-shadow: 0 0 7px 3px rgba(201, 201, 201, 0.004);
+    }
+
+    &.ghost:hover {
+      background: rgba(255, 255, 255, .4);
+    }
+
+    &.page:hover {
+      background: #e8ebe8;
+    }
   }
 }
 
-//button.page:hover,
-button.page:active {
-  background: #e8ebe8;
-}
-
+// 默认图片宽度
 img {
   width: 100%;
   max-height: 100%; // 如果出现图片高度被压缩就注释这行
 }
 
-img {
+// 默认禁止选中除输入类型以外的元素
+*:not(input,select,form,textarea) {
   -webkit-user-select: none;
 }

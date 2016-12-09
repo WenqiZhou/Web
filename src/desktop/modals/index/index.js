@@ -24,11 +24,11 @@ export default class DesktopIndex extends Component {
     total[item.type] = total[item.type] || [];
     total[item.type].push(item);
     return total;
-  }, { 1: [], 2: [], 3: [] });
+  }, { 1: [], 2: [], 3: [], 5: [], 6: [], 7: [] });
 
   render() {
     return (
-      <div className="desktop index">
+      <div className="desktop index lg-index">
         <Navigation current="/" path={this.props.path} className="index" />
         <Header />
         <div className="banner no-padding">
@@ -36,7 +36,7 @@ export default class DesktopIndex extends Component {
         </div>
         <main className="container">
           {
-            [1, 2].map((key) => (
+            [6, 1].map((key) => (
               <SectionGroup key={key} type={key} list={this.state.list[key]} />
             ))
           }

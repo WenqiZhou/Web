@@ -6,7 +6,7 @@ import './index.less';
 export class SearchBar extends Component {
   render() {
     return (
-      <nav className="top search-bar">
+      <nav className="sm-only top search-bar">
         <div
           onClick={() => {
             go('/m/auth')

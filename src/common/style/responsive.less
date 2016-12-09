@@ -1,27 +1,113 @@
 @import "theme/default/base";
 
-@{mobile} {
+// 响应式布局的css样式表,配合桌面端与移动端使用
+@hfs: 100px;
+
+html {
+  font-size: @hfs;
+}
+
+.sm-only {
   display: none;
 }
 
-@{desktop} {
+.lg-only {
   display: block;
 }
 
-@media all and(max-width: 999px) {
-  @{desktop} {
+// 移动端自适应
+// 需求方提供的方案中,应该所有font-size再除以2
+// 目的是为了能够直接使用2x的UI
+// 但是我认为应该考虑的是1X的尺寸 2X的尺寸是为了优化显示的目的 不应该直接用到项目中
+@media screen and(max-width: 767px) {
+  html {
+    font-size: @hfs;
+  }
+
+  .container {
+    width: 100%;
+  }
+
+  .sm-only {
+    display: block;
+  }
+
+  .lg-only {
     display: none;
   }
 }
 
-@media all and (min-width: 1000px) {
-  @{desktop} {
+@hfsc: 10;
+.loop-hfs(@n) when (@n>=220) {
+  @media screen and (min-width: (1px * @n - @hfsc + 1)) and (max-width: (1px * @n)) {
+    html {
+      font-size: round(@hfs * @n / 375);
+    }
+  }
+  .loop-hfs(@n - @hfsc);
+}
+
+.loop-hfs(415);
+
+@media screen and (max-width: 215px) {
+  html {
+    font-size: 30px;
+  }
+}
+
+// 1024*768为ipad 可能需要重新考虑一些问题
+
+// PC端自适应
+// [1920*1080] [1440*900] [1280*720]
+
+@media screen and (min-width: 1280px) {
+  html {
+    font-size: 66px;
+  }
+
+  .container {
+    width: 1038px;
+  }
+
+  .ad-banner {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  html {
+    font-size: 75px; // 42px
+  }
+
+  .container {
+    width: 1080px;
+  }
+
+  .ad-banner {
     display: block;
   }
 }
 
-@media all and (max-width: 999px) {
-  @{mobile} {
+@media screen and (min-width: 1600px) {
+  html {
+    font-size: 84px;
+  }
+
+  .container {
+    width: 1560px;
+  }
+
+  .ad-banner {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  html {
+    font-size: 100px; // 56px
+  }
+
+  .ad-banner {
     display: block;
   }
 }

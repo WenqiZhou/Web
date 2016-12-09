@@ -2,15 +2,16 @@
  * Creator: yeliex
  * Description: refact `px` to `rem`
  */
-const fs = require("fs");
+const fs = require('fs');
 const { join } = require('path');
 const { sync } = require('glob');
 
-const files = sync('./mobile{/*.less,/*/*.less,/*/*/*.less}').filter(item => !item.match(/base\.less/));
+const files = sync('./desktop{/*.less,/*/*.less,/*/*/*.less}').filter(item => !item.match(/base\.less/));
 
 files.forEach((file) => {
   const path = join(__dirname, file);
-  const content = fs.readFileSync(`${path}_bak`, 'utf-8');
+  const bakPath = `${path}_bak`;
+  const content = fs.readFileSync(fs.existsSync(bakPath) ? bakPath : path, 'utf-8');
 
   const detect = content.match(/(\d*px)/g);
 
@@ -18,14 +19,15 @@ files.forEach((file) => {
     const newContent = content.replace(/(\d*\.?\d*px)/g, (str) => {
       const number = str.replace(/px$/, '');
 
-      if(number === 1){
+      if (number === 1) {
         return str;
       }
 
-      return `${Number(Number(number) / 37.5).toFixed(6).replace(/^0\./, '.')}rem`;
+      const result = Number(Number(number) / 100).toFixed(6).replace(/^0\./, '.');
+      return `${result}rem`;
     });
 
-    fs.writeFileSync(`${path}_bak`, content, 'utf-8');
+    fs.writeFileSync(bakPath, content, 'utf-8');
     fs.writeFileSync(`${path}`, newContent, 'utf-8');
     console.log(path, 'success');
   } else {

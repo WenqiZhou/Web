@@ -13,7 +13,7 @@ export default class MobileHouseDetail extends Component {
     data.landlord = data.landlord || {};
 
     return (
-      <div className="house detail">
+      <div className="sm-only house detail">
         <SearchBar />
         <div>
           <HouseBanner list={data.images || []} price={data.price} />

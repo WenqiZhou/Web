@@ -1,5 +1,5 @@
 nav.navigation {
-  height: 1.14rem;
+  height: 114px;
   width: 100%;
   overflow: hidden;
   background: #ffffff;
@@ -18,48 +18,45 @@ nav.navigation {
   ul {
     list-style: none;
     float: right;
-    font-size: .22rem;
-    font-weight: 300;
+    font-size: 22px;
+    font-weight: 400;
     color: #ffffff;
 
     li {
       display: inline-block;
     }
-
-    li.current {
-      font-weight: 400;
-    }
   }
 
   button {
-    width: 1.6rem;
-    height: .5rem;
-    line-height: .5rem;
-    margin-bottom: .05rem;
+    width: 160px;
+    height: 50px;
+    line-height: 50px;
+    margin-bottom: 5px;
     padding: 0;
-    border-radius: .05rem;
-    border-width: .02rem;
+    border-radius: 5px;
+    border-width: 2px;
   }
 
   &.index {
-    height: .68rem;
-    line-height: .68rem;
+    height: 68px;
+    line-height: 68px;
     position: absolute;
     background: transparent;
-    margin-top: .54rem;
-    padding: 0 1.0rem 0 .47rem;
+    margin-top: 54px;
+    padding: 0 100px 0 47px;
 
     .icon {
-      width: 1.84rem;
+      width: 184px;
       height: 100%;
     }
 
     .right.list {
-      height: .55rem;
-      line-height: .55rem;
+      height: 55px;
+      line-height: 55px;
+      font-size: 22px;
 
       li {
-        width: 1.2rem;
+        width: 120px;
         text-align: center;
       }
     }

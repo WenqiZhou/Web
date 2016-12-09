@@ -1,11 +1,11 @@
 @import "../../style/base";
 
 .desktop.modal {
-  font-size: .180000rem;
-  width: 4.800000rem;
+  font-size: 18px;
+  width: 480px;
   background: #ffffff;
-  height: 4.200000rem;
-  border-radius: .030000rem;
+  height: 420px;
+  border-radius: 3px;
 
   top: 0;
   left: 0;
@@ -21,40 +21,40 @@
   }
 
   &.double {
-    width: 9.900000rem;
-    height: 4.800000rem;
+    width: 990px;
+    height: 480px;
     display: flex;
-    padding: .400000rem;
+    padding: 40px;
 
     .content {
       width: 50%;
       height: 100%;
       &:first-of-type {
-        margin-left: .300000rem;
-        border-right: solid .020000rem #e4e4e4;
+        margin-left: 30px;
+        border-right: solid 2px #e4e4e4;
 
         & > * {
-          width: 3.860000rem;
+          width: 386px;
 
           &.toggle.buttons {
-            height: .350000rem;
+            height: 35px;
 
             button {
               width: 50%;
-              height: .350000rem;
-              font-size: .220000rem;
+              height: 35px;
+              font-size: 22px;
               display: inline-block;
               color: #959595;
-              border-bottom: solid .020000rem #e4e4e4;
+              border-bottom: solid 2px #e4e4e4;
               background: transparent;
               box-shadow: none;
-              padding: 0 0 .130000rem 0;
+              padding: 0 0 13px 0;
               line-height: 1em;
               cursor: pointer;
 
               &.current {
                 color: #fe393d;
-                border-bottom: solid .020000rem #fe393d;
+                border-bottom: solid 2px #fe393d;
                 transition: color .5s ease;
               }
             }

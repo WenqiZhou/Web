@@ -9,7 +9,7 @@
 
     .list {
       position: fixed;
-      top: .620000rem;
+      top: 62px;
       left: 0;
       bottom: 0;
       width: 60%;
@@ -22,7 +22,7 @@
       width: 40%;
       position: fixed;
       right: 0;
-      top: .620000rem;
+      top: 62px;
       left: auto;
       bottom: 0;
     }
