@@ -3,15 +3,7 @@
 @banner-prefix: banner-anim;
 @navbar-prefix: nav;
 
-.banner-height(@counter: 0) when (@counter < 2) {
-  @media screen and (min-height: (7.000000rem + 1.500000rem*@counter)) {
-    .@{banner-prefix} {
-      height: (7.000000rem + 1.500000rem*(@counter - 1));
-    }
-  }
-  .banner-height(@counter + 1);
-}
-@{desktop} {
+.lg-only.index {
   header {
     width: 100%;
     height: auto;
@@ -21,7 +13,7 @@
 
     .@{banner-prefix} {
       position: relative;
-      height: 4.020000rem;
+      height: 8.49rem;
 
       &-elem {
         background-size: cover;
@@ -34,23 +26,21 @@
 
       &-arrow {
         position: absolute;
-        width: .330000rem;
-        height: .760000rem;
-        top: calc(~"50% - .380000rem") !important;
+        width: .33rem;
+        height: .76rem;
+        top: calc(~"50% - .38rem") !important;
         cursor: pointer;
         z-index: 999;
 
         &.prev {
-          left: .820000rem;
+          left: .82rem;
         }
 
         &.next {
-          right: .820000rem;
+          right: .82rem;
         }
       }
     }
-
-    .banner-height();
 
     @{navbar-prefix} {
       top: 0;
