@@ -60,6 +60,14 @@ button {
     border: solid 1px #b7b7b7;
     width: 50px;
     height: 25px;
+
+    &:hover {
+      box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
+      &:disabled {
+        box-shadow: none;
+      }
+    }
+
     .mobile & {
       width: 25px;
       height: 25px;
