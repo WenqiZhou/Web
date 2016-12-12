@@ -51,6 +51,7 @@
     "node.os": "^1.2.4",
     "rc-banner-anim": "^0.5.3",
     "rc-queue-anim": "^0.12.5",
+    "rc-select": "^6.6.10",
     "rc-tween-one": "^0.11.0",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
