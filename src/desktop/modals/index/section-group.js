@@ -3,6 +3,7 @@ import classnames from 'classnames';
 import { EventTypeDescription } from '../../../../libs/enums';
 import Item from './item';
 import Carousel from '../../components/Carousel';
+import HousesCarousel from '../../components/HousesCarousel';
 
 export default class SectionGroup extends Component {
   static propTypes = {
@@ -25,15 +26,19 @@ export default class SectionGroup extends Component {
       >
         <h1>{eventDescription.name}</h1>
         <h2>{eventDescription.description}</h2>
-        <Carousel>
-          {
-            list.map((item, index) => {
-              return (
-                <Item type={type} key={index} data={item} />
-              )
-            })
-          }
-        </Carousel>
+        {
+          type === 3 ?
+            <HousesCarousel list={list} /> :
+            <Carousel>
+              {
+                list.map((item, index) => {
+                  return (
+                    <Item type={type} key={index} data={item} />
+                  )
+                })
+              }
+            </Carousel>
+        }
       </div>
     )
   }

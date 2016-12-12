@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Header } from '../../components/Headers';
 import Navigation from '../../components/Navigation';
 import SectionGroup from './section-group';
+import Search from './search';
 import '../../style/index.less';
 
 import { loginModal } from '../../components/AuthModals/LoginModal';
@@ -28,9 +29,10 @@ export default class DesktopIndex extends Component {
 
   render() {
     return (
-      <div className="desktop index lg-index">
+      <div className="index lg-only">
         <Navigation current="/" path={this.props.path} className="index" />
         <Header />
+        <Search />
         <div className="banner no-padding">
           <img src="/assets/images/image_desktop_index_registe.png" alt="banner" />
         </div>
@@ -40,6 +42,12 @@ export default class DesktopIndex extends Component {
               <SectionGroup key={key} type={key} list={this.state.list[key]} />
             ))
           }
+        </main>
+        <div className="banner no-padding">
+          <img src="/assets/images/image_desktop_index_banner_ad.png" alt="banner" />
+        </div>
+        <main className="container">
+          <SectionGroup key={3} type={3} list={this.state.list[3]} />
         </main>
       </div>
     )
