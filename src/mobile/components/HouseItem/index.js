@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import classnames from 'classnames';
 import HouseItemImage from './image';
-import HousePrice from '../HousePrice';
+import HousePrice from '../../../common/components/HousePrice';
 import { HouseType } from '../../../../libs/enums';
 import Starts from '../../../common/components/Stars';
 import { go } from '../../../common/libs/utils/utils';
@@ -9,7 +9,6 @@ import './index.less';
 
 export default class HouseItem extends Component {
   handleClick = (url) => (e) => {
-    console.log(1)
     if (e.target.className.match(/(next|prev)/)) {
       return;
     }

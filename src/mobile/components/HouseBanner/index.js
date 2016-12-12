@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import BannerAnim, { Element, Arrow } from 'rc-banner-anim';
 import { viewer } from '../../components/ImageViewer';
-import HousePrice from '../../components/HousePrice';
+import HousePrice from '../../../common/components/HousePrice';
 import './index.less';
 
 export default class HouseBanner extends Component {

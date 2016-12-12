@@ -1,118 +1,120 @@
 @import "../../style/base";
 
-.house {
-  &.item {
-    cursor: pointer;
-    width: 100%;
-
-    .images {
+.sm-only {
+  .house {
+    &.item {
+      cursor: pointer;
       width: 100%;
-      height: 3.1rem;
-      position: relative;
-      display: block;
 
-      .house-images {
+      .images {
         width: 100%;
-        height: 100%;
-        & > div {
+        height: 3.1rem;
+        position: relative;
+        display: block;
+
+        .house-images {
           width: 100%;
           height: 100%;
-          background-size: cover;
-          background-position: center;
+          & > div {
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+          }
         }
-      }
 
-      &:after {
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: rgba(0, 0, 0, 0.2);
-      }
-
-      img {
-        height: 100%;
-      }
-
-      .arrow {
-        top: 1.28rem !important;
-        width: .27rem;
-        height: .54rem;
-        position: absolute;
-        z-index: 10;
-        &.prev {
-          left: .25rem;
+        &:after {
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: rgba(0, 0, 0, 0.2);
         }
-        &.next {
-          right: .25rem;
-        }
-      }
-    }
-
-    .info {
-      width: 100%;
-      background: @body-background;
-      height: .85rem;
-      position: relative;
-      display: inline-block;
-      //line-height: 1;
-      padding: .22rem .15rem 0 .2rem;
-
-      .avatar {
-        right: .16rem;
-        top: -.23rem;
-        position: absolute;
-        width: .46rem;
-        font-size: 0;
-        overflow: hidden;
 
         img {
+          height: 100%;
+        }
+
+        .arrow {
+          top: 1.28rem !important;
+          width: .27rem;
+          height: .54rem;
+          position: absolute;
+          z-index: 10;
+          &.prev {
+            left: .25rem;
+          }
+          &.next {
+            right: .25rem;
+          }
+        }
+      }
+
+      .info {
+        width: 100%;
+        background: @body-background;
+        height: .85rem;
+        position: relative;
+        display: inline-block;
+        //line-height: 1;
+        padding: .22rem .15rem 0 .2rem;
+
+        .avatar {
+          right: .16rem;
+          top: -.23rem;
+          position: absolute;
           width: .46rem;
-          height: .46rem;
-          border: solid 1px #ffffff;
-          border-radius: 50%;
-        }
-      }
-
-      .left {
-        .title {
-          font-size: .16rem;
-          height: 1.1em;
-          white-space: nowrap;
+          font-size: 0;
           overflow: hidden;
-          text-overflow: ellipsis;
-          color: @text-color;
-        }
-        .description {
-          font-size: .12rem;
-          line-height: 1;
-          color: #82898d;
-          margin-top: .1rem;
-        }
-        height: .4rem;
-        width: calc(~'100% - .6rem');
-        overflow: hidden;
-        word-break: keep-all;
-        display: inline-block;
-      }
 
-      .likes {
-        height: .4rem;
-        padding-top: .25rem;
-        display: inline-block;
-        font-size: .14rem;
-        line-height: .15rem;
-        width: .6rem;
-        color: #82898d;
-        .icon {
-          width: .14rem;
-          height: .15rem;
+          img {
+            width: .46rem;
+            height: .46rem;
+            border: solid 1px #ffffff;
+            border-radius: 50%;
+          }
+        }
+
+        .left {
+          .title {
+            font-size: .16rem;
+            height: 1.1em;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: @text-color;
+          }
+          .description {
+            font-size: .12rem;
+            line-height: 1;
+            color: #82898d;
+            margin-top: .1rem;
+          }
+          height: .4rem;
+          width: calc(~'100% - .6rem');
+          overflow: hidden;
+          word-break: keep-all;
           display: inline-block;
-          margin-right: .5rem;
+        }
+
+        .likes {
+          height: .4rem;
+          padding-top: .25rem;
+          display: inline-block;
+          font-size: .14rem;
+          line-height: .15rem;
+          width: .6rem;
+          color: #82898d;
+          .icon {
+            width: .14rem;
+            height: .15rem;
+            display: inline-block;
+            margin-right: .5rem;
+          }
         }
       }
     }
