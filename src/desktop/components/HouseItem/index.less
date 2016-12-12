@@ -1,0 +1,79 @@
+.lg-only {
+  .house.item {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+
+    * {
+      cursor: pointer;
+    }
+
+    .house.price {
+      height: .6rem;
+      line-height: .6rem;
+      font-size: .34rem;
+      span.small {
+        font-size: .24rem;
+      }
+    }
+
+    .info {
+      width: 100%;
+      background: #ffffff;
+      height: 1.23rem;
+      position: relative;
+      padding: 0;
+
+      .avatar {
+        right: .16rem;
+        top: -.64rem;
+        width: .9rem;
+        height: .9rem;
+        font-size: 0;
+        overflow: hidden;
+        position: absolute;
+
+        img {
+          width: .9rem;
+          height: .9rem;
+          border-radius: 50%;
+          border: solid 2px #ffffff;
+        }
+      }
+
+      text-align: left;
+
+      .title {
+        display: block;
+        width: 80%;
+        font-size: .26rem;
+        margin: .19rem 0;
+        line-height: .26rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        color: #030000;
+      }
+
+      .description {
+        line-height: 1;
+        display: block;
+        font-size: .22rem;
+        color: #82898d;
+
+        .likes {
+          display: inline-block;
+
+          .icon {
+            width: .22rem;
+            height: .22rem;
+            vertical-align: bottom;
+            margin: 0 .5em;
+            display: inline-block;
+          }
+        }
+      }
+    }
+  }
+}
