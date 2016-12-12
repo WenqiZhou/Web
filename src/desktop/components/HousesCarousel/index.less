@@ -1,0 +1,47 @@
+.houses.wrapper {
+  width: 100%;
+
+  .wrapper-list {
+    width: 100%;
+    display: block;
+    .list {
+      display: block;
+      width: 100%;
+      height: 4.72rem;
+
+      &.lines_2 {
+        height: 9.44rem;
+      }
+
+      &.lines_3 {
+        height: 14.16rem;
+      }
+
+      .house.item {
+        width: 5rem;
+        height: 4.72rem;
+        margin-left: .28rem;
+        display: inline-block;
+        float: left;
+        img {
+          height: 3.5rem;
+        }
+
+        &:nth-of-type(3n-2) {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+
+  &.pages_0,
+  &.pages_1 {
+    .wrapper-navigation {
+      display: none;
+    }
+  }
+  .wrapper-navigation {
+    display: block;
+    margin-top: .8rem;
+  }
+}
