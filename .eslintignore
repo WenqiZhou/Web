@@ -1,4 +1,6 @@
 src/**/*-test.js
+modules/*/dist
+dist
 .*
 package.json
 npm-debug.log

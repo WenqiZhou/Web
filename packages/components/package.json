@@ -1,0 +1,9 @@
+{
+  "name": "11-components",
+  "private": true,
+  "version": "0.0.1",
+  "description": "common components for 11bnb web client",
+  "scripts": {
+  },
+  "comments": "11bnb web客户端通用组件"
+}

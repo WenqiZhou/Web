@@ -49,3 +49,4 @@ build/out
 build/release
 build/tmp
 assets/build
+modules/*/dist
