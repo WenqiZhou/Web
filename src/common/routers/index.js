@@ -21,6 +21,7 @@ const Routes = ({ history }) => (
         <IndexRoute component={require('../models/search')} />
       </Route>
       <Route path="/house/:id" component={require('../models/house_detail')} />
+      <Route path="/activity/:id" components={require('../models/activity')} />
     </Route>
     <Route path="/m/auth" component={require('../../mobile/modals/auth')}>
       <IndexRedirect to="login" />
