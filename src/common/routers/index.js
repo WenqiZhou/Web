@@ -3,6 +3,7 @@ import { Router, Route, IndexRoute, IndexRedirect } from 'react-router';
 import App from '$common/components/App';
 import { dispatch } from '$common/store';
 import { WINDOW_CUSTOMER_ROUTE_CLEAR } from '$common/store/types';
+import PanelRoutes from '../../panel/routers';
 
 // customerProps提供了一个方法,如果组件中调用了setPath自定义路由路径,必须在Route中加上这个方法清除路径
 const customerProps = {
@@ -13,7 +14,7 @@ const customerProps = {
   }
 };
 
-const Routes = ({ history }) => (
+const Routes = ({ history, ...props }) => (
   <Router history={history} {...customerProps}>
     <Route path="/" component={App}>
       <IndexRoute components={require('../models/index/index')} />
@@ -38,6 +39,7 @@ const Routes = ({ history }) => (
         <Route path=":id" component={() => <span>退订政策</span>} />
       </Route>
     </Route>
+    {PanelRoutes}
     <Route path="*" component={require('../models/error/404')} />
   </Router>
 );
