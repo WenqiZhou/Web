@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
+import { Nav } from '11-desktop';
 import { Header } from '../../components/Headers';
-import Navigation from '../../components/Navigation';
 import SectionGroup from './section-group';
 import Search from './search';
 import '../../style/index.less';
@@ -30,7 +30,7 @@ export default class DesktopIndex extends Component {
   render() {
     return (
       <div className="index lg-only">
-        <Navigation current="/" path={this.props.path} className="index" />
+        <Nav current="/" path={this.props.path} className="index" />
         <Header />
         <Search />
         <div className="banner no-padding">

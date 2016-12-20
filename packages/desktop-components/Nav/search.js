@@ -1,6 +1,6 @@
 // navigation search component
 import React, { Componet } from 'react';
-import Input from '../../../common/components/BaseInput';
+import { Input } from '11-common';
 
 const Search = ({ onChange, onEnter }) => (
   <div className="search input">
