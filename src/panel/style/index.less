@@ -1,5 +1,23 @@
-.dashboard {
-  nav {
+:global(.dashboard) {
+  :global(.container) {
+    width: 11.6rem;
+    display: block;
+    margin: .1rem auto .38rem;
+
+    &:global(.flex) {
+      display: flex;
+    }
+  }
+
+  :global(.card) {
     background: #ffffff;
+    border: solid 1px #d4d9d9;
+    display: block;
+    width: 100%;
+  }
+
+  main {
+    flex: 1;
+    margin-left: .2rem;
   }
 }

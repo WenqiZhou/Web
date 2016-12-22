@@ -5,20 +5,21 @@ import { Menu, Banner } from '11-panel';
 import { Nav } from '11-desktop';
 import Style from '../style/index.less';
 
-console.log(Style)
-
 export default class App extends Component {
   render() {
     return (
-      <div className={Style.dashboard}>
-        <div className={Style.dashboard.nav}>
-          <Nav search className={classnames(Nav.Style.index, 'dashboard')} />
-        </div>
+      <div className="dashboard lg-only">
+        <Nav search black className={classnames(Nav.Style.index, 'dashboard')} />
         <Banner />
-        <div>
+        <div className="container flex">
           <Menu />
-          {this.props.children}
+          <main>
+            {
+              this.props.children
+            }
+          </main>
         </div>
+        footer
       </div>
     )
   }
