@@ -1,10 +1,13 @@
-// 其实本不需要这个,但是如果没有这个文件,eslint会报错
-const context = require(/^.*\/\.index\.js$/);
+const context = require.context('./src', true, /\.js$/);
+const keys = context.keys();
 
-const components = context.reduce((total,path)=>{
-  const key = path.match(/(.*)\/index.js$/);
+const utils = keys.reduce((memo, k) => {
+  const key = k.match(/^\.\/(.*).js/);
+  if (key && key[1]) {
+    memo[key[1]] = context(k);
+  }
 
-  total[key[1]] = context[path];
+  return memo;
+}, {});
 
-  return total;
-},{});
+export default utils;

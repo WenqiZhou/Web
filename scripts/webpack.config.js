@@ -22,16 +22,17 @@ module.exports = (webpackConfig) => {
       '11-desktop': 'desktop-components'
     });
   webpackConfig.resolve.modulesDirectories = webpackConfig.resolve.modulesDirectories || [];
-  webpackConfig.resolve.modulesDirectories.push('./packages');
+  webpackConfig.resolve.modulesDirectories.push(join(__dirname, '../packages/'));
 
   webpackConfig.babel.plugins.push('transform-runtime');
 
-  ['11-panel', '11-common', '11-utils', '11-mobile', '11-desktop'].forEach((libraryName) => {
-    webpackConfig.babel.plugins.push(['import', {
-      libraryName,
-      libraryDirectory: 'src'
-    }]);
-  });
+  //['panel-components', 'components', 'utils', 'mobile-components', 'desktop-component'].forEach((libraryName) => {
+  //    webpackConfig.babel.plugins.push(['import', {
+  //      libraryName,
+  //      libraryDirectory: join(__dirname, `../packages/${libraryName}/src`)
+  //    }]);
+  //  }
+  //);
 
   const files = sync('./src/entries/*.js');
   const newEntries = files.reduce(function (memo, file) {
@@ -48,10 +49,21 @@ module.exports = (webpackConfig) => {
 
   webpackConfig.plugins.push(new LodashModuleReplacementPlugin());
 
-  // webpackConfig.module.loaders.push({
-  //   test: /\.css$/,
-  //   loader: 'style-loader!css-loader?importLoaders=1!autoprefixer-loader'
-  // });
+  webpackConfig.module.loaders.forEach(function (loader, index) {
+    // 这里的模块不需要prefix
+    if (typeof loader.test === 'function' && loader.test.toString().indexOf('\\.less$') > -1) {
+      loader.exclude = /(packages|panel)/;
+      loader.test = /\.less$/;
+    }
+
+    // 这里的模块需要prefix (node_modules好像不需要处理,但是issue中好像要求排除,其实不排除貌似也不会起作用)
+    if (loader.test.toString() === '/\\.module\\.less$/') {
+      loader.include = /(packages|panel)/;
+      loader.exclude = /node_modules/;
+      loader.test = /\.less$/;
+    }
+  });
 
   return webpackConfig;
-};
+}
+;

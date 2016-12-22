@@ -7,5 +7,8 @@ module.exports = () => config({
     plugins: []
   },
   plugins: [],
-  resolve: {}
+  resolve: {},
+  module: {
+    loaders: []
+  }
 });

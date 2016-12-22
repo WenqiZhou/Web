@@ -1,10 +1,17 @@
-// 其实本不需要这个,但是如果没有这个文件,eslint会报错
-const context = require(/^.*\/\.index\.js$/);
+const _ = {
+  upperFirst: require('lodash/upperFirst')
+};
 
-const components = context.reduce((total,path)=>{
-  const key = path.match(/(.*)\/index.js$/);
+const context = require.context('./src', true, /index\.js$/);
+const keys = context.keys();
 
-  total[key[1]] = context[path];
+const components = keys.reduce((memo, k) => {
+  const key = k.match(/^\.\/(.*)\/index.js/);
+  if (key && key[1]) {
+    memo[_.upperFirst(key[1])] = context(k);
+  }
 
-  return total;
-},{});
+  return memo;
+}, {});
+
+export default components;

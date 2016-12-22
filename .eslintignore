@@ -1,5 +1,5 @@
 src/**/*-test.js
-modules/*/dist
+packages/*/dist
 dist
 .*
 package.json
