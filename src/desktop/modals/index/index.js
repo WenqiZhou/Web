@@ -30,7 +30,7 @@ export default class DesktopIndex extends Component {
   render() {
     return (
       <div className="index lg-only">
-        <Nav current="/" path={this.props.path} className="index" />
+        <Nav current="/" path={this.props.path} className={Nav.Style.index} />
         <Header />
         <Search />
         <div className="banner no-padding">

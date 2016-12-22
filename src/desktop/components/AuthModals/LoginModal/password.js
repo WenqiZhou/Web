@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
+import { Input } from '11-common';
 import Form from '../../../../common/components/Form';
-import Input from '../../../../common/components/Input';
 
 const LoginModalPasswordLogin = ({ setRef, errorTime }) => (
   <Form setRef={setRef} className="desktop form">

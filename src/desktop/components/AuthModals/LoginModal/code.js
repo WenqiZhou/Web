@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
+import { Input } from '11-common';
 import Form from '../../../../common/components/Form';
 import Code from '../../../../common/components/Code';
-import Input, { Group } from '../../../../common/components/Input';
 
 export default class LoginModalCodeLogin extends Component {
   constructor(props) {
@@ -22,10 +22,10 @@ export default class LoginModalCodeLogin extends Component {
   render() {
     return (
       <Form setRef={this.props.setRef} className="desktop form">
-        <Group>
+        <Input.Group>
           <Input style={{ width: 88 }} type="text" key="countrycode" value="+86" readOnly />
           <Input onChange={this.handleMobileChange} className="flex" style={{ width: 284 }} type="tel" maxLength={11} key="user" placeholder="手机号" />
-        </Group>
+        </Input.Group>
         <Input
           key=""
           action={(

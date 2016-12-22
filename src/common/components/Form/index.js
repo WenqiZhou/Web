@@ -4,7 +4,7 @@
 // 因为在onChange处理完以后 必须调用callback,传入处理后的value, 使表单能正常处理输入以及校验, 否则会输入无效
 import React, { Component, PropTypes, cloneElement, createElement } from 'react';
 import classnames from 'classnames';
-import Input from '../Input';
+import { Input } from '11-common';
 import './index.less';
 
 export default class MobileForm extends Component {
