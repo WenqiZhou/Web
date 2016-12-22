@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
+import { Input } from '11-common';
 import { redirect, go, setTitle } from '../../../../common/libs/utils/utils';
 import { toast } from '../../../components/Toast';
 import Form from '../../../../common/components/Form';
-import Input from '../../../../common/components/Input';
 import Code from '../../../../common/components/Code';
 import './index.less';
 

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import calssnames from 'classnames';
+import { Input } from '11-common';
 import { go } from '../../../../common/libs/utils/utils';
 import Form from '../../../../common/components/Form';
-import Input from '../../../../common/components/Input';
 
 const MobilePasswordLogin = ({ setRef }) => (
   <div>

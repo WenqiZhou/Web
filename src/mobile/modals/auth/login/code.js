@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
+import { Input } from '11-common';
 import Form from '../../../../common/components/Form';
-import Input from '../../../../common/components/Input';
 import { toast } from '../../../components/Toast';
 import Code from '../../../../common/components/Code';
 
@@ -18,7 +18,6 @@ export default class MobileCodeLogin extends Component {
       sendCount: this.state.sendCount++
     });
   };
-
 
   handleSendVarify = (result, error) => {
     if (!result) {
