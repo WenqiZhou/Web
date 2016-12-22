@@ -38,8 +38,8 @@ export default class Input extends Component {
         style={style}
         className={classnames({
           'input wrapper': true,
-          [Style.input]: true,
-          [Style.wrapper]: true,
+          // [Style.input]: true,
+          // [Style.wrapper]: true,
           [className]: true
         })}
       >
@@ -49,7 +49,7 @@ export default class Input extends Component {
               <span
                 className={classnames({
                   icon: true,
-                  [Style.icon]: true,
+                  // [Style.icon]: true,
                   [icon]: true
                 })} />
             ) : ''
@@ -62,7 +62,7 @@ export default class Input extends Component {
           props.value && clearable ?
             (
               <a onClick={handleClear} className={classnames({
-                [Style.icon]: true,
+                // [Style.icon]: true,
                 'icon mobile input clear': true
               })} />
             ) : ''
