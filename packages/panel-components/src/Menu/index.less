@@ -1,0 +1,57 @@
+// side menu宽度应该是需要根据屏幕大小尽量保持一致的 (都为1160像素)
+// 所有子元素都应该使用em单位
+// 由于目前还需要确定响应式方案 所以待具体确定后修改
+:global(.dashboard) {
+  aside {
+    width: 1.5rem;
+
+    ul, li {
+      list-style: none;
+    }
+
+    ul.list {
+      & > :global(.item),
+      li.sublist {
+        padding: 0 .075rem;
+        margin: 0 auto .18rem;
+
+        ul {
+          padding: .1rem 0;
+          border-bottom: dashed 1px #848484;
+
+          &:last-of-type {
+            border-bottom: none;
+          }
+        }
+      }
+
+      & > :global(.item) {
+        padding: .04rem 0 .04rem .48rem;
+        font-size: .2rem;
+        font-weight: 500;
+        color: #000000;
+      }
+    }
+
+    :global(.item) {
+      font-size: .18rem;
+      color: #848484;
+      padding-left: .415rem;
+      line-height: .43rem;
+
+      &:first-of-type,
+      &:global(.current) {
+        font-size: .2rem;
+        font-weight: 500;
+      }
+
+      &:first-of-type {
+        color: #000000;
+      }
+
+      &:global(.current) {
+        color: #fe393d;
+      }
+    }
+  }
+}
