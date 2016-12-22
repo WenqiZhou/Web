@@ -15,11 +15,14 @@ nav.navigation {
     background-repeat: no-repeat;
   }
 
+  ul,button {
+    font-weight: 300;
+  }
+
   ul {
     list-style: none;
     float: right;
     font-size: .22rem;
-    font-weight: 300;
     color: #ffffff;
 
     li {
@@ -27,7 +30,8 @@ nav.navigation {
     }
 
     li.current {
-      font-weight: 400;
+      font-weight: bold;
+      border-bottom: solid .04rem #fe393d;
     }
   }
 
@@ -39,7 +43,9 @@ nav.navigation {
     padding: 0;
     border-radius: .05rem;
     border-width: .02rem;
+    border-color: #fe393d;
   }
+
   &.index,
   &:global(.index) {
     height: .68rem;
@@ -47,7 +53,7 @@ nav.navigation {
     position: absolute;
     background: transparent;
     margin-top: .54rem;
-    padding: 0 1.0rem 0 .47rem;
+    padding: 0 1rem 0 .47rem;
 
     .icon {
       width: 1.84rem;
@@ -62,6 +68,25 @@ nav.navigation {
         width: 1.2rem;
         text-align: center;
       }
+    }
+  }
+
+  &:global(.dashboard) {
+    height: 1.22rem;
+    margin: 0;
+    padding: 0 1rem 0 .47rem;
+    position: relative;
+
+    ul {
+      margin-top: .37rem;
+    }
+  }
+
+  &.black {
+    background: #ffffff;
+
+    * {
+      color: #000000;
     }
   }
 }

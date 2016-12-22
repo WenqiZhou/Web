@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
 import Search from './search';
 import Style from './index.less';
-console.log(Style)
+
 const NavItems = {
   '/': '首页',
   download: '下载app',
@@ -10,7 +10,7 @@ const NavItems = {
   signup: '注册',
   login: '登录'
 };
-console.log(Style)
+
 const NavItemsLogined = {};
 
 export default class Navigation extends Component {
@@ -20,7 +20,8 @@ export default class Navigation extends Component {
     className: PropTypes.string,
     fixed: PropTypes.bool,
     search: PropTypes.bool,
-    current: PropTypes.string
+    current: PropTypes.string,
+    black: PropTypes.bool
   };
 
   render() {
@@ -30,13 +31,15 @@ export default class Navigation extends Component {
           [Style.navigation]: true,
           fixed: this.props.fixed,
           search: this.props.search,
+          [Style.black]: this.props.black,
           [this.props.className]: true
         })}
       >
         <div className={classnames({
           [Style.icon]: true,
           [Style.logo]: true,
-          'icon logo white': true
+          'icon logo': true,
+          white: !this.props.black
         })} />
         {
           this.props.search ? <Search /> : ''
