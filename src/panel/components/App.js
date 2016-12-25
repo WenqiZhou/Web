@@ -3,6 +3,7 @@ import React, { Component, cloneElement } from 'react';
 import classnames from 'classnames';
 import { Menu, Banner } from '11-panel';
 import { Nav } from '11-desktop';
+import Footer from './Footer';
 import Style from '../style/index.less';
 
 export default class App extends Component {
@@ -19,7 +20,7 @@ export default class App extends Component {
             }
           </main>
         </div>
-        footer
+        <Footer />
       </div>
     )
   }
