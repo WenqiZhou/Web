@@ -1,0 +1,21 @@
+ul.inline-menu,
+& li.item {
+  list-style: none;
+}
+
+li.item {
+  display: inline-block;
+  width: 1.06rem;
+  padding-bottom: .07rem;
+  margin-bottom: .02rem;
+  text-align: center;
+  border-bottom: solid .04rem transparent;
+  cursor: pointer;
+  color: #333333;
+  -webkit-user-select: none;
+
+  &:global(.current),
+  &:hover {
+    border-bottom-color:  #fe393d;
+  }
+}
