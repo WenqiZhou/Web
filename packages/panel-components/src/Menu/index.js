@@ -129,7 +129,7 @@ class SubMenu extends Component {
     return (
       <ul>
         {
-          <MenuItem name={this.props.title} onClick={this.props.onClick} current={this.props.current} path={this.props.parent || '/'} key={this.props.key} icon="plus" />
+          <MenuItem name={this.props.title} onClick={this.props.onClick} current={this.props.current} path={this.props.parent || ''} key={this.props.key} icon="plus" />
         }
         {
           Object.keys(this.props.list).map((key) => (
@@ -156,7 +156,12 @@ class MenuItem extends Component {
     parent: ''
   };
 
+  isCurrent = () => {
+    return this.props.first ? this.props.path === this.props.current : this.props.current === `${this.props.parent || ''}${this.props.path || '/'}`
+  };
+
   handleClick = (path, parent) => () => {
+    if(this.props.children || this.isCurrent()) return;
     this.props.onClick(`${parent || ''}${path || ''}`)
   };
 
@@ -169,7 +174,7 @@ class MenuItem extends Component {
           card: this.props.first,
           [Style.sublist]: this.props.children,
           'icon dashboard menu': this.props.icon,
-          current: this.props.first ? this.props.path === this.props.current : this.props.current === `${this.props.parent || ''}${this.props.path || '/'}`,
+          current: this.isCurrent(),
           [this.props.icon || '']: true,
           [this.props.className || '']: true
         })}
@@ -192,6 +197,7 @@ export default class PanelMenu extends Component {
   firstSub = false;
 
   handleClick = (key) => {
+    console.log(1)
     redirect.go(`/dashboard${this.props.host ? '/host' : ''}${key}`)
   };
 
