@@ -38,3 +38,51 @@ export const UserInfo = {
     "receptance_rate": -1.0
   }
 };
+
+export const OrderList = [
+  {
+    key: '1',
+    name:'独立花园露台的法租界洋房(长签优惠大)-静安去',
+    id: '3783274',
+    money: '¥330元',
+    status: '已支付',
+    image: 'http://s3.cn-north-1.amazonaws.com.cn/11bnbimgs/f6429114-a48f-11e6-b006-022edde0e3ee.h',
+    time: new Date()
+  },
+  {
+    key: '2',
+    name:'独立花园露台的法租界洋房(长签优惠大)-静安去',
+    id: '3783274',
+    money: '¥330元',
+    status: '待支付',
+    image: 'http://s3.cn-north-1.amazonaws.com.cn/11bnbimgs/f6429114-a48f-11e6-b006-022edde0e3ee.h',
+    time: new Date()
+  },
+  {
+    key: '3',
+    name:'独立花园露台的法租界洋房(长签优惠大)-静安去',
+    id: '3783274',
+    money: '¥330元',
+    status: '待确认',
+    image: 'http://s3.cn-north-1.amazonaws.com.cn/11bnbimgs/f6429114-a48f-11e6-b006-022edde0e3ee.h',
+    time: new Date()
+  },
+  {
+    key: '4',
+    name:'独立花园露台的法租界洋房(长签优惠大)-静安去',
+    id: '3783274',
+    money: '¥330元',
+    status: '已完成',
+    image: 'http://s3.cn-north-1.amazonaws.com.cn/11bnbimgs/f6429114-a48f-11e6-b006-022edde0e3ee.h',
+    time: new Date()
+  },
+  {
+    key: '5',
+    name:'独立花园露台的法租界洋房(长签优惠大)-静安去',
+    id: '3783274',
+    money: '¥330元',
+    status: '已失效',
+    image: 'http://s3.cn-north-1.amazonaws.com.cn/11bnbimgs/f6429114-a48f-11e6-b006-022edde0e3ee.h',
+    time: new Date()
+  }
+];

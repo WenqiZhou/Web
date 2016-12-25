@@ -16,6 +16,7 @@ const customerProps = {
 };
 const Routes = (
   <Route path="/dashboard" component={require('../components/App')}>
+    <IndexRedirect to="orders" />
     {Routers.orders}
     <Route path="host">
       {Routers.orders}
