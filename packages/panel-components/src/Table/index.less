@@ -1,0 +1,21 @@
+.table {
+  width: 100%;
+  font-size: .18rem;
+  border-collapse: collapse;
+
+  td {
+    border-right: solid 1px #d4d9d9;
+    text-align: center;
+    line-height: .34rem;
+  }
+
+  tr {
+    border-bottom: solid 1px #d4d9d9;
+  }
+
+  tr, td {
+    &:last-of-type {
+      border-right: none;
+    }
+  }
+}
