@@ -14,7 +14,7 @@ const Card = ({ children, className, wrapperClassName, style, wrapperStyle, titl
 );
 
 Card.propTypes = {
-  children: PropTypes.oneOfType([PropTypes.array, PropTypes.element, PropTypes.node]).isRequired,
+  children: PropTypes.oneOfType([PropTypes.array, PropTypes.element, PropTypes.node]),
   className: PropTypes.string,
   style: PropTypes.object,
   title: PropTypes.oneOfType([PropTypes.string, PropTypes.element])
