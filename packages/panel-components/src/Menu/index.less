@@ -3,25 +3,42 @@
 // 由于目前还需要确定响应式方案 所以待具体确定后修改
 :global(.dashboard) {
   aside {
-    width: 1.5rem;
+    width: 1.62rem;
 
     ul, li {
       list-style: none;
     }
 
     ul.list {
+
+      & > :global(.item) {
+        margin: 0 auto .18rem;
+      }
+
+      li.sublist {
+        margin: 0 auto;
+        border-bottom: none;
+
+        &:not(:global(.first)) {
+          border-top: none;
+        }
+
+        &:last-of-type {
+          border-bottom: solid 1px #d9d9d9;
+        }
+      }
+
       & > :global(.item),
       li.sublist {
         padding: 0 .075rem;
-        margin: 0 auto .18rem;
 
         ul {
           padding: .1rem 0;
           border-bottom: dashed 1px #848484;
+        }
 
-          &:last-of-type {
-            border-bottom: none;
-          }
+        &:last-of-type ul {
+          border-bottom: none;
         }
       }
 
@@ -64,6 +81,19 @@
       color: #848484;
       padding-left: .415rem;
       line-height: .43rem;
+      cursor: pointer;
+
+      &:hover {
+        color: #fe393d !important;
+      }
+
+      ul {
+        cursor: default;
+      }
+
+      &[disabled] {
+        cursor: not-allowed;
+      }
 
       &:first-of-type,
       &:global(.current) {
@@ -76,8 +106,9 @@
       }
 
       &:global(.current) {
-        color: #fe393d;
+        color: #fe393d !important;
       }
     }
   }
+
 }
