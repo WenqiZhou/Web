@@ -1,0 +1,25 @@
+:global {
+  .col {
+    float: left;
+    position: relative;
+  }
+
+  .col-span(@n:1) when (@n<25) {
+    .col-@{n} {
+      width: 100% / (24 / @n);
+    }
+
+    .col-span(@n+1);
+  }
+
+  .col-span();
+
+  .col-space {
+    &:first-of-type {
+      padding-left: 0 !important;
+    }
+    &:last-of-type {
+      padding-right: 0 !important;
+    }
+  }
+}

@@ -1,0 +1,21 @@
+:global {
+  .row {
+    display: block;
+    width: 100%;
+    margin-bottom: .2rem;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+
+    &:before,
+    &:after {
+      clear: both;
+      visibility: hidden;
+      font-size: 0;
+      height: 0;
+      content: " ";
+      display: table;
+    }
+  }
+}
