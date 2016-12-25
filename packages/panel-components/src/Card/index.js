@@ -1,12 +1,15 @@
 import React, { PropTypes } from 'react';
 import classnames from 'classnames';
+import './index.less';
 
-const Card = ({ children, className, style, title }) => (
-  <section className={classnames('card', className)} style={style}>
+const Card = ({ children, className, wrapperClassName, style, wrapperStyle, title }) => (
+  <section style={wrapperStyle} className={classnames('card', wrapperClassName)}>
     {
       title ? <div className="card-title">{title}</div> : ''
     }
-    {children}
+    <div className={classnames('card-content', className)} style={style}>
+      {children}
+    </div>
   </section>
 );
 
