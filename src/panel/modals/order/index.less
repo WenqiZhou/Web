@@ -1,0 +1,75 @@
+.order {
+  .path {
+    padding: 0 .12rem;
+    line-height: .32rem;
+    font-size: .16rem;
+    color: #949494;
+  }
+
+  .status {
+    padding: 0 .12rem;
+    line-height: .4rem;
+    font-size: .2rem;
+    font-weight: bold;
+  }
+
+  .detail {
+    padding: 0 .28rem;
+    .title {
+      font-size: .18rem;
+      font-weight: bold;
+      line-height: .52rem;
+      border-bottom: solid 1px #d4d9d9;
+
+      &:last-of-type {
+        border-bottom: none;
+      }
+
+      &:only-of-type {
+        border-bottom: solid 1px #d4d9d9;
+      }
+
+      :global(.right) {
+        font-weight: bold;
+      }
+    }
+  }
+
+  :global(.right) {
+    float: right;
+    font-weight: normal;
+  }
+
+  :global(.normal) {
+    font-weight: normal !important;
+    font-size: .2rem !important;
+    :global(.right) {
+      font-weight: normal !important;
+    }
+  }
+
+  :global(.orange) {
+    color: #fe393d;
+  }
+
+  dl, dt, dd {
+    list-style: none;
+  }
+
+  dt, dd {
+    display: inline-block;
+  }
+
+  dt {
+    color: #aaaaaa;
+    &:after {
+      content: ":";
+    }
+    padding-right: .5em;
+  }
+
+  dd {
+    color: #030000;
+    padding-right: .6rem;
+  }
+}
