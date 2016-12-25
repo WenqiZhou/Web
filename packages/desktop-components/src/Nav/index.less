@@ -15,7 +15,7 @@ nav.navigation {
     background-repeat: no-repeat;
   }
 
-  ul,button {
+  ul, button {
     font-weight: 300;
   }
 
@@ -27,11 +27,17 @@ nav.navigation {
 
     li {
       display: inline-block;
+      cursor: pointer;
     }
 
+    li:hover,
     li.current {
       font-weight: bold;
       border-bottom: solid .04rem #fe393d;
+    }
+
+    li.button:hover {
+      border-bottom: none;
     }
   }
 
@@ -44,6 +50,10 @@ nav.navigation {
     border-radius: .05rem;
     border-width: .02rem;
     border-color: #fe393d;
+
+    &:hover {
+      font-weight: bold;
+    }
   }
 
   &.index,

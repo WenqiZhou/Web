@@ -58,7 +58,7 @@ export default class Navigation extends Component {
               </li>
             ))
           }
-          <li>
+          <li className={Style.button}>
             <button className="ghost">免费成为房东</button>
           </li>
         </ul>
