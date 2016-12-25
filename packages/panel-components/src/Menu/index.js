@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import classnames from 'classnames';
 import Style from './index.less';
-
+console.log(Style)
 export default class PanelMenu extends Component {
   render() {
     return (
       <aside>
         <ul className={Style.list}>
-          <li className="item card">
+          <li className="item card icon dashboard menu user">
             房东中心
           </li>
-          <li className="item card">
+          <li className="item card icon dashboard menu house">
             发布房源
           </li>
           <li className={classnames(Style.sublist, 'card')}>

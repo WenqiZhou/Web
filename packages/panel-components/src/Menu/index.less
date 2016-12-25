@@ -33,6 +33,32 @@
       }
     }
 
+    :global {
+      li {
+        &.icon {
+          position: relative;
+          background-image: none !important;
+          &:before {
+            content: "";
+            background-repeat: no-repeat;
+            background-size: .22rem;
+            background-position: center;
+            width: .22rem;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: .15rem;
+          }
+          &.user:before {
+            background-image: url("/assets/images/icons/icon_dashboard_menu_user.png");
+          }
+          &.house:before {
+            background-image: url("/assets/images/icons/icon_dashboard_menu_house.png");
+          }
+        }
+      }
+    }
+
     :global(.item) {
       font-size: .18rem;
       color: #848484;
