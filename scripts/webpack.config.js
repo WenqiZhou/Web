@@ -11,6 +11,7 @@ module.exports = (webpackConfig) => {
   webpackConfig.resolve.alias = Object.assign({},
     webpackConfig.resolve.alias || {},
     {
+      '11-store': resolve('./src/common/store'),
       $src: resolve('./src'),
       $common: resolve('./src/common'),
       $desktop: resolve('./src/desktop'),
@@ -19,12 +20,13 @@ module.exports = (webpackConfig) => {
       '11-common': 'components',
       '11-utils': 'utils',
       '11-mobile': 'mobile-components',
-      '11-desktop': 'desktop-components'
+      '11-desktop': 'desktop-components',
     });
   webpackConfig.resolve.modulesDirectories = webpackConfig.resolve.modulesDirectories || [];
   webpackConfig.resolve.modulesDirectories.push(join(__dirname, '../packages/'));
 
   webpackConfig.babel.plugins.push('transform-runtime');
+  webpackConfig.babel.plugins.push('syntax-export-extensions');
 
   //['panel-components', 'components', 'utils', 'mobile-components', 'desktop-component'].forEach((libraryName) => {
   //    webpackConfig.babel.plugins.push(['import', {
