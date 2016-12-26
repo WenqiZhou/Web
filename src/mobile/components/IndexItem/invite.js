@@ -1,4 +1,5 @@
 import React from 'react';
+import { Image } from '11-common';
 import './index.less';
 
 const INVITETYPEItem = ({ data }) => {
@@ -6,7 +7,7 @@ const INVITETYPEItem = ({ data }) => {
   return (
     <section className="activity invite">
       <div className="image">
-        <img src={`${invite.thumbImage}_750`} alt={invite.title} />
+        <Image src={`${invite.thumbImage}_750`} alt={invite.title} />
       </div>
       <div className="contents">
         <div className="title">{invite.title}</div>

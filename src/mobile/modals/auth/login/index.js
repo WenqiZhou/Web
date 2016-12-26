@@ -1,11 +1,10 @@
 import React, { Component, createElement } from 'react';
 import classnames from 'classnames';
 import { connect } from 'react-redux';
-import { redirect, go, setTitle } from '../../../../common/libs/utils/utils';
-import { toast } from '../../../components/Toast';
+import { ThirdLogin, Toast } from '11-common';
+import { redirect, go, setTitle } from '11-utils';
 import MobilePasswordLogin from './password';
 import MobileCodeLogin from './code';
-import ThirdLogin from '../../../../common/components/ThirdLogin';
 import './index.less';
 
 @connect((props, { location }) => {

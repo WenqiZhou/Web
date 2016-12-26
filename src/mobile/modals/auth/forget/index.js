@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
-import { Input } from '11-common';
-import { redirect, go, setTitle } from '../../../../common/libs/utils/utils';
-import { toast } from '../../../components/Toast';
-import Form from '../../../../common/components/Form';
-import Code from '../../../../common/components/Code';
+import { Input, Toast, Form, Code } from '11-common';
+import { setTitle } from '11-utils';
 import '../signup/index.less';
 
 export default class MobileSignupIndex extends Component {
@@ -36,9 +33,9 @@ export default class MobileSignupIndex extends Component {
 
   handleSendVarify = (result, error) => {
     if (!result) {
-      toast(error);
+      Toast(error);
     } else {
-      toast('验证码发送成功');
+      Toast('验证码发送成功');
     }
   };
 

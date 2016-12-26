@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { go } from '../../../common/libs/utils/utils';
+import { redirect } from '11-utils';
 import { SearchBar } from '../../components/Navigation';
 import Items from '../../components/IndexItem'
 import { EventType } from '../../../../libs/enums';
@@ -20,7 +20,7 @@ const MobileIndex = ({ data = [] }) => (
           <div
             key={index}
             onClick={() => {
-              go('/s')
+              redirect.go('/s')
             }}
           >
             <MobileEventItem data={item} />

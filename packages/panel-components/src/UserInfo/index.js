@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import { Image } from '11-common';
 import Card from '../Card';
 import Style from './index.less';
 import { confuseMobile } from '../../../../libs/patterns';
@@ -6,7 +7,7 @@ import { confuseMobile } from '../../../../libs/patterns';
 const UserInfo = ({ data }) => (
   <Card className={Style.info}>
     <div className="avatar">
-      <img src={`${data.head_url}_750`} alt={data.real_name} />
+      <Image src={`${data.head_url}_750`} alt={data.real_name} />
     </div>
     <div className="information">
       <p>

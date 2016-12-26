@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactDom from 'react-dom';
 import BannerAnim, { Element, Arrow } from 'rc-banner-anim';
-import Dimmer from '$common/components/Dimmer';
+import Dimmer from '11-common';
 import './index.less';
 
 class Viewer extends Component {

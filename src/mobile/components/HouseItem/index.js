@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import classnames from 'classnames';
+import { Image } from '11-common';
+import { redirect } from '11-utils';
 import HouseItemImage from './image';
 import HousePrice from '../../../common/components/HousePrice';
 import { HouseType } from '../../../../libs/enums';
 import Starts from '../../../common/components/Stars';
-import { go } from '../../../common/libs/utils/utils';
 import './index.less';
 
 export default class HouseItem extends Component {
@@ -12,7 +13,7 @@ export default class HouseItem extends Component {
     if (e.target.className.match(/(next|prev)/)) {
       return;
     }
-    go(url);
+    redirect.go(url);
   };
 
   render() {
@@ -25,7 +26,7 @@ export default class HouseItem extends Component {
         </div>
         <div className="info">
           <div className="avatar">
-            <img src={data.landlord.head_url ? `${data.landlord.head_url}_750` : '/assets/images/icons/image_mobile_avatar.png'} alt={data.landlord.real_name} />
+            <Image src={data.landlord.head_url ? `${data.landlord.head_url}_750` : '/assets/images/icons/image_mobile_avatar.png'} alt={data.landlord.real_name} />
           </div>
           <div>
             <div className="left">

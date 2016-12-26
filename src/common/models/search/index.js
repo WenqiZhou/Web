@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { request } from '11-utils';
 import DesktopSearch from '../../../desktop/modals/search';
 import MobileSearch from '../../../mobile/modals/search';
-import { request } from '../../libs/request';
 import { SEARCH } from '../../store/requests/types';
 
 @connect(({ search, Request }) => {

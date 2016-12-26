@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import classnames from 'classnames';
+import { Image } from '11-common';
+import { enterTime, leaveTime, getCp } from '11-utils/src/timeparse';
 import { SearchBar } from '../../components/Navigation';
 import '../../style/house_detail.less';
 import HouseBanner from '../../components/HouseBanner';
 import HouseType from '../../components/HouseType';
 import { LandLordDesc } from '../../../../libs/enums';
-import { enterTime, leaveTime, getCp } from '../../../common/libs/utils/timeparse';
 
 export default class MobileHouseDetail extends Component {
   render() {
@@ -50,7 +51,7 @@ export default class MobileHouseDetail extends Component {
                 }
               </p>
               <div className="avatar">
-                <img src={data.landlord.head_url ? `${data.landlord.head_url}_750` : '/assets/images/icons/image_mobile_avatar.png'} alt="加载中" />
+                <Image src={data.landlord.head_url ? `${data.landlord.head_url}_750` : '/assets/images/icons/image_mobile_avatar.png'} alt="加载中" />
               </div>
               <p>
                 房东：{data.landlord.real_name}
@@ -74,7 +75,7 @@ export default class MobileHouseDetail extends Component {
                 关于此房源
               </div>
               <p>{data.house_description}</p>
-              <img src={`${((data.images || [])[0] || {}).image_url}_750`} alt="加载中" />
+              <Image src={`${((data.images || [])[0] || {}).image_url}_750`} alt="加载中" />
             </section>
             <section className="dividing source">
               <p>房源：</p>

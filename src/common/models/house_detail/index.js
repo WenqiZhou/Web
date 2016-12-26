@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import DesktopHouseDetail from '$desktop/modals/house_detail';
 import MobileHouseDetail from '$mobile/modals/house_detail';
-import { request } from '../../../common/libs/request';
+import { request } from '11-utils';
 import { HOUSE_DETAIL } from '../../../common/store/requests/types';
 
 @connect(({ Request }) => {

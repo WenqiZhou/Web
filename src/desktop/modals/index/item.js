@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import classnames from 'classnames';
-import { go } from '../../../common/libs/utils/utils';
+import { Image } from '11-common';
+import { redirect } from '11-utils';
 
 export default class IndexActivityItems extends Component {
   parseData = (data, type) => {
@@ -15,7 +16,7 @@ export default class IndexActivityItems extends Component {
   };
 
   handleClick = (id) => () => {
-    go(`activity/${id}`)
+    redirect.go(`activity/${id}`)
   };
 
   render() {
@@ -30,7 +31,7 @@ export default class IndexActivityItems extends Component {
         })}
       >
         <div style={{ position: 'relative' }}>
-          {data ? <img src={`${data.images[0].image_url}_750`} alt={data.title} /> : '' }
+          {data ? <Image src={`${data.images[0].image_url}_750`} alt={data.title} /> : '' }
           <h1>{data.title}</h1>
           <h2>{data.sub_title}</h2>
         </div>

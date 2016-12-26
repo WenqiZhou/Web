@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import { Nav } from '11-desktop';
+import { Image } from '11-common';
 import { Header } from '../../components/Headers';
 import SectionGroup from './section-group';
 import Search from './search';
 import '../../style/index.less';
-
-import { loginModal } from '../../components/AuthModals/LoginModal';
 
 export default class DesktopIndex extends Component {
   constructor(props) {
@@ -34,7 +33,7 @@ export default class DesktopIndex extends Component {
         <Header />
         <Search />
         <div className="banner no-padding">
-          <img src="/assets/images/image_desktop_index_registe.png" alt="banner" />
+          <Image src="/assets/images/image_desktop_index_registe.png" alt="banner" />
         </div>
         <main className="container">
           {
@@ -44,7 +43,7 @@ export default class DesktopIndex extends Component {
           }
         </main>
         <div className="banner no-padding">
-          <img src="/assets/images/image_desktop_index_banner_ad.png" alt="banner" />
+          <Image src="/assets/images/image_desktop_index_banner_ad.png" alt="banner" />
         </div>
         <main className="container">
           <SectionGroup key={3} type={3} list={this.state.list[3]} />

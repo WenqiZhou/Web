@@ -1,10 +1,9 @@
 import template from 'string-template';
-import fetch from '../../libs/request';
+import fetch from '11-utils/src/fetch';
 import Store from '../../store';
 
 const context = require.context('./', false, /\.js$/);
 const keys = context.keys().filter(item => item !== './index.js' && item !== './types.js');
-
 const types = {};
 
 const requests = keys.reduce((memo, key) => {
@@ -119,17 +118,19 @@ const request = ({ profile, headers = {}, query = {}, data = {}, params = {} }) 
       xxx: ''
     },
     data
-  }).then(typeof profile.callback === 'function' ? profile.callback({
-    headers,
-    query,
-    params
-  }) : (response => response));
+  }).then(typeof profile.callback === 'function' ?
+    profile.callback({
+      headers,
+      query,
+      params
+    }) : (response => response));
 };
 
 const dispatcher = ({ key, ...props }) => {
   if (!requests[key]) {
     throw new Error('no api matched');
   }
+
   return request({ key, profile: requests[key], ...props });
 };
 

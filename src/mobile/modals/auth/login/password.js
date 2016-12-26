@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import calssnames from 'classnames';
-import { Input } from '11-common';
-import { go } from '../../../../common/libs/utils/utils';
-import Form from '../../../../common/components/Form';
+import { Input, Form } from '11-common';
+import { redirect } from '11-utils';
 
 const MobilePasswordLogin = ({ setRef }) => (
   <div>
@@ -14,7 +13,7 @@ const MobilePasswordLogin = ({ setRef }) => (
       <Input icon="mobile password" clearable type="password" key="password" placeholder="请输入密码" />
     </Form>
     <p className="help">
-      <a onClick={() => go('/m/auth/forget')}>忘记密码？</a>
+      <a onClick={() => redirect.go('/m/auth/forget')}>忘记密码？</a>
     </p>
   </div>
 );

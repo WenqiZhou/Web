@@ -1,8 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import { Input } from '11-common';
-import Form from '../../../../common/components/Form';
-import { toast } from '../../../components/Toast';
-import Code from '../../../../common/components/Code';
+import { Input, Form, Code, Toast } from '11-common';
 
 export default class MobileCodeLogin extends Component {
   constructor(props) {
@@ -21,9 +18,9 @@ export default class MobileCodeLogin extends Component {
 
   handleSendVarify = (result, error) => {
     if (!result) {
-      toast(error);
+      Toast(error);
     } else {
-      toast('验证码发送成功');
+      Toast('验证码发送成功');
     }
   };
 

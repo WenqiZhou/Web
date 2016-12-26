@@ -1,4 +1,5 @@
 import React from 'react';
+import { Image } from '11-common';
 import './index.less';
 
 const ACTIVITYTYPEItem = ({ data }) => {
@@ -6,7 +7,7 @@ const ACTIVITYTYPEItem = ({ data }) => {
   return (
     <section className="activity" id={activity.activity_id}>
       <div className="image">
-        <img src={`${activity.images[0].image_url}_750`} alt={activity.title} />
+        <Image src={`${activity.images[0].image_url}_750`} alt={activity.title} />
       </div>
       <div className="contents">
         <div className="title">{activity.title}</div>

@@ -1,5 +1,5 @@
 /* eslint import/prefer-default-export: 0 */
-import { goBack } from '../../libs/utils/utils';
+import { redirect } from '11-utils';
 
 // 房屋信息相关接口
 export const HOUSE_DETAIL = {
@@ -19,7 +19,7 @@ export const HOUSE_DETAIL = {
     if (response.ret === -2004) {
       /* eslint no-alert: 0 */
       alert(response.err);
-      goBack();
+      redirect.goBack();
     } else {
       return {
         [params.id]: response,
