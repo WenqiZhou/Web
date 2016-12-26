@@ -3,7 +3,7 @@ import ReactDom from 'react-dom';
 import { Provider } from 'react-redux';
 import { hashHistory, browserHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
-import Store from '$common/store';
+import Store from '11-store';
 import Routes from '$common/routers';
 import '../../views/index.html';
 

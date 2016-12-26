@@ -18,8 +18,3 @@ export const redirect = (url) => store.dispatch(replace(url || '/'));
 export const go = (url) => store.dispatch(push(url || '/'));
 
 export const goBack = () => store.dispatch(reduxGoBack());
-
-export const setPath = (path) => store.dispatch({
-  type: WINDOW_CUSTOMER_ROUTE,
-  path
-});
