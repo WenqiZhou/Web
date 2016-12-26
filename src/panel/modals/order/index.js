@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import classnames from 'classnames';
-import { Card } from '11-panel';
+import { Card, BrandNav } from '11-panel';
 import { Row } from '11-common';
 import Style from './index.less';
 
@@ -9,10 +9,7 @@ export default class OrderDetail extends Component {
     return (
       <div className={Style.order}>
         <Row>
-          <Card className={Style.path}>
-            {/* eslint react/no-unescaped-entities: 0 */}
-            我是房客 > 我的订单 > 订单管理 > 订单详情
-          </Card>
+          <BrandNav list={['我是房客', '我的订单', '订单管理', '订单详情']} render="&nbsp;>&nbsp;" />
         </Row>
         <Row style={{ margin: '-.08rem 0 .27rem' }}>
           <Card className={Style.status}>
