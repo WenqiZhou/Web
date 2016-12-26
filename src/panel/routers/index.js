@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import { Router, Route, IndexRoute, IndexRedirect } from 'react-router';
 import App from '$common/components/App';
-import { dispatch } from '$common/store';
+import { dispatch } from '11-store';
 import { WINDOW_CUSTOMER_ROUTE_CLEAR } from '$common/store/types';
 import { Menu } from '11-panel';
 import Routers from './routers';
@@ -19,9 +19,11 @@ const Routes = (
     <IndexRedirect to="orders" />
     {Routers.orders}
     {Routers.order}
+    {Routers.comments}
     <Route path="host">
       {Routers.orders}
       {Routers.order}
+      {Routers.comments}
       <IndexRoute component={require('../modals/host_index')} />
     </Route>
   </Route>
