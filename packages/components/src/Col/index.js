@@ -5,12 +5,18 @@ import './index.less';
 
 export default class Col extends Component {
   static propTypes = {
+    className: PropTypes.string,
     span: PropTypes.number,
     sm: PropTypes.number,
     lg: PropTypes.number,
     offset: PropTypes.number,
     space: PropTypes.number,
     children: PropTypes.any
+  };
+
+
+  static defaultProps = {
+    className: ''
   };
 
   render() {
@@ -43,7 +49,8 @@ export default class Col extends Component {
           classnames({
             col: true,
             ...classes,
-            'col-space': this.props.space
+            'col-space': this.props.space,
+            [this.props.className]: true
           })
         }
       >
