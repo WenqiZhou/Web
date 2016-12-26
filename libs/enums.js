@@ -77,3 +77,10 @@ export const BedsTypes = {
   15: '榻榻米',
   16: '炕床'
 };
+
+// 评论是否可见
+export const CommentVisibleType = {
+  0: 'DEFUALT',
+  1: 'VISIBLE', // 可见
+  2: 'INVISIBLE' // 不可见
+};
