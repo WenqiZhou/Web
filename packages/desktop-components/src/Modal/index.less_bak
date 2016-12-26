@@ -1,0 +1,66 @@
+@import "../../style/base";
+
+.desktop.modal {
+  font-size: 18px;
+  width: 480px;
+  background: #ffffff;
+  height: 420px;
+  border-radius: 3px;
+
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  position: absolute;
+
+  .content {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  &.double {
+    width: 990px;
+    height: 480px;
+    display: flex;
+    padding: 40px;
+
+    .content {
+      width: 50%;
+      height: 100%;
+      &:first-of-type {
+        margin-left: 30px;
+        border-right: solid 2px #e4e4e4;
+
+        & > * {
+          width: 386px;
+
+          &.toggle.buttons {
+            height: 35px;
+
+            button {
+              width: 50%;
+              height: 35px;
+              font-size: 22px;
+              display: inline-block;
+              color: #959595;
+              border-bottom: solid 2px #e4e4e4;
+              background: transparent;
+              box-shadow: none;
+              padding: 0 0 13px 0;
+              line-height: 1em;
+              cursor: pointer;
+
+              &.current {
+                color: #fe393d;
+                border-bottom: solid 2px #fe393d;
+                transition: color .5s ease;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
