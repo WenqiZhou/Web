@@ -44,7 +44,7 @@ export default class Navigation extends Component {
         {
           this.props.search ? <Search /> : ''
         }
-        <ul className={classnames(Style.right,Style.list)}>
+        <ul className={classnames(Style.right, Style.list)}>
           {
             Object.keys(NavItems).map((key, index) => (
               <li
