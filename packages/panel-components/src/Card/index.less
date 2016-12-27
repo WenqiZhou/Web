@@ -5,6 +5,7 @@
       border: solid 1px #d4d9d9;
       display: block;
       width: 100%;
+      position: relative;
 
       &-title {
         width: 100%;
@@ -21,6 +22,15 @@
 
       &-content {
         padding: .2rem;
+      }
+
+      &:global(.menu-title) {
+        :global(.card-title) {
+          padding-bottom: 0;
+        }
+        :global(.card-content) {
+          padding: 0;
+        }
       }
     }
   }
