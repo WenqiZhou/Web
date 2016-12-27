@@ -79,7 +79,7 @@ export default class Orders extends Component {
         }
         <Row>
           <Card
-            wrapperClassName={Style.card}
+            wrapperClassName="menu-title"
             title={<Menu host={this.props.host} current={this.props.params.type || '/'} />}
           >
             <Table className={Style.table} columns={this.columns} dataSource={OrderList} />
