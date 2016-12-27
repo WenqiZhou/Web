@@ -22,16 +22,26 @@ const requests = keys.reduce((memo, key) => {
   return memo;
 }, {});
 
+/**
+ * 请求
+ * @param profile 配置文件
+ * @param headers 自定义头
+ * @param query 自定义query参数
+ * @param data 自定义post
+ * @param params 自定义地址中的参数
+ * @returns {Function|any|*|Promise}
+ */
 const request = ({ profile, headers = {}, query = {}, data = {}, params = {} }) => {
   // 需要处理profile.headers中的数据
   // 这些数据默认是需要手动处理的
-  const { path, headers: profileHeaders, params: profileParams } = profile;
+  const { path, headers: profileHeaders, params: profileParams, query: profileQuery } = profile;
   let realPath = path;
 
   headers = new Headers(headers);
 
   headers.set('Content-Type', headers.get('Content-Type') || 'application/json');
 
+  // 根据配置文件设置默认的header
   if (profileHeaders && typeof profileHeaders === 'object') {
     // 需要将profileHeaders中的内容全部遍历到headers中
     Object.keys(profileHeaders).forEach((key) => {
@@ -74,7 +84,38 @@ const request = ({ profile, headers = {}, query = {}, data = {}, params = {} }) 
     });
   }
 
-  // 判断地址中是否需要进行模板替换
+  // 根据配置文件设置默认的query
+  if (profileQuery && typeof profileQuery === 'object') {
+    // 将profileQuery中的内容全部遍历到query中
+    Object.keys(profileQuery).forEach((key) => {
+      let value = profileQuery[key];
+      let source;
+      const queryProfile = profileQuery[key]; // 默认query的设置文件
+      const seted = query[key];
+
+      // 如果在请求中已设置,不需要处理
+      if (seted) {
+        return;
+      }
+
+      // 由于query的值是有可能为任何值的,因此不会存在未设置的情况
+      if (typeof queryProfile === 'object') {
+        source = queryProfile.source;
+        value = queryProfile.default;
+        // 获取source中的数据 当String(value)也不存在时,说明真的不存在,返回value作为default
+        value = source.split('.')
+          .reduce((previousValue, currentKey, index, array) => {
+            const v = previousValue[currentKey];
+            // v为空时,由于reduce必须要遍历到最后一个
+            return v || (index === array.length - 1) ? v : {};
+          }, Store.getState()) || value;
+      }
+      // 设置最终值
+      query[key] = value;
+    });
+  }
+
+  // 替换地址
   if (path.match(/\{(.*)}/)) {
     // 进行字符串模板替换
     const parsedProfileParams = Object.keys(profileParams || {}).reduce((previous, key) => {
@@ -110,6 +151,7 @@ const request = ({ profile, headers = {}, query = {}, data = {}, params = {} }) 
 
     realPath = template(realPath, params);
   }
+
   return fetch(realPath, {
     method: profile.method || 'GET',
     headers,
