@@ -111,7 +111,9 @@ const request = ({ profile, headers = {}, query = {}, data = {}, params = {} }) 
           }, Store.getState()) || value;
       }
       // 设置最终值
-      query[key] = value;
+      if (value !== null) {
+        query[key] = value;
+      }
     });
   }
 

@@ -238,3 +238,20 @@ export const BookingStatus = {
     description: '结束状态，非流程状态，仅用于校验订单状态的正确性 接口调用者不用关注'
   }
 };
+
+export const BookingTypes = {
+  0: '/',
+  1: 'paid',
+  2: 'not_paid',
+  3: 'not_confirmed',
+  4: 'finished',
+  5: 'canceled',
+  6: 'deleted',
+  '/': '0',
+  paid: '1',
+  not_paid: '2',
+  not_confirmed: '3',
+  finished: '4',
+  canceled: '5',
+  deleted: '6'
+};

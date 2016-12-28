@@ -14,7 +14,6 @@ export default class TableRow extends Component {
       return col.render(colData, row, this.props.index)
     }
 
-    //console.log(colData,col)
     return <span>{colData}</span>;
   };
 

@@ -1,11 +1,14 @@
 import { handleActions } from 'redux-actions';
 import Types from '../types';
 
+import { UserInfo } from '../../../../libs/mock';
+
 const User = handleActions({
   [Types.USER_SIGNUP](state, { user }) {
     return { ...state, ...user };
   }
 }, {
+  ...UserInfo,
   access_token: '\\x01\\x014\\xec\\xeb\\xa2Xb\\x98\\xb4Xb\\x98\\xb4X0bPy7QfUCBVdtwj\\xd8(\\x84\\xab\\xee]\\xbd,\\xe7\\xce-\\xc4\\xd2.\\x82\\x93',
   ret: 0,
   uin: 887942050,

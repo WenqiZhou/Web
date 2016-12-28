@@ -47,10 +47,7 @@ export default class CommentsList extends Component {
   getData = (first = true) => () => {
     if ((first === false && !this.props.lastId) || this.props.loading) return;
     request({
-      key: COMMENT_LIST,
-      query: {
-        last_id: ''
-      }
+      key: COMMENT_LIST
     });
   };
 
