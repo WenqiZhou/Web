@@ -11,8 +11,8 @@ export const COMMENT_LIST = {
     }
   },
   query: {
-    num: 2,
-    last_id: {
+    n: 10,
+    l: {
       source: 'Request.COMMENT_LIST.data.last_id',
       default: null
     }

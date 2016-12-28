@@ -12,8 +12,7 @@ export default class ListItem extends Component {
   render() {
     const { data } = this.props;
     const content = data.by_tenant || data.by_landlord;
-    const commiter = content.type === '1' ? '房东' : '房客'
-    ''
+    const commiter = content.type === '1' ? '房东' : '房客';
 
     return (
       <Row className={Style.item}>
