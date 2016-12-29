@@ -241,17 +241,17 @@ export const BookingStatus = {
 
 export const BookingTypes = {
   0: '/',
-  1: 'paid',
-  2: 'not_paid',
-  3: 'not_confirmed',
-  4: 'finished',
-  5: 'canceled',
-  6: 'deleted',
+  6: 'paid',
+  5: 'not_paid',
+  4: 'not_confirmed',
+  2: 'finished',
+  1: 'canceled',
+  3: 'deleted',
   '/': '0',
-  paid: '1',
+  paid: '6',
   not_paid: '2',
-  not_confirmed: '3',
-  finished: '4',
-  canceled: '5',
-  deleted: '6'
+  not_confirmed: '5',
+  finished: '2',
+  canceled: '1',
+  deleted: '3'
 };

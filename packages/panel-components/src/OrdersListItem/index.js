@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { Image, Row, Col } from '11-common';
 import 'node.date-time';
+import { redirect } from '11-utils';
 import Style from './index.less';
 import { BookingStatus } from '../../../../libs/enums';
 
@@ -38,14 +39,22 @@ export const Money = ({ text }) => (
   <span>¥{text}元</span>
 );
 
-export const Status = ({ text }) => (
+export const Status = ({ text, row, host }) => (
   <div className={Style.list}>
     <p>{(BookingStatus[text] || {}).name}</p>
-    <p>订单详情</p>
+    <p>
+      <a
+        onClick={() => {
+          redirect.go(`/dashboard/order/${host ? 'host/' : ''}${row.booking_id}`)
+        }}
+      >
+        订单详情
+      </a>
+    </p>
   </div>
 );
 
-export const Actions = ({text}) => (
+export const Actions = ({ text }) => (
   <div className={Style.list}>
     <p>取消订单</p>
     <p>联系房东</p>

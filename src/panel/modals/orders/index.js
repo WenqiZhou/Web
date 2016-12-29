@@ -112,8 +112,8 @@ export default class Orders extends Component {
       key: 'status',
       width: '.87rem',
       dataSource: 'status',
-      render: (text) => (
-        <OrdersListItem.Status text={text} />
+      render: (text, row) => (
+        <OrdersListItem.Status text={text} row={row} host={this.props.host} />
       )
     },
     {
