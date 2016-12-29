@@ -27,3 +27,18 @@ export const BOOKING_LIST = {
     }
   }
 };
+
+export const BOOKING_DETAIL = {
+  method: 'GET',
+  path: '//booking/bookid/{id}',
+  headers: {
+    'User-Uin': {
+      source: 'user.uin',
+      default: '100000'
+    },
+    'Client-Token': {
+      source: 'user.token',
+      default: null
+    }
+  }
+};
