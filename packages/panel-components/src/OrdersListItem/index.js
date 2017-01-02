@@ -15,7 +15,7 @@ export const OrderHouseName = ({ text, row }) => (
         {row.house_info.title}
       </p>
       <p className={Style.time}>
-        {new Date(row.create_time).format("Y-MM-dd HH:mm:SS")}
+        {new Date(row.create_time).format("Y-MM-dd HH:mm")}
       </p>
     </Col>
   </Row>
