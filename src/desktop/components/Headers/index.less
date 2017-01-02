@@ -3,54 +3,56 @@
 @banner-prefix: banner-anim;
 @navbar-prefix: nav;
 
-.lg-only.index {
-  header {
-    width: 100%;
-    height: auto;
-    position: relative;
-    top: 0;
-    left: 0;
-
-    .@{banner-prefix} {
+:global {
+  .lg-only.index {
+    header {
+      width: 100%;
+      height: auto;
       position: relative;
-      height: 8.49rem;
-
-      &-elem {
-        background-size: cover;
-        background-position: center 0;
-        background-repeat: no-repeat;
-        position: absolute;
-        height: 100%;
-        width: 100%;
-      }
-
-      &-arrow {
-        position: absolute;
-        width: .33rem;
-        height: .76rem;
-        top: calc(~"50% - .38rem") !important;
-        cursor: pointer;
-        z-index: 999;
-
-        &.prev {
-          left: .82rem;
-        }
-
-        &.next {
-          right: .82rem;
-        }
-      }
-    }
-
-    @{navbar-prefix} {
       top: 0;
-      position: absolute;
-      background: transparent;
-      color: @heading-color;
+      left: 0;
 
-      .fixed {
-        position: fixed;
-        background: #ffffff;
+      .@{banner-prefix} {
+        position: relative;
+        height: 8.49rem;
+
+        &-elem {
+          background-size: cover;
+          background-position: center 0;
+          background-repeat: no-repeat;
+          position: absolute;
+          height: 100%;
+          width: 100%;
+        }
+
+        &-arrow {
+          position: absolute;
+          width: .33rem;
+          height: .76rem;
+          top: calc(~"50% - .38rem") !important;
+          cursor: pointer;
+          z-index: 999;
+
+          &.prev {
+            left: .82rem;
+          }
+
+          &.next {
+            right: .82rem;
+          }
+        }
+      }
+
+      @{navbar-prefix} {
+        top: 0;
+        position: absolute;
+        background: transparent;
+        color: @heading-color;
+
+        .fixed {
+          position: fixed;
+          background: #ffffff;
+        }
       }
     }
   }

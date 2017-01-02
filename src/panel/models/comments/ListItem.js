@@ -1,6 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import { Image, Row, Col } from '11-common';
-import { Avatar } from '11-panel';
+import { Image, Row, Col, Avatar } from '11-common';
 import 'node.date-time';
 import Style from './index.less';
 
@@ -17,7 +16,7 @@ export default class ListItem extends Component {
     return (
       <Row className={Style.item}>
         <Col span={4} className={Style.avatar}>
-          <Avatar url={`${content.user.head_url}_750`} />
+          <Avatar url={content.user.head_url} />
           <p>
             {content.user.real_name}
           </p>

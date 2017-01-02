@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import classnames from 'classnames';
-import { Image, Starts } from '11-common';
+import { Image, Stars } from '11-common';
 import { redirect } from '11-utils';
 import HousePrice from '../../../common/components/HousePrice';
 import { HouseType } from '../../../../libs/enums';
@@ -30,7 +30,7 @@ export default class HouseItem extends Component {
             </div>
             <div className="description">
               {HouseType[data.house_type]} •
-              <Starts stars={Number(data.score)} />•
+              <Stars stars={Number(data.score)} />•
               <div className="likes">
                 <span
                   className={classnames({

@@ -2,184 +2,186 @@
 
 @index-prefix: .index;
 
-.lg-only@{index-prefix} {
-  background: #ffffff;
-  font-size: 0;
-  line-height: 0;
-  .banner {
-    width: 100%;
-    background: #f5f5f5;
-    padding: .150000rem 0;
-
-    &.no-padding {
-      padding: 0;
-    }
-    img {
-      width: 100%;
-      margin: 0 auto;
-    }
-  }
-
-  main {
+:global {
+  .lg-only@{index-prefix} {
     background: #ffffff;
-    max-width: 15.6rem;
-    margin: 0.6rem auto 0;
+    font-size: 0;
+    line-height: 0;
+    .banner {
+      width: 100%;
+      background: #f5f5f5;
+      padding: .150000rem 0;
 
-    .activity.group {
-      padding: .4rem 0 .64rem;
-      text-align: center;
-      position: relative;
-      display: block;
-      overflow-x: auto;
-
-      h1 {
-        font-size: .48rem;
-        line-height: .8rem;
-        font-weight: 400;
+      &.no-padding {
+        padding: 0;
       }
-
-      h2 {
-        font-size: .24rem;
-        line-height: .42rem;
-        font-weight: 400;
-        margin-bottom: .72rem;
+      img {
+        width: 100%;
+        margin: 0 auto;
       }
+    }
 
-      .activity.item {
-        color: #ffffff;
-        cursor: pointer !important;
+    main {
+      background: #ffffff;
+      max-width: 15.6rem;
+      margin: 0.6rem auto 0;
 
-        * {
-          cursor: pointer;
-        }
-
-        h1, h2 {
-          left: 0;
-          right: 0;
-          margin: auto;
-          position: absolute;
-          line-height: 1;
-        }
+      .activity.group {
+        padding: .4rem 0 .64rem;
+        text-align: center;
+        position: relative;
+        display: block;
+        overflow-x: auto;
 
         h1 {
-          top: 1.41rem;
-          font-size: .4rem;
+          font-size: .48rem;
+          line-height: .8rem;
+          font-weight: 400;
         }
 
         h2 {
-          top: 1.96rem;
-          font-size: .26rem;
+          font-size: .24rem;
+          line-height: .42rem;
+          font-weight: 400;
+          margin-bottom: .72rem;
+        }
+
+        .activity.item {
+          color: #ffffff;
+          cursor: pointer !important;
+
+          * {
+            cursor: pointer;
+          }
+
+          h1, h2 {
+            left: 0;
+            right: 0;
+            margin: auto;
+            position: absolute;
+            line-height: 1;
+          }
+
+          h1 {
+            top: 1.41rem;
+            font-size: .4rem;
+          }
+
+          h2 {
+            top: 1.96rem;
+            font-size: .26rem;
+          }
         }
       }
     }
-  }
 
-  .search {
-    width: 11.68rem;
-    height: 1.1rem;
-    background: rgba(0, 0, 0, .5);
-    left: 0;
-    right: 0;
-    top: 6.6rem;
-    position: absolute;
-    margin: auto;
-    border-radius: .05rem;
-    padding: .2rem;
-    z-index: 999;
-    display: flex;
-
-    .input-group {
-      margin: 0;
-      flex: 1;
-    }
-
-    button {
-      border: 0;
-      border-top-right-radius: .05rem;
-      border-bottom-right-radius: .05rem;
-      width: 1.48rem;
-      font-size: .24rem;
-    }
-
-    > .input-group {
-      background: #ffffff;
-      border-top-left-radius: .05rem;
-      border-bottom-left-radius: .05rem;
-      width: 100%;
-      height: .7rem;
-      line-height: .7rem;
-      padding: .04rem 0;
+    .search {
+      width: 11.68rem;
+      height: 1.1rem;
+      background: rgba(0, 0, 0, .5);
+      left: 0;
+      right: 0;
+      top: 6.6rem;
+      position: absolute;
       margin: auto;
+      border-radius: .05rem;
+      padding: .2rem;
+      z-index: 999;
+      display: flex;
 
-      .keyword {
-        width: 4.28rem;
+      .input-group {
+        margin: 0;
+        flex: 1;
       }
 
-      .time {
-        width: 3.76rem;
-        flex: initial;
+      button {
+        border: 0;
+        border-top-right-radius: .05rem;
+        border-bottom-right-radius: .05rem;
+        width: 1.48rem;
+        font-size: .24rem;
+      }
 
-        input {
-          width: 1.71rem;
-          text-align: center;
+      > .input-group {
+        background: #ffffff;
+        border-top-left-radius: .05rem;
+        border-bottom-left-radius: .05rem;
+        width: 100%;
+        height: .7rem;
+        line-height: .7rem;
+        padding: .04rem 0;
+        margin: auto;
+
+        .keyword {
+          width: 4.28rem;
         }
 
-        .icon {
-          width: .34rem;
-          background-size: .34rem;
-          position: static;
-          top: initial;
-          bottom: initial;
-          left: initial;
-          right: initial;
-          margin: 0;
+        .time {
+          width: 3.76rem;
+          flex: initial;
+
+          input {
+            width: 1.71rem;
+            text-align: center;
+          }
+
+          .icon {
+            width: .34rem;
+            background-size: .34rem;
+            position: static;
+            top: initial;
+            bottom: initial;
+            left: initial;
+            right: initial;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background-position: center;
+            background-color: transparent;
+            background-repeat: no-repeat;
+          }
+        }
+
+        .people {
+          flex: 1;
+          border: none;
+          background: transparent;
+          text-align: center;
+          outline: none;
+          margin: 0 .20rem;
           padding: 0;
           height: 100%;
-          background-position: center;
-          background-color: transparent;
-          background-repeat: no-repeat;
-        }
-      }
-
-      .people {
-        flex: 1;
-        border: none;
-        background: transparent;
-        text-align: center;
-        outline: none;
-        margin: 0 .20rem;
-        padding: 0;
-        height: 100%;
-        width: .34rem;
-      }
-
-      .keyword,
-      .time {
-        border-right: solid 1px #bbbbbb;
-      }
-
-      .rc-select,
-      select,
-      input {
-        height: 100%;
-        line-height: .68rem;
-        font-size: .24rem;
-        border: none;
-        outline: none;
-        padding: 0 0 0 .2rem;
-
-        &::-webkit-input-placeholder {
-          color: #757575;
+          width: .34rem;
         }
 
-        > .rc-select-selection {
-          border: none;
+        .keyword,
+        .time {
+          border-right: solid 1px #bbbbbb;
+        }
+
+        .rc-select,
+        select,
+        input {
+          height: 100%;
           line-height: .68rem;
-          height: .68rem;
+          font-size: .24rem;
+          border: none;
+          outline: none;
+          padding: 0 0 0 .2rem;
 
-          > .rc-select-selection__rendered {
+          &::-webkit-input-placeholder {
+            color: #757575;
+          }
+
+          > .rc-select-selection {
+            border: none;
             line-height: .68rem;
             height: .68rem;
+
+            > .rc-select-selection__rendered {
+              line-height: .68rem;
+              height: .68rem;
+            }
           }
         }
       }

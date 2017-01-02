@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import classnames from 'classnames';
-import { Image, Starts } from '11-common';
+import { Image, Stars } from '11-common';
 import { redirect } from '11-utils';
 import HouseItemImage from './image';
 import HousePrice from '../../../common/components/HousePrice';
@@ -34,7 +34,7 @@ export default class HouseItem extends Component {
               </div>
               <div className="description">
                 {HouseType[data.house_type]} •
-                <Starts stars={Number(data.score)} />• {data.baidu_city}{data.baidu_district}
+                <Stars stars={Number(data.score)} />• {data.baidu_city}{data.baidu_district}
               </div>
             </div>
             <div className="likes">

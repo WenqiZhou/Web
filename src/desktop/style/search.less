@@ -1,30 +1,32 @@
-.desktop {
-  &.search {
-    width: 100%;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-
-    .list {
-      position: fixed;
-      top: .620000rem;
+:global {
+  .desktop {
+    &.search {
+      width: 100%;
+      position: absolute;
+      top: 0;
+      bottom: 0;
       left: 0;
-      bottom: 0;
-      width: 60%;
-      overflow-x: hidden;
-      overflow-y: auto;
-    }
-
-    .map {
-      display: block;
-      width: 40%;
-      position: fixed;
       right: 0;
-      top: .620000rem;
-      left: auto;
-      bottom: 0;
+
+      .list {
+        position: fixed;
+        top: .620000rem;
+        left: 0;
+        bottom: 0;
+        width: 60%;
+        overflow-x: hidden;
+        overflow-y: auto;
+      }
+
+      .map {
+        display: block;
+        width: 40%;
+        position: fixed;
+        right: 0;
+        top: .620000rem;
+        left: auto;
+        bottom: 0;
+      }
     }
   }
 }
