@@ -1,0 +1,133 @@
+.book {
+  font-size: .22rem;
+
+  .container {
+    width: 15.6rem;
+    margin: 0 auto;
+  }
+
+  .left {
+    padding-top: .3rem;
+    margin-right: .3rem;
+    width: 10.58rem;
+  }
+
+  .right {
+    width: 4.7rem;
+
+    > section {
+      border-top: none;
+
+      :global(.card-content) {
+        padding: 0;
+      }
+
+      :global(.image) {
+        position: relative;
+        font-size: 0;
+
+        .avatar {
+          position: absolute;
+          width: .9rem;
+          height: .9rem;
+          border-radius: 100%;
+          bottom: 0;
+          right: .2rem;
+          margin-bottom: -.45rem;
+        }
+      }
+
+      .content {
+        padding: 0 .34rem;
+        :global(.title) {
+          color: #2f6ebf;
+          margin: .22rem 0;
+          padding-right: .9rem;
+        }
+
+        p {
+          text-align: left;
+          line-height: .74rem;
+
+          span:first-of-type {
+            width: 1.4rem;
+            display: inline-block;
+          }
+        }
+
+        :global(.time) {
+          height: 1.04rem;
+          margin-bottom: .3rem;
+          p {
+            line-height: .52rem;
+          }
+
+          :global(.right) {
+            float: left;
+            padding-left: .5rem;
+            p {
+              line-height: 1.04rem;
+              span {
+                width: auto;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .title {
+    font-size: .24rem;
+    color: #333333;
+  }
+
+  .root {
+    padding: .3rem .67rem;
+  }
+
+  section {
+    :global(.card-content) {
+      padding: .36rem .4rem .56rem;
+    }
+
+    :global(.card-title) {
+      background: transparent;
+      padding: 0;
+    }
+
+    .title {
+      position: relative;
+      height: .34rem;
+      line-height: .34rem;
+      margin-bottom: .09rem;
+
+      &:before {
+        content: '';
+        width: .06rem;
+        float: left;
+        margin-right: .2rem;
+        height: 100%;
+        background: #fe393d;
+      }
+    }
+  }
+
+  .count {
+    padding: 0;
+    height: 1rem;
+    line-height: 1rem;
+    font-size: .26rem;
+    text-align: center;
+    font-weight: bold;
+
+    span {
+      font-size: .38rem;
+    }
+
+    :global(.unit) {
+      padding-left: .4rem;
+      font-size: .26rem;
+    }
+  }
+}

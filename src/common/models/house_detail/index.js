@@ -30,6 +30,9 @@ export default class HouseDetail extends Component {
   render() {
     const data = this.props.HOUSE_DETAIL[this.props.params.id] || {};
     const props = {
+      ...this.props,
+      id: this.props.params.id,
+      loading: this.props.loading,
       data: data.house || {},
       similar: data.similar || {}
     };

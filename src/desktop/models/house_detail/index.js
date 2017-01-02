@@ -2,9 +2,14 @@ import React, { Component } from 'react';
 import classnames from 'classnames';
 import { Image, Row, Col, Stars, Input } from '11-common';
 import { Nav } from '11-desktop';
+import { redirect } from '11-utils';
 import Style from './index.less';
 
 export default class DesktopHousesDetail extends Component {
+  goBook = () => {
+    redirect.go(`/book/${this.props.id}?start=${new Date().getTime()}&end=${new Date().getTime()}&people=2`);
+  };
+
   render() {
     const { data } = this.props;
     const { images = [] } = data;
@@ -93,7 +98,7 @@ export default class DesktopHousesDetail extends Component {
                       <Input />
                     </li>
                   </ul>
-                  <button className={classnames('button', Style['book-btn'])}>
+                  <button onClick={this.goBook} className={classnames('button', Style['book-btn'])}>
                     申请预定
                   </button>
                   <button className={classnames('button page', Style['status-btn'])}>
