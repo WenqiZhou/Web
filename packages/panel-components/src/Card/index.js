@@ -1,9 +1,16 @@
 import React, { PropTypes } from 'react';
 import classnames from 'classnames';
-import './index.less';
+import Style from './index.less';
 
-const Card = ({ children, className, wrapperClassName, style, wrapperStyle, title }) => (
-  <section style={wrapperStyle} className={classnames('card', wrapperClassName)}>
+const Card = ({ basic, children, className, wrapperClassName, style, wrapperStyle, title }) => (
+  <section
+    style={wrapperStyle}
+    className={classnames({
+      [Style.card]: true,
+      [wrapperClassName]: true,
+      'card-bordered': !basic
+    })}
+  >
     {
       title ? <div className="card-title">{title}</div> : ''
     }

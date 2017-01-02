@@ -1,12 +1,15 @@
-:global {
-  .dashboard {
-    .card {
-      background: #ffffff;
-      border: solid 1px #d4d9d9;
-      display: block;
-      width: 100%;
-      position: relative;
+.card {
+  background: #ffffff;
+  display: block;
+  width: 100%;
+  position: relative;
 
+  &:global(.card-bordered) {
+    border: solid 1px #d4d9d9;
+  }
+
+  :global {
+    .card {
       &-title {
         width: 100%;
         display: block;
