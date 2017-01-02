@@ -19,8 +19,8 @@ const HostMenu = {
       '/paid': '已支付',
       '/not_paid': '待支付',
       '/not_confirmed': '待确认',
-      '/finished': '已完成',
-      '/canceled': '已取消'
+      '/finished': '已完成'
+      //'/canceled': '已取消'
     }
   },
   '/houses': {
@@ -84,8 +84,8 @@ const Menu = {
       '/paid': '已支付',
       '/not_paid': '待支付',
       '/not_confirmed': '待确认',
-      '/finished': '已完成',
-      '/canceled': '已取消'
+      '/finished': '已完成'
+      //'/canceled': '已取消'
     }
   },
   '/comments': {

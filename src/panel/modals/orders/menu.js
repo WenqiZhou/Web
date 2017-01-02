@@ -6,9 +6,9 @@ const menuList = {
   paid: '已支付',
   not_paid: '待支付',
   not_confirmed: '待确认',
-  finished: '已完成',
-  canceled: '已取消',
-  deleted: '回收站'
+  finished: '已完成'
+  //canceled: '已取消',
+  //deleted: '回收站'
 };
 
 const Menu = ({ current, host }) => (
