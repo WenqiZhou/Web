@@ -14,9 +14,9 @@ const customerProps = {
 };
 
 const Routes = (
-  <Route path="orders" component={require('../modals/orders')}>
-    <IndexRoute component={require('../modals/orders')} />
-    <Route path=":type" component={require('../modals/orders')} />
+  <Route path="orders" component={require('../models/orders')}>
+    <IndexRoute component={require('../models/orders')} />
+    <Route path=":type" component={require('../models/orders')} />
   </Route>
 );
 

@@ -22,17 +22,19 @@ const Routes = ({ history, ...props }) => (
         <IndexRoute component={require('../models/search')} />
       </Route>
       <Route path="/house/:id" component={require('../models/house_detail')} />
-      <Route path="/activity/:id" components={require('../models/activity')} />
+      {/*由于移动端使用弹窗的方式,所以不需要路由,PC端检测如果是移动端进入页面,跳转到移动端详情页*/}
+      <Route path="/book/:id" component={require('../models/house_detail')} />
+      <Route path="/activity/:id" component={require('../models/activity')} />
     </Route>
-    <Route path="/m/auth" component={require('../../mobile/modals/auth')}>
+    <Route path="/m/auth" component={require('../../mobile/models/auth')}>
       <IndexRedirect to="login" />
-      <Route path="login" component={require('../../mobile/modals/auth/login')}>
+      <Route path="login" component={require('../../mobile/models/auth/login')}>
         <IndexRedirect to="password" />
-        <Router path="password" component={require('../../mobile/modals/auth/login/password')} />
+        <Router path="password" component={require('../../mobile/models/auth/login/password')} />
         <Router path="code" />
       </Route>
-      <Route path="signup" component={require('../../mobile/modals/auth/signup')} />
-      <Route path="forget" component={require('../../mobile/modals/auth/forget')} />
+      <Route path="signup" component={require('../../mobile/models/auth/signup')} />
+      <Route path="forget" component={require('../../mobile/models/auth/forget')} />
     </Route>
     <Route path="/help">
       <Route path="cb">

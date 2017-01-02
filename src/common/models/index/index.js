@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import MobileIndex from '$mobile/modals/index';
-import DesktopIndex from '$desktop/modals/index';
+import MobileIndex from '$mobile/models/index';
+import DesktopIndex from '$desktop/models/index';
 import { request } from '11-utils';
 import { HOMEPAGE } from '11-store/requests/types';
 

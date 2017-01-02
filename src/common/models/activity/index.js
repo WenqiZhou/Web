@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import DesktopHouseActivity from '$desktop/modals/activity';
-import MobileHouseActivity from '$mobile/modals/activity';
+import DesktopHouseActivity from '$desktop/models/activity';
+import MobileHouseActivity from '$mobile/models/activity';
 import { request } from '11-utils';
 import { HOUSE_DETAIL } from '../../../common/store/requests/types';
 

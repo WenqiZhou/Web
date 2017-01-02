@@ -14,9 +14,9 @@ const customerProps = {
 };
 
 const Routes = (
-  <Route path="order" component={require('../modals/order')}>
+  <Route path="order" component={require('../models/order')}>
     <IndexRedirect to="/dashboard/" />
-    <Route path=":id" component={require('../modals/order')} />
+    <Route path=":id" component={require('../models/order')} />
   </Route>
 );
 

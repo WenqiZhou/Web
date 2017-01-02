@@ -14,10 +14,10 @@ const customerProps = {
 };
 
 const Routes = (
-  <Route path="comments" component={require('../modals/comments')}>
-    <IndexRoute component={require('../modals/comments/list')} />
-    <Route path=":type" component={require('../modals/comments/status')} />
-    <Route path="comment/:id" component={require('../modals/comments/comment')} />
+  <Route path="comments" component={require('../models/comments')}>
+    <IndexRoute component={require('../models/comments/list')} />
+    <Route path=":type" component={require('../models/comments/status')} />
+    <Route path="comment/:id" component={require('../models/comments/comment')} />
   </Route>
 );
 

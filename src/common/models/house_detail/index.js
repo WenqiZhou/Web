@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import DesktopHouseDetail from '$desktop/modals/house_detail';
-import MobileHouseDetail from '$mobile/modals/house_detail';
+import DesktopHouseDetail from '$desktop/models/house_detail';
+import DesktopHouseBook from '$desktop/models/book';
+import MobileHouseDetail from '$mobile/models/house_detail';
 import { request } from '11-utils';
 import { HOUSE_DETAIL } from '../../../common/store/requests/types';
 
-@connect(({ Request }) => {
+@connect(({ Request }, { location }) => {
   return {
     loading: Request.loading,
+    path: location.pathname,
     HOUSE_DETAIL: (Request.HOUSE_DETAIL || {}).data || {}
   };
 })
@@ -31,6 +33,12 @@ export default class HouseDetail extends Component {
       data: data.house || {},
       similar: data.similar || {}
     };
+
+    if (this.props.path.match(/\/book\//)) {
+      return (
+        <DesktopHouseBook {...props} />
+      )
+    }
 
     return (
       <div>

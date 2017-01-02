@@ -24,7 +24,7 @@ const Routes = (
       {Routers.orders}
       {Routers.order}
       {Routers.comments}
-      <IndexRoute component={require('../modals/host_index')} />
+      <IndexRoute component={require('../models/host_index')} />
     </Route>
   </Route>
 );

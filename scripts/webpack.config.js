@@ -52,7 +52,7 @@ module.exports = (webpackConfig) => {
   webpackConfig.plugins.push(new LodashModuleReplacementPlugin());
 
   webpackConfig.module.loaders.forEach(function (loader, index) {
-    const reg = /(packages|panel|desktop\/modals\/house_detail)/;
+    const reg = /(packages|panel|desktop\/models\/house_detail)/;
 
     // 这里的模块不需要prefix
     if (typeof loader.test === 'function' && loader.test.toString().indexOf('\\.less$') > -1) {
