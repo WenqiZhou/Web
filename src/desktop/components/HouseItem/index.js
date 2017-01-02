@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import classnames from 'classnames';
-import { Image } from '11-common';
+import { Image, Starts } from '11-common';
 import { redirect } from '11-utils';
 import HousePrice from '../../../common/components/HousePrice';
 import { HouseType } from '../../../../libs/enums';
-import Starts from '../../../common/components/Stars'
 import './index.less';
 
 export default class HouseItem extends Component {

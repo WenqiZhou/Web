@@ -52,15 +52,17 @@ module.exports = (webpackConfig) => {
   webpackConfig.plugins.push(new LodashModuleReplacementPlugin());
 
   webpackConfig.module.loaders.forEach(function (loader, index) {
+    const reg = /(packages|panel|desktop\/modals\/house_detail)/;
+
     // 这里的模块不需要prefix
     if (typeof loader.test === 'function' && loader.test.toString().indexOf('\\.less$') > -1) {
-      loader.exclude = /(packages|panel)/;
+      loader.exclude = reg;
       loader.test = /\.less$/;
     }
 
     // 这里的模块需要prefix (node_modules好像不需要处理,但是issue中好像要求排除,其实不排除貌似也不会起作用)
     if (loader.test.toString() === '/\\.module\\.less$/') {
-      loader.include = /(packages|panel)/;
+      loader.include = reg;
       loader.exclude = /node_modules/;
       loader.test = /\.less$/;
     }

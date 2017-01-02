@@ -1,0 +1,206 @@
+.detail {
+  .banner {
+    width: 100%;
+    height: 7rem;
+    position: relative;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .price-wrapper {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: .7rem;
+    }
+
+    .price {
+      margin-left: 10.9rem;
+      width: 4.7rem;
+      background: rgba(64, 64, 64, .95);
+      line-height: .7rem;
+      padding-left: .25rem;
+      color: #ffffff;
+      font-size: .34rem;
+
+      span {
+        font-size: .24rem;
+      }
+    }
+  }
+
+  :global(.white) {
+    background: #ffffff;
+  }
+
+  .container {
+    width: 15.6rem;
+    margin: 0 auto;
+
+    .left {
+      width: 10.9rem;
+    }
+
+    .right {
+      width: 4.7rem;
+    }
+  }
+
+  .info {
+    &.basic {
+      padding: .2rem 0 .25rem;
+
+      .brand {
+        font-size: .2rem;
+        line-height: .4rem;
+        color: #626262;
+
+        a:before {
+          content: ' > ';
+        }
+
+        a:first-of-type:before {
+          content: '';
+        }
+
+        a:not([disabled]) {
+          color: #fe393d;
+        }
+
+        a[disabled] {
+          cursor: default;
+        }
+      }
+
+      .title {
+        font-size: .3rem;
+        line-height: .5rem;
+        color: #404040;
+        word-break: break-all;
+      }
+
+      .extra {
+        p {
+          float: left;
+          font-size: .22rem;
+          line-height: .5rem;
+          color: #626262;
+
+          &:after {
+            content: '•';
+            font-weight: 100;
+            width: .45rem;
+            text-align: center;
+            display: inline-block;
+          }
+
+          &:last-of-type:after {
+            content: '';
+          }
+
+          :global(.stars) {
+            margin: 0;
+          }
+
+          :global {
+            .icon.liked,
+            .icon.like {
+              display: inline-block;
+              width: .2rem;
+              height: .2rem;
+              margin-right: .13rem;
+            }
+          }
+        }
+      }
+
+      .type {
+        margin: .4rem 0 .2rem 0;
+        list-style: none;
+        display: inline-flex;
+
+        li {
+          width: .9rem;
+          margin-right: .9rem;
+          font-size: .2rem;
+          float: left;
+          text-align: center;
+          color: #959595;
+
+          :global(.icon) {
+            width: .45rem;
+            height: .45rem;
+            display: block;
+            margin: 0 auto .25rem;
+          }
+        }
+      }
+    }
+  }
+
+  .side {
+    width: 100%;
+    border: solid 1px #d4d9d9;
+    &.book {
+      height: 3.75rem;
+      margin-bottom: .25rem;
+      padding: 0 .22rem;
+
+      .times {
+        list-style: none;
+        width: 100%;
+        padding: .12rem 0 0;
+        font-size: .22rem;
+        color: #727272;
+        display: flex;
+
+        :global(.title) {
+          line-height: .62rem;
+        }
+
+        li {
+          width: 1.62rem;
+
+          :global(.input) {
+            margin: 0 !important;
+            padding-right: .22rem;
+
+            input {
+              border-radius: .05rem;
+            }
+          }
+
+          &:last-of-type {
+            width: calc(~'100% - 3.24rem');
+
+            :global(.input) {
+              padding-right: 0;
+            }
+          }
+        }
+      }
+
+      .book-btn {
+        width: 100%;
+        height: .6rem;
+        margin-top: .54rem;
+        font-size: .26rem;
+        display: block;
+      }
+
+      .status-btn {
+        font-size: .24rem;
+        height: .6rem;
+        line-height: 1;
+        width: 2.04rem;
+        color: #fe393d;
+        margin: .4rem auto 0;
+        display: block;
+      }
+    }
+  }
+}
+
