@@ -1,0 +1,111 @@
+.steps {
+  width: 100%;
+  background: #ffffff;
+  border-top: solid 1px #d4d9d9;
+  border-bottom: solid 1px #d4d9d9;
+  font-size: .22rem;
+  color: #333333;
+
+  :global {
+    ul {
+      margin: .5rem 0 .3rem 5.5rem;
+      list-style: none;
+    }
+
+    li {
+      display: inline-block;
+      width: 2.06rem;
+      text-align: center;
+
+      .decimal {
+        width: 100%;
+        position: relative;
+        margin-bottom: .2rem;
+
+        .number {
+          width: .3rem;
+          height: .3rem;
+          background: #949494;
+          border-radius: 100%;
+          color: #ffffff;
+          text-align: center;
+          margin: 0 auto;
+          font-size: .2rem;
+          line-height: .3rem;
+          z-index: 2;
+
+          &:before {
+            content: '';
+            width: 50%;
+            position: absolute;
+            margin-left: -.15rem;
+            top: .11rem;
+            left: 0;
+            right: 0;
+            height: .08rem;
+            background: #c6c6c6;
+            z-index: 1;
+          }
+
+          &:after {
+            content: '';
+            width: 50%;
+            position: absolute;
+            margin-left: .15rem;
+            top: .11rem;
+            left: 50%;
+            right: 0;
+            height: .08rem;
+            background: #c6c6c6;
+            z-index: 1;
+          }
+
+          &:global(.before-current) {
+            &:before {
+              background: #fe393d;
+            }
+          }
+
+          &:global(.after-current) {
+            &:after {
+              background: #fe393d;
+            }
+          }
+        }
+      }
+
+      &:first-of-type {
+        .number {
+          &:before {
+            content: none;
+          }
+        }
+      }
+
+      &:last-of-type {
+        .number {
+          &:after {
+            content: none;
+          }
+        }
+      }
+
+      span {
+        line-height: 1;
+        color: #333333;
+      }
+    }
+
+    :global(.current) {
+      color: #fe393d;
+
+      .number {
+        background: #fe393d !important;
+      }
+
+      span {
+        color: #fe393d;
+      }
+    }
+  }
+}
