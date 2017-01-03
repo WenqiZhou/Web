@@ -29,14 +29,38 @@ export default class DesktopBook extends Component {
             <Col className={Style.left}>
               <Card className={Style.root}>
                 <Card
+                  className={Style['enter-info']}
                   basic
                   title={<SectionTitle>入住信息</SectionTitle>}
                 >
-                  123
+                  <ul>
+                    <li>
+                      <p className="label">
+                        入住时间
+                      </p>
+                      <Input />
+                    </li>
+                    <li>
+                      <p className="label">
+                        退房时间
+                      </p>
+                      <Input />
+                    </li>
+                    <li>
+                      <p className="label">
+                        入住人数
+                      </p>
+                      <Input />
+                    </li>
+                  </ul>
                 </Card>
                 <Card
                   basic
-                  title={<SectionTitle>预定人信息</SectionTitle>}
+                  title={
+                    <SectionTitle>
+                      预定人信息 <span className="subtitle">选择常用入住人: <input type="checkbox" /></span>
+                    </SectionTitle>
+                  }
                 >
                   123
                 </Card>

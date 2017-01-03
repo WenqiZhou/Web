@@ -1,5 +1,6 @@
 .book {
   font-size: .22rem;
+  color: #333333;
 
   .container {
     width: 15.6rem;
@@ -80,6 +81,11 @@
   .title {
     font-size: .24rem;
     color: #333333;
+
+    :global(.subtitle) {
+      padding-left: .14rem;
+      font-size: .2rem;
+    }
   }
 
   .root {
@@ -128,6 +134,31 @@
     :global(.unit) {
       padding-left: .4rem;
       font-size: .26rem;
+    }
+  }
+
+  // 预定分布样式
+  .enter-info {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+
+    ul {
+      list-style: none;
+    }
+
+    li {
+      width: 2.1rem;
+      margin: .06rem .64rem 0 .36rem;
+      display: inline-block;
+
+      p {
+        font-size: .22rem;
+        line-height: 1;
+      }
+
+      :global(.input.wrapper){
+        margin: .28rem 0 0 0;
+      }
     }
   }
 }
