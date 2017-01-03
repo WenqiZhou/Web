@@ -2,6 +2,10 @@
   font-size: .22rem;
   color: #333333;
 
+  input {
+    border-radius: .03rem;
+  }
+
   .container {
     width: 15.6rem;
     margin: 0 auto;
@@ -156,8 +160,30 @@
         line-height: 1;
       }
 
-      :global(.input.wrapper){
+      :global(.input.wrapper) {
         margin: .28rem 0 0 0;
+      }
+    }
+  }
+
+  .booker-info {
+    padding-top: 0 !important;
+    padding-bottom: .15rem !important;
+
+    :global {
+      .input.wrapper {
+        margin: .35rem 0;
+        height: .4rem;
+        line-height: .4rem;
+
+        .label {
+          width: 1.5rem;
+        }
+
+        input {
+          width: 2.4rem;
+          flex: 0;
+        }
       }
     }
   }

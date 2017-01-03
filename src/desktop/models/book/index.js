@@ -19,7 +19,7 @@ export default class DesktopBook extends Component {
     const { data } = this.props;
     const { query } = this.props.location;
     const { images = [], landlord = {} } = data;
-    console.log(data, landlord, this.props)
+
     return (
       <div className={classnames('lg-only', Style.book)}>
         <Nav search black className={classnames(Nav.Style.index, 'dashboard')} />
@@ -56,19 +56,27 @@ export default class DesktopBook extends Component {
                 </Card>
                 <Card
                   basic
+                  className={Style['booker-info']}
                   title={
                     <SectionTitle>
                       预定人信息 <span className="subtitle">选择常用入住人: <input type="checkbox" /></span>
                     </SectionTitle>
                   }
                 >
-                  123
+                  <Form>
+                    <Input clearable key="name" label="姓名：" />
+                    <Input key="mobile" label="手机：" />
+                    <Input key="idcard" label="身份证号码：" />
+                  </Form>
                 </Card>
                 <Card
                   basic
+                  className={Style['booker-info']}
                   title={<SectionTitle>优惠券</SectionTitle>}
                 >
-                  123
+                  <Form>
+                    <Input key="ticket" label="优惠券：" />
+                  </Form>
                 </Card>
                 <Card
                   basic
