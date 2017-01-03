@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Input, Toast, Form, Code } from '11-common';
+import { Input, Toast, Form, Varify } from '11-common';
 import { setTitle } from '11-utils';
 import '../signup/index.less';
 
@@ -58,7 +58,7 @@ export default class MobileSignupIndex extends Component {
               icon="mobile code"
               maxLength={4}
               action={(
-                <Code
+                <Varify
                   mobile={this.state.mobile}
                   onSend={this.handleSendVarify}
                   getMobile={() => this.state.mobile}
@@ -68,7 +68,7 @@ export default class MobileSignupIndex extends Component {
                   }}
                 >
                   <a />
-                </Code>
+                </Varify>
               )}
               clearable
               type="tel"

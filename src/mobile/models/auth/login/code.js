@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import { Input, Form, Code, Toast } from '11-common';
+import { Input, Form, Varify, Toast } from '11-common';
 
 export default class MobileCodeLogin extends Component {
   constructor(props) {
@@ -48,7 +48,7 @@ export default class MobileCodeLogin extends Component {
             icon="mobile code"
             maxLength={4}
             action={(
-              <Code
+              <Varify
                 mobile={this.state.mobile}
                 onSend={this.handleSendVarify}
                 getMobile={() => this.state.mobile}
@@ -58,7 +58,7 @@ export default class MobileCodeLogin extends Component {
                 }}
               >
                 <a />
-              </Code>
+              </Varify>
             )}
             clearable
             type="tel"

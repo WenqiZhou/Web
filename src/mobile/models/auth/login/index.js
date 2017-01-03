@@ -29,12 +29,12 @@ export default class MobileAuthLogin extends Component {
   form = null;
 
   goRegister = () => {
-    go('/m/auth/signup')
+    redirect.go('/m/auth/signup')
   };
 
   redirect = (path) => () => {
     if (path === this.props.path) return;
-    redirect(`/m/auth/login/${path}`)
+    redirect.go(`/m/auth/login/${path}`)
   };
 
   render() {

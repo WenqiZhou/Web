@@ -7,7 +7,8 @@
 // 考虑到以后需求方修改的兼容性,因此使用回调进行所有操作,而没有使用async
 import React, { Component, PropTypes, cloneElement } from 'react';
 import classnames from 'classnames';
-import { fetch, Requests } from '11-utils';
+import fetch from '11-utils/src/fetch';
+import Requests from '11-store/requests';
 
 export default class Code extends Component {
   static propTypes = {
@@ -18,6 +19,10 @@ export default class Code extends Component {
     sendAction: PropTypes.func,
     getMobile: PropTypes.func,
     children: PropTypes.node
+  };
+
+  static defaultProps = {
+    className: ''
   };
 
   constructor(props) {
@@ -120,6 +125,7 @@ export default class Code extends Component {
       sended: false
     });
     const profile = Requests.GetVerificationCode;
+    console.log(profile)
     fetch(profile.path, {
       ...profile,
       body: JSON.stringify({

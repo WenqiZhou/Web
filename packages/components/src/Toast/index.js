@@ -24,10 +24,7 @@ const initial = () => {
     setTimeout(destroy, duration * 1000);
   };
 
-  return {
-    destroy,
-    toast
-  }
+  return toast;
 };
 
 export default initial();

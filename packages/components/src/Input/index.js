@@ -18,6 +18,7 @@ export default class Input extends Component {
   static propTypes = {
     icon: PropTypes.string,
     label: PropTypes.string,
+    info: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
     clearable: PropTypes.bool,
     handleClear: PropTypes.func,
     action: PropTypes.node,
