@@ -8,7 +8,7 @@ const Modal = ({ visible, children, onClose, className = '' }) => (
   <Dimmer onClick={onClose}>
     <div
       className={classnames({
-        desktop: true,
+        'lg-only': true,
         modal: true,
         [className]: true
       })}

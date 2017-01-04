@@ -1,14 +1,29 @@
 import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
+import { redirect } from '11-utils';
 import Search from './search';
 import Style from './index.less';
+import { loginModal } from '../Signup';
 
 const NavItems = {
-  '/': '首页',
-  download: '下载app',
-  news: '新闻',
-  signup: '注册',
-  login: '登录'
+  '/': {
+    name: '首页'
+  },
+  download: {
+    name: '下载app'
+  },
+  news: {
+    name: '新闻'
+  },
+  signup: {
+    name: '注册'
+  },
+  login: {
+    name: '登录',
+    action: () => {
+      loginModal();
+    }
+  }
 };
 
 const NavItemsLogined = {};
@@ -22,6 +37,15 @@ export default class Navigation extends Component {
     search: PropTypes.bool,
     current: PropTypes.string,
     black: PropTypes.bool
+  };
+
+  handleClick = (key) => () => {
+    const action = NavItems[key].action;
+    if (typeof action === 'function') {
+      action();
+    } else {
+      redirect.go(key);
+    }
   };
 
   render() {
@@ -49,12 +73,13 @@ export default class Navigation extends Component {
             Object.keys(NavItems).map((key, index) => (
               <li
                 key={index}
+                onClick={this.handleClick(key)}
                 className={classnames({
                   item: true,
                   [Style.current]: this.props.current ? this.props.current === key : index === 0
                 })}
               >
-                {NavItems[key]}
+                {NavItems[key].name}
               </li>
             ))
           }

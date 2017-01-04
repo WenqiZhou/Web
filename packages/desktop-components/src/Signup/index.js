@@ -1,9 +1,8 @@
 import React, { Component, createElement } from 'react';
 import ReactDom from 'react-dom';
-import { Input } from '11-common';
+import { Input, ThirdLogin } from '11-common';
 import classnames from 'classnames';
-import { Modal } from '11-desktop';
-import { ThirdLogin } from '11-common';
+import Modal from '../Modal';
 import LoginModalPasswordLogin from './password';
 import LoginModalCodeLogin from './code';
 import './index.less';

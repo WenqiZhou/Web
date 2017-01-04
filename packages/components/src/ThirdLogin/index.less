@@ -1,37 +1,39 @@
-ul.third-login {
-  list-style: none;
-  line-height: 0;
-  margin: 0 auto;
-  text-align: center;
-  width: 100% !important;
-  -webkit-margin-before: 0;
-  -webkit-margin-after: 0;
-  -webkit-margin-start: 0;
-  -webkit-margin-end: 0;
-  -webkit-padding-start: 0;
+:global {
+  ul.third-login {
+    list-style: none;
+    line-height: 0;
+    margin: 0 auto;
+    text-align: center;
+    width: 100% !important;
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+    -webkit-margin-start: 0;
+    -webkit-margin-end: 0;
+    -webkit-padding-start: 0;
 
-  li {
-    display: inline-block;
-    width: 46px;
-    height: 46px;
-    margin-left: 56px;
-    position: relative;
+    li {
+      display: inline-block;
+      width: .46rem;
+      height: .46rem;
+      margin-left: .56rem;
+      position: relative;
 
-    a {
-      left: 0;
-      position: absolute;
-    }
+      a {
+        left: 0;
+        position: absolute;
+      }
 
-    &:first-of-type {
-      margin-left: 0;
+      &:first-of-type {
+        margin-left: 0;
+      }
     }
   }
-}
 
-.sm-only .third-login {
-  li {
-    width: .36rem;
-    height: .36rem;
-    margin-left: .3375rem;
+  .sm-only .third-login {
+    li {
+      width: .36rem;
+      height: .36rem;
+      margin-left: .3375rem;
+    }
   }
 }

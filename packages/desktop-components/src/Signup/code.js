@@ -33,7 +33,7 @@ export default class LoginModalCodeLogin extends Component {
         <Input
           maxLength={4}
           action={(
-            <Code
+            <Varify
               mobile={this.state.mobile}
               onSend={this.handleSendVarify}
               onCountFinish={this.onCountFinish}
@@ -42,7 +42,7 @@ export default class LoginModalCodeLogin extends Component {
               }}
             >
               <button />
-            </Code>
+            </Varify>
           )}
           clearable
           type="tel"

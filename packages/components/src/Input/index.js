@@ -7,9 +7,9 @@ import classnames from 'classnames';
 import Style from './index.less';
 
 export default class Input extends Component {
-  static Group = () => (
+  static Group = ({ children }) => (
     <div className="input-group">
-      {this.props.children}
+      {children}
     </div>
   );
 

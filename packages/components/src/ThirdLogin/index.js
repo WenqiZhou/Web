@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
-import { request, Requests } from '11-utils';
+import { request } from '11-utils';
+import Requests from '11-store/requests';
 import Item from './item';
 import './index.less';
 

@@ -34,7 +34,7 @@ export default class MobileAuthLogin extends Component {
 
   redirect = (path) => () => {
     if (path === this.props.path) return;
-    redirect.go(`/m/auth/login/${path}`)
+    redirect.redirect(`/m/auth/login/${path}`)
   };
 
   render() {
