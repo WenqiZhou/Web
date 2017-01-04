@@ -178,11 +178,56 @@
 
         .label {
           width: 1.5rem;
+          font-size: .22rem;
         }
 
         input {
           width: 2.4rem;
           flex: 0;
+        }
+      }
+    }
+  }
+
+  .booker-insure {
+    padding-top: .05rem !important;
+    padding-bottom: .2rem !important;
+
+    :global {
+      .row {
+        display: flex;
+        margin: .3rem 0;
+        line-height: .4rem;
+
+        > .label {
+          width: 1rem;
+        }
+
+        .label {
+          font-size: .22rem;
+        }
+
+        .input.wrapper {
+          margin: 0 0 0 .35rem;
+          width: 2.8rem;
+
+          .label {
+            width: .75rem;
+          }
+
+          &.idcard {
+            width: 3.4rem;
+
+            .label {
+              width: 1.3rem;
+            }
+          }
+        }
+
+        a {
+          flex: 1;
+          padding-left: .25rem;
+          color: #fe393d;
         }
       }
     }

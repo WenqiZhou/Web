@@ -57,21 +57,6 @@ export default class DesktopBook extends Component {
                 <Card
                   basic
                   className={Style['booker-info']}
-                  title={
-                    <SectionTitle>
-                      预定人信息 <span className="subtitle">选择常用入住人: <input type="checkbox" /></span>
-                    </SectionTitle>
-                  }
-                >
-                  <Form>
-                    <Input clearable key="name" label="姓名：" />
-                    <Input key="mobile" label="手机：" />
-                    <Input key="idcard" label="身份证号码：" />
-                  </Form>
-                </Card>
-                <Card
-                  basic
-                  className={Style['booker-info']}
                   title={<SectionTitle>优惠券</SectionTitle>}
                 >
                   <Form>
@@ -80,9 +65,15 @@ export default class DesktopBook extends Component {
                 </Card>
                 <Card
                   basic
+                  className={Style['booker-insure']}
                   title={<SectionTitle>保险</SectionTitle>}
                 >
-                  123
+                  <Row>
+                    <span className="label">入住人:</span>
+                    <Input label="姓名" />
+                    <Input className="idcard" label="身份证号码" />
+                    <a>删除</a>
+                  </Row>
                 </Card>
                 <Card
                   basic
