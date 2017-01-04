@@ -1,6 +1,7 @@
 // layout布局,Row比较简单 直接display:block with: 100%就可以
-import React, { Component, PropTypes, cloneElement } from 'react';
+import React, { Component, PropTypes, cloneElement, isValidElement } from 'react';
 import classnames from 'classnames';
+import Col from '../Col';
 import './index.less';
 
 export default class Row extends Component {
@@ -12,14 +13,25 @@ export default class Row extends Component {
   };
 
   render() {
+    if (!this.props.children) {
+      return <span />;
+    }
     const children = this.props.children instanceof Array ? this.props.children : [this.props.children];
     return (
       <div style={this.props.style} className={`row ${this.props.className || ''}`}>
         {
-          children.map((child, index) => cloneElement(child, {
-            key: index,
-            space: this.props.space
-          }))
+          children.map((child, index) => {
+            if (!isValidElement(child)) {
+              return child;
+            }
+            return cloneElement(child, {
+              key: index,
+              ...child.name === Col.name ?
+                {
+                  space: this.props.space
+                } : {}
+            });
+          })
         }
       </div>
     )
