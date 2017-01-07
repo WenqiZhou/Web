@@ -8,6 +8,7 @@ module.exports = (webpackConfig) => {
     'process.api': JSON.stringify('/api/'),
     'process.env.desktop': true,
     'process.env.mobile': true,
+    'process.env.history': JSON.stringify('browserHistory'),
     production: false
   }));
 

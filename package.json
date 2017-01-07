@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "clean": "rm -rf *.json.gzip",
-    "start": "dora --port 61101 --plugins \"webpack?config=scripts/webpack.config.development.js,webpack-hmr,livereload?enableJs=true&injectHost=127.0.0.1\"",
+    "start": "dora --port 61101 --plugins \"webpack?config=scripts/webpack.config.development.js,webpack-hmr,livereload?enableJs=true&injectHost=127.0.0.1,browser-history?index=/views/index.html\"",
     "build": "atool-build --config scripts/webpack.config.production.js -o ./dist && npm run clean",
     "build:test": "atool-build --config scripts/webpack.config.test.js -o ./dist && npm run clean",
     "build:analyze": "atool-build --config scripts/webpack.config.analyze.js -o ./dist --verbose && npm run clean",

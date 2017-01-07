@@ -10,7 +10,7 @@ const sagaMiddleware = createSagaMiddleware();
 const store = createStore(combineReducers({
   ...reducers, routing
 }), {}, compose(
-  applyMiddleware(sagaMiddleware, routerMiddleware(process.env.NODE_ENV === 'production' ? browserHistory : hashHistory)),
+  applyMiddleware(sagaMiddleware, routerMiddleware(process.env.NODE_ENV === 'production' || process.env.history === 'browserHistory' ? browserHistory : hashHistory)),
   window.devToolsExtension ? window.devToolsExtension() : f => f // 调用redux-devtools-extension
 ));
 
