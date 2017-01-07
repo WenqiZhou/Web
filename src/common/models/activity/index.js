@@ -3,33 +3,32 @@ import { connect } from 'react-redux';
 import DesktopHouseActivity from '$desktop/models/activity';
 import MobileHouseActivity from '$mobile/models/activity';
 import { request } from '11-utils';
-import { HOUSE_DETAIL } from '../../../common/store/requests/types';
+import { SEARCH } from '../../../common/store/requests/types';
 
-@connect(({ Request }) => {
+@connect(({ search, Request }) => {
   return {
     loading: Request.loading,
-    HOUSE_DETAIL: (Request.HOUSE_DETAIL || {}).data || {}
+    SEARCH: (Request.SEARCH || {}).data || {}
   };
 })
-export default class HouseDetail extends Component {
+export default class ActivityDetail extends Component {
   componentWillMount() {
     this.getData();
   }
 
   getData = () => {
     request({
-      key: HOUSE_DETAIL,
-      params: {
-        id: this.props.params.id
+      key: SEARCH,
+      query: {
+        ai: this.props.params.id
       }
     });
   };
 
   render() {
-    const data = this.props.HOUSE_DETAIL[this.props.params.id] || {};
+    const { activity_share, ains } = this.props.SEARCH;
     const props = {
-      data: data.house || {},
-      similar: data.similar || {}
+      activity_share, ains
     };
 
     return (

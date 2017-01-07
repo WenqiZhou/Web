@@ -1,0 +1,116 @@
+.activity {
+  .header {
+    width: 100%;
+    height: 5.74rem;
+    position: relative;
+
+    .background {
+      width: 100%;
+      height: 100%;
+      background-position: top center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .title {
+      color: #ffffff;
+      position: absolute;
+      display: block;
+      top: 1.75rem;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      width: 100%;
+      text-align: center;
+
+      h1 {
+        font-size: .4rem;
+        line-height: .5rem;
+      }
+      h2 {
+        font-size: .2rem;
+        line-height: .3rem;
+      }
+    }
+  }
+
+  .nav {
+    width: 100%;
+    height: .8rem;
+    padding: .15rem 0 .2rem;
+    display: block;
+    background: #ffffff;
+    font-size: .2rem;
+    color: #000;
+
+    ul {
+      list-style: none;
+      text-align: center;
+      display: block;
+    }
+
+    li {
+      display: inline-block;
+      height: .45rem;
+      line-height: .45rem;
+      padding: 0 .25rem;
+      background: transparent;
+      border-radius: .04rem;
+      margin: 0 .15rem;
+      cursor: pointer;
+
+      &:hover,
+      &:global(.current) {
+        background: #fe393d;
+        color: #ffffff;
+      }
+    }
+  }
+
+  &.title {
+    font-size: .32rem;
+    margin: .5rem 0 .35rem;
+    text-align: center;
+    color: #030000;
+
+
+    span {
+      line-height: 1;
+      margin: 0 .35rem;
+      display: inline-block;
+    }
+
+    &:after,
+    &:before {
+      content: '•';
+      width: 1rem;
+      display: inline-block;
+      color: #fe393d;
+      background-image: url("/assets/images/icon_desktop_activity_dividing_red.png");
+      background-repeat: no-repeat;
+      background-position-y: center;
+      background-size: .85rem;
+    }
+
+    &:before {
+      text-align: right;
+      background-position-x: left;
+    }
+
+    &:after {
+      text-align: left;
+      background-position-x: right;
+    }
+  }
+
+  &.banner {
+    width: 12.78rem;
+    height: 3.6rem;
+    margin: 0 auto .56rem;
+  }
+}
+
+:global(.support-holder) {
+  display: none !important;
+}
