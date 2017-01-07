@@ -255,3 +255,46 @@ export const BookingTypes = {
   canceled: '1',
   deleted: '3'
 };
+
+export const ActivityItemType = {
+  0: {
+    key: 'AIT_START',
+    name: ''
+  },
+  1: {
+    key: 'AIT_TOP_TITLE',
+    name: '顶层标题'
+  },
+  2: {
+    key: 'AIT_TOP_IMAGE',
+    name: '顶层图片'
+  },
+  3: {
+    key: 'AIT_BIG_ACTIVITY',
+    name: '活动(大)'
+  },
+  4: {
+    key: 'AIT_TITLE_DOUBLE',
+    name: '标题(主副标题)'
+  },
+  5: {
+    key: 'AIT_TITLE_SINGLE',
+    name: '标题(仅主标题)'
+  },
+  6: {
+    key: 'AIT_IMAGE',
+    name: '图'
+  },
+  7: {
+    key: 'AIT_TEXT',
+    name: '文'
+  },
+  8: {
+    key: 'AIT_HOUSES',
+    name: '推荐房源'
+  },
+  9: {
+    key: 'AIT_ACTIVITYS',
+    name: '推荐主题(活动)'
+  }
+};
