@@ -3,9 +3,10 @@ import classnames from 'classnames';
 import { Nav } from '11-desktop';
 import { setTitle } from '11-utils';
 import Style from './index.less';
-import Header, { HeaderImage, HeaderTitle } from './Header';
+import Header, { HeaderImage, HeaderTitle, HeaderText } from './Header';
 import ActivityNav from './Navigation';
-import { ActivityTitle, ActivityBanner } from './Activity';
+import { ActivityTitle, ActivityBanner, ActivityHouses } from './Activity';
+import { ActivityHouse as mockHouse } from '../../../../libs/mock';
 
 export default class DesktopActivity extends Component {
   static propTypes = {
@@ -15,6 +16,13 @@ export default class DesktopActivity extends Component {
   static defaultProps = {
     ains: []
   };
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      headerText: ''
+    };
+  }
 
   componentDidMount() {
     const tag = window.document.createElement('script');
@@ -53,6 +61,14 @@ export default class DesktopActivity extends Component {
     }
   };
 
+  renderHeaderText = (data = {}) => {
+    console.log(data)
+    if (data.type === 7) {
+      return <HeaderText {...data} />
+    }
+    return '';
+  };
+
   renderChildren = (data, index) => {
     switch (data.type) {
       case 5: {
@@ -60,6 +76,12 @@ export default class DesktopActivity extends Component {
       }
       case 6: {
         return <ActivityBanner {...data} />;
+      }
+      case 7: {
+        if (index === 0) {
+          return '';
+        }
+        return <span>{data.text.content}</span>
       }
       default: {
         return '';
@@ -72,6 +94,16 @@ export default class DesktopActivity extends Component {
 
     const navList = this.props.ains.filter(({ type }) => type === 5);
 
+    const contents = this.props.ains.filter(({ type }) => !([1, 2, 4].includes(type))).reduce((total, current, index, source) => {
+      if (current.type === 7 && source[index - 1] && source[index - 1].type === 6) {
+        total[total.length - 1].text = current;
+      } else {
+        total.push(current);
+      }
+
+      return total;
+    }, []);
+
     return (
       <div className={classnames('lg-only', Style.activity)}>
         <Nav search black className={classnames(Nav.Style.index, 'dashboard')} />
@@ -81,16 +113,20 @@ export default class DesktopActivity extends Component {
               key
             }))
           }
+          {
+            this.renderHeaderText(contents[0])
+          }
         </Header>
         {
           /* 所有活动项目的导航 */
         }
         <ActivityNav list={navList} current={0} />
         {
-          this.props.ains.map(this.renderChildren).filter(elem => !!elem).map((element, key) => cloneElement(element, {
+          contents.map(this.renderChildren).filter(elem => !!elem).map((element, key) => cloneElement(element, {
             key
           }))
         }
+        <ActivityHouses list={mockHouse.houses} showMore />
       </div>
     )
   }

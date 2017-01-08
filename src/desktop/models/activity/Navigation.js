@@ -10,7 +10,13 @@ export default class ActivityNavigation extends Component {
 
   render() {
     return (
-      <div className={Style.nav}>
+      <div
+        className={
+          classnames({
+            [Style.nav]: true,
+            visible: this.props.list.length > 0
+          })}
+      >
         <ul>
           {
             this.props.list.map(({ title_single }, index) => (
