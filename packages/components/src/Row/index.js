@@ -26,7 +26,7 @@ export default class Row extends Component {
             }
             return cloneElement(child, {
               key: index,
-              ...child.name === Col.name ?
+              ...child.type.name === Col.name ?
                 {
                   space: this.props.space
                 } : {}
