@@ -24,7 +24,7 @@ export default class HouseItem extends Component {
           <div className="avatar">
             <Image src={data.landlord.head_url ? `${data.landlord.head_url}_750` : '/assets/images/icons/image_mobile_avatar.png'} alt={data.landlord.real_name} />
           </div>
-          <div>
+          <div className="content">
             <div title={data.title} className="title">
               {data.city}•{data.title}
             </div>
