@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Nav } from '11-desktop';
+import { setTitle } from '11-utils';
 import { Image } from '11-common';
 import { Header } from '../../components/Headers';
 import SectionGroup from './section-group';
@@ -12,6 +13,10 @@ export default class DesktopIndex extends Component {
     this.state = {
       list: { ...this.parseData(props.data) }
     }
+  }
+
+  componentDidMount() {
+    setTitle();
   }
 
   componentWillReceiveProps(np) {

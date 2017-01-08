@@ -13,7 +13,7 @@ export default class HostIndex extends Component {
         <Row>
           <UserInfo data={Info.user} />
         </Row>
-        <Row space={18}>
+        <Row space={9}>
           <Col span={8}>
             <Card title="订单管理" className={Style.content}>
               <ul>
