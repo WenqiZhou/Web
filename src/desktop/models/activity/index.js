@@ -6,7 +6,6 @@ import Style from './index.less';
 import Header, { HeaderImage, HeaderTitle, HeaderText } from './Header';
 import ActivityNav from './Navigation';
 import { ActivityTitle, ActivityBanner, ActivityHouses } from './Activity';
-import { ActivityHouse as mockHouse } from '../../../../libs/mock';
 
 export default class DesktopActivity extends Component {
   static propTypes = {
@@ -62,11 +61,29 @@ export default class DesktopActivity extends Component {
   };
 
   renderHeaderText = (data = {}) => {
-    console.log(data)
     if (data.type === 7) {
       return <HeaderText {...data} />
     }
     return '';
+  };
+
+  renderSection = ({ houses, image, text }, index) => {
+    return (
+      <div>
+        {/*渲染分节标题*/}
+        {
+          houses ? <ActivityTitle id={index} {...houses} /> : ''
+        }
+        {/*渲染banner*/}
+        {
+          image ? <ActivityBanner image={image} {...text} /> : ''
+        }
+        {/*渲染房源列表*/}
+        {
+          houses ? <ActivityHouses list={houses.houses.houses} showMore /> : ''
+        }
+      </div>
+    )
   };
 
   renderChildren = (data, index) => {
@@ -75,7 +92,7 @@ export default class DesktopActivity extends Component {
         return <ActivityTitle {...data} />;
       }
       case 6: {
-        return <ActivityBanner {...data} />;
+        return this.renderSection(data, index);
       }
       case 7: {
         if (index === 0) {
@@ -92,11 +109,15 @@ export default class DesktopActivity extends Component {
   render() {
     const headers = this.props.ains.filter(({ type }) => [1, 2, 4].includes(type));
 
-    const navList = this.props.ains.filter(({ type }) => type === 5);
+    const navList = this.props.ains.filter(({ type }) => type === 8);
 
     const contents = this.props.ains.filter(({ type }) => !([1, 2, 4].includes(type))).reduce((total, current, index, source) => {
-      if (current.type === 7 && source[index - 1] && source[index - 1].type === 6) {
+      if (current.type === 7 && index === 0) {
+        total.push(current);
+      } else if (current.type === 7) {
         total[total.length - 1].text = current;
+      } else if (current.type === 8) {
+        total[total.length - 1].houses = current;
       } else {
         total.push(current);
       }
@@ -120,13 +141,12 @@ export default class DesktopActivity extends Component {
         {
           /* 所有活动项目的导航 */
         }
-        <ActivityNav list={navList} current={0} />
+        <ActivityNav list={navList} current={Number((location.hash || '').replace(/^#/, ''))} />
         {
           contents.map(this.renderChildren).filter(elem => !!elem).map((element, key) => cloneElement(element, {
             key
           }))
         }
-        <ActivityHouses list={mockHouse.houses} showMore />
       </div>
     )
   }

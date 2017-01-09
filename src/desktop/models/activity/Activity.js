@@ -4,9 +4,10 @@ import { Image, Row, Col } from '11-common';
 import HouseItem from '../../components/HouseItem';
 import Style from './index.less';
 
-export const ActivityTitle = ({ title_single: title = {} }) => (
-  <div className={classnames(Style.activity, Style.title)}>
-    <span>{title.title}</span>
+// 分节标题
+export const ActivityTitle = ({ title_single: title = {}, houses = {}, id }) => (
+  <div id={id} className={classnames(Style.activity, Style.title)}>
+    <span>{houses.title || title.title}</span>
   </div>
 );
 
@@ -16,7 +17,7 @@ export const ActivityBanner = ({ image, text }) => (
     {
       text ?
         <div className={Style.text}>
-          <p>{text.text.content}</p>
+          <p>{text.content}</p>
         </div> : ''
     }
   </div>

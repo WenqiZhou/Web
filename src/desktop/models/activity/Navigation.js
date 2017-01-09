@@ -8,6 +8,10 @@ export default class ActivityNavigation extends Component {
     current: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
   };
 
+  handleClick = (target) => () => {
+    location.hash = target;
+  };
+
   render() {
     return (
       <div
@@ -19,12 +23,14 @@ export default class ActivityNavigation extends Component {
       >
         <ul>
           {
-            this.props.list.map(({ title_single }, index) => (
+            this.props.list.map(({ houses }, index) => (
               <li
                 key={index}
-                className={classnames({ current: index === this.props.current })}
+                onClick={this.handleClick(Number(index) + 1)}
+                className={classnames({ current: Number(index) + 1 === this.props.current })}
+                target={Number(index) + 1}
               >
-                {title_single.title}
+                {houses.title}
               </li>)
             )
           }

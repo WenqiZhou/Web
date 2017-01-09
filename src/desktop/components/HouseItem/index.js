@@ -13,7 +13,7 @@ export default class HouseItem extends Component {
 
   render() {
     const { data } = this.props;
-
+    data.landlord = data.landlord || {};
     return (
       <section onClick={this.handleClick(data.house_id)} className="house item">
         <div style={{ position: 'relative' }}>
