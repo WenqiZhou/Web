@@ -7,6 +7,8 @@
   "scripts": {
     "clean": "rm -rf *.json.gzip",
     "start": "dora --port 61101 --plugins \"webpack?config=scripts/webpack.config.development.js,webpack-hmr,livereload?enableJs=true&injectHost=127.0.0.1,browser-history?index=/views/index.html\"",
+    "start:server:dev": "node --inspect --harmony_async_await server",
+    "start:server": "forever start -c \"node --harmony_async_await\" server",
     "build:server:dev": "atool-build --config scripts/webpack.config.development.server.js -o ./dist/server/ --no-compress -w",
     "build": "npm run build:production && npm run build:server && npm run clean",
     "build:production": "atool-build --config scripts/webpack.config.production.js -o ./dist",
