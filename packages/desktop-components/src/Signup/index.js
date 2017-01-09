@@ -71,6 +71,7 @@ class LoginModal extends Component {
 }
 
 const initial = () => {
+  if(typeof window === 'undefined') return {};
   const div = window.document.createElement('div');
   window.document.body.appendChild(div);
 

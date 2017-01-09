@@ -2,9 +2,12 @@ import store from '11-store';
 
 import { REQUEST } from '11-store/types';
 
+const isNode = typeof window === 'undefined';
+
 const { fetch } = require('autofetch');
 
 fetch.baseHost(process.api);
+
 fetch.callback((response) => {
   return new Promise((recept, reject) => {
     if (!response.ok) {

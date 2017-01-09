@@ -24,6 +24,7 @@ export default class DesktopActivity extends Component {
   }
 
   componentDidMount() {
+    if (typeof window === 'undefined') return;
     const tag = window.document.createElement('script');
     tag.type = 'text/javascript';
     tag.appendChild(window.document.createTextNode(`
@@ -141,7 +142,7 @@ export default class DesktopActivity extends Component {
         {
           /* 所有活动项目的导航 */
         }
-        <ActivityNav list={navList} current={Number((location.hash || '').replace(/^#/, ''))} />
+        <ActivityNav list={navList} current={Number((typeof window === 'undefined' ? '0' : location.hash || '').replace(/^#/, ''))} />
         {
           contents.map(this.renderChildren).filter(elem => !!elem).map((element, key) => cloneElement(element, {
             key

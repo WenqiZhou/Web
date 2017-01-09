@@ -18,7 +18,7 @@ class Viewer extends Component {
         <div
           className="image-viewer"
           style={{
-            height: Number(((window.document.body.clientWidth * 231) / 375).toFixed(0))
+            height: Number(((typeof window === 'undefined' ? 0 : window.document.body.clientWidth * 231) / 375).toFixed(0))
           }}
         >
           <BannerAnim
@@ -64,6 +64,7 @@ class Viewer extends Component {
 }
 
 const initial = () => {
+  if (typeof window === 'undefined') return {};
   const div = window.document.createElement('div');
   window.document.body.appendChild(div);
 
