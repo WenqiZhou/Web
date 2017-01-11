@@ -67,9 +67,20 @@
     background: transparent;
     font-size: .2rem;
     color: #000;
+    z-index: 1000;
 
     &:global(.visible) {
       background: #ffffff;
+    }
+
+    &:global(.fixed) {
+      position: fixed;
+      top: 0;
+      left: 0;
+
+      & + * {
+        margin-top: 1.2rem;
+      }
     }
 
     ul {
@@ -88,8 +99,14 @@
       margin: 0 .15rem;
       cursor: pointer;
 
-      &:hover,
-      &:global(.current) {
+      &:hover {
+        background: #fe393d;
+        color: #ffffff;
+      }
+    }
+
+    a {
+      &:global(.current) li{
         background: #fe393d;
         color: #ffffff;
       }
@@ -98,7 +115,8 @@
 
   &.title {
     font-size: .32rem;
-    margin: .5rem 0 .35rem;
+    margin: 0 0 .35rem;
+    padding-top: .5rem;
     text-align: center;
     color: #030000;
 
@@ -212,6 +230,25 @@
         color: #000000;
         line-height: .33rem;
         padding: 0 .48rem;
+      }
+    }
+  }
+}
+
+.modal {
+  text-align: center;
+  color: #878787;
+
+  p {
+    text-align: center;
+    line-height: .35rem;
+    margin: .45rem 0 .2rem;
+
+    a {
+      text-decoration: none !important;
+      color: inherit;
+      &:hover {
+        opacity: .8;
       }
     }
   }

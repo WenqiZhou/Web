@@ -1,7 +1,8 @@
 import React, { Component, PropTypes, cloneElement } from 'react';
+import Scroll, { animateScroll, Element } from 'react-scroll';
 import classnames from 'classnames';
 import { Nav } from '11-desktop';
-import { setTitle } from '11-utils';
+import { setTitle, responsive } from '11-utils';
 import Style from './index.less';
 import Header, { HeaderImage, HeaderTitle, HeaderText } from './Header';
 import ActivityNav from './Navigation';
@@ -19,7 +20,8 @@ export default class DesktopActivity extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      headerText: ''
+      headerText: '',
+      navFixed: false
     };
   }
 
@@ -41,7 +43,33 @@ export default class DesktopActivity extends Component {
       })(window, document, 'script', '_MEIQIA');
       _MEIQIA('entId', 47404);`));
     window.document.body.appendChild(tag);
+
+    this.setScroll();
   }
+
+  componentWillUnmount() {
+    window.onscroll = null;
+  }
+
+  setScroll = () => {
+    const headerHeight = Number(responsive.style(window.document.getElementsByTagName('nav')[0], 'height').replace(/px$/, '')) + Number(responsive.style(window.document.getElementsByClassName(Style.header)[0], 'height').replace(/px$/, ''));
+
+    window.onscroll = (e) => {
+      if (window.document.body.scrollTop >= headerHeight && !this.state.navFixed) {
+        this.setNavFixed(true);
+        return;
+      }
+      if (window.document.body.scrollTop < headerHeight && this.state.navFixed) {
+        this.setNavFixed(false);
+      }
+    }
+  };
+
+  setNavFixed = (fixed = false) => {
+    this.setState({
+      navFixed: fixed
+    });
+  };
 
   renderHeader = (data) => {
     switch (data.type) {
@@ -70,7 +98,7 @@ export default class DesktopActivity extends Component {
 
   renderSection = ({ houses, image, text }, index) => {
     return (
-      <div>
+      <Element className="scroll" name={`scroll_${index}`}>
         {/*渲染分节标题*/}
         {
           houses ? <ActivityTitle id={index} {...houses} /> : ''
@@ -83,7 +111,7 @@ export default class DesktopActivity extends Component {
         {
           houses ? <ActivityHouses list={houses.houses.houses} showMore /> : ''
         }
-      </div>
+      </Element>
     )
   };
 
@@ -142,7 +170,7 @@ export default class DesktopActivity extends Component {
         {
           /* 所有活动项目的导航 */
         }
-        <ActivityNav list={navList} current={Number((typeof window === 'undefined' ? '0' : location.hash || '').replace(/^#/, ''))} />
+        <ActivityNav fixed={this.state.navFixed} list={navList} current={Number((typeof window === 'undefined' ? '0' : location.hash || '').replace(/^#/, ''))} />
         {
           contents.map(this.renderChildren).filter(elem => !!elem).map((element, key) => cloneElement(element, {
             key

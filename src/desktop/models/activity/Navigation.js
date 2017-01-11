@@ -1,15 +1,17 @@
 import React, { Component, PropTypes } from 'react';
+import { Link } from 'react-scroll';
 import classnames from 'classnames';
+import { responsive } from '11-utils';
 import Style from './index.less';
 
 export default class ActivityNavigation extends Component {
   static propTypes = {
     list: PropTypes.array.isRequired,
-    current: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+    fixed: PropTypes.bool
   };
 
-  handleClick = (target) => () => {
-    location.hash = target;
+  static defaultProps = {
+    fixed: false
   };
 
   render() {
@@ -18,21 +20,18 @@ export default class ActivityNavigation extends Component {
         className={
           classnames({
             [Style.nav]: true,
+            fixed: this.props.fixed,
             visible: this.props.list.length > 0
           })}
       >
         <ul>
           {
             this.props.list.map(({ houses }, index) => (
-              <li
-                key={index}
-                onClick={this.handleClick(Number(index) + 1)}
-                className={classnames({ current: Number(index) + 1 === this.props.current })}
-                target={Number(index) + 1}
-              >
-                {houses.title}
-              </li>)
-            )
+              <Link activeClass="current" key={index} spy to={`scroll_${(Number(index) + 1)}`} offset={responsive.size(-0.6)} smooth>
+                <li>
+                  {houses.title}
+                </li>
+              </Link>))
           }
         </ul>
       </div>
