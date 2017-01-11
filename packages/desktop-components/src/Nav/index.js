@@ -6,24 +6,24 @@ import Style from './index.less';
 import { loginModal } from '../Signup';
 
 const NavItems = {
-  '/': {
-    name: '首页'
-  },
-  download: {
-    name: '下载app'
-  },
-  news: {
-    name: '新闻'
-  },
-  signup: {
-    name: '注册'
-  },
-  login: {
-    name: '登录',
-    action: () => {
-      loginModal();
-    }
-  }
+  //'/': {
+  //  name: '首页'
+  //},
+  //download: {
+  //  name: '下载app'
+  //},
+  //news: {
+  //  name: '新闻'
+  //},
+  //signup: {
+  //  name: '注册'
+  //},
+  //login: {
+  //  name: '登录',
+  //  action: () => {
+  //    loginModal();
+  //  }
+  //}
 };
 
 const NavItemsLogined = {};
@@ -66,7 +66,7 @@ export default class Navigation extends Component {
           white: !this.props.black
         })} />
         {
-          this.props.search ? <Search /> : ''
+          this.props.search&&false ? <Search /> : ''
         }
         <ul className={classnames(Style.right, Style.list)}>
           {
@@ -83,7 +83,7 @@ export default class Navigation extends Component {
               </li>
             ))
           }
-          <li className={Style.button}>
+          <li style={{display:"none"}} className={Style.button}>
             <button className="ghost">免费成为房东</button>
           </li>
         </ul>
