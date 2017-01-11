@@ -18,7 +18,7 @@ export default class HouseItem extends Component {
       <section onClick={this.handleClick(data.house_id)} className="house item">
         <div style={{ position: 'relative' }}>
           <Image src={`${((data.images || [])[0] || {}).image_url}_750`} alt={data.title} />
-          <HousePrice price={data.price} render={(number) => <span>{number}元／<span className="small">晚</span></span>} />
+          <HousePrice price={data.price} render={(number) => <span>{number / 100}元／<span className="small">晚</span></span>} />
         </div>
         <div className="info">
           <div className="avatar">
