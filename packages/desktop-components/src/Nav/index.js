@@ -48,6 +48,10 @@ export default class Navigation extends Component {
     }
   };
 
+  goIndex = () => {
+    redirect.go('/');
+  };
+
   render() {
     return (
       <nav
@@ -59,14 +63,17 @@ export default class Navigation extends Component {
           [this.props.className]: true
         })}
       >
-        <div className={classnames({
+        <div
+          onClick={this.goIndex}
+          className={classnames({
           [Style.icon]: true,
           [Style.logo]: true,
           'icon logo': true,
           white: !this.props.black
-        })} />
+        })}
+        />
         {
-          this.props.search&&false ? <Search /> : ''
+          this.props.search && false ? <Search /> : ''
         }
         <ul className={classnames(Style.right, Style.list)}>
           {
@@ -83,7 +90,7 @@ export default class Navigation extends Component {
               </li>
             ))
           }
-          <li style={{display:"none"}} className={Style.button}>
+          <li style={{ display: "none" }} className={Style.button}>
             <button className="ghost">免费成为房东</button>
           </li>
         </ul>
