@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
 import { Image, Stars } from '11-common';
 import { redirect } from '11-utils';
@@ -7,8 +7,17 @@ import { HouseType } from '../../../../libs/enums';
 import './index.less';
 
 export default class HouseItem extends Component {
+  static propTypes = {
+    data: PropTypes.object.isRequired,
+    onClick: PropTypes.func
+  };
+
   handleClick = (id) => () => {
-    redirect.go(`/house/${id}`);
+    if (typeof this.props.onClick !== 'function') {
+      redirect.go(`/house/${id}`);
+    } else {
+      this.props.onClick(this.props.data);
+    }
   };
 
   render() {
@@ -18,7 +27,12 @@ export default class HouseItem extends Component {
       <section onClick={this.handleClick(data.house_id)} className="house item">
         <div style={{ position: 'relative' }}>
           <Image src={`${((data.images || [])[0] || {}).image_url}_750`} alt={data.title} />
-          <HousePrice price={data.price} render={(number) => <span>{number / 100}元／<span className="small">晚</span></span>} />
+          <HousePrice
+            price={data.price}
+            render={(number) =>
+              <span>{number / 100}元／<span className="small">晚</span></span>
+            }
+          />
         </div>
         <div className="info">
           <div className="avatar">
