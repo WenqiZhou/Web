@@ -3,6 +3,7 @@ import classnames from 'classnames';
 import { Image, Row, Col } from '11-common';
 import HouseItem from '../../components/HouseItem';
 import Style from './index.less';
+import { modal } from './Modals';
 
 // 分节标题
 export const ActivityTitle = ({ title_single: title = {}, houses = {}, id }) => (
@@ -23,7 +24,16 @@ export const ActivityBanner = ({ image, text }) => (
   </div>
 );
 
-export const ActivityHouse = HouseItem;
+export const ActivityHouse = (props) => {
+  return (
+    <HouseItem
+      {...props}
+      onClick={({ landlord = {} } = {}) => {
+        modal({ landlord });
+      }}
+    />
+  )
+};
 
 export const ActivityMoreHouse = ({ disabled }) => (
   <div className={Style.more}>
