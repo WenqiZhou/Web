@@ -16,7 +16,7 @@
     "build:server": "atool-build --config scripts/webpack.config.production.server.js -o ./dist/server/ --no-compress",
     "build:test": "npm run build:test:app && npm run build:test:server && npm run clean",
     "build:test:app": "atool-build --config scripts/webpack.config.test.js -o ./dist",
-    "build:test:server": "atool-build --config scripts/webpack.config.test.js -o ./dist/server/ --no-compress",
+    "build:test:server": "atool-build --config scripts/webpack.config.test.server.js -o ./dist/server/ --no-compress",
     "build:analyze": "atool-build --config scripts/webpack.config.analyze.js -o ./dist --verbose && npm run clean",
     "pages": "npm run pages:checkout && npm run pages:build && npm run pages:cleanall && npm run pages:publish",
     "pages:checkout": "git add . && git stash && git checkout gh-pages && git add . && git checkout master ./",
