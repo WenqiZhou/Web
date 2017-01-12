@@ -29,6 +29,8 @@ class ModalContact extends Component {
 }
 
 const initial = () => {
+  if (typeof window !== 'object') return {};
+
   const div = window.document.createElement('div');
   window.document.body.appendChild(div);
 

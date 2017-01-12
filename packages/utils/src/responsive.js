@@ -9,6 +9,7 @@ const _ = {
  * @returns {*}
  */
 export const style = (element, prop) => {
+  if (typeof window !== 'object') return;
   if (window.getComputedStyle) {
     return window.getComputedStyle(element)[_.camelCase(prop)];
   } else {
