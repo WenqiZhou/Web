@@ -10,6 +10,7 @@
     "start:server:dev": "node --inspect --harmony_async_await server",
     "start:server": "forever start -c \"node --harmony_async_await\" server",
     "build:server:dev": "atool-build --config scripts/webpack.config.development.server.js -o ./dist/server/ --no-compress -w",
+    "build:dev": "atool-build --config scripts/webpack.config.development.js -o ./dist/ --no-compress -w",
     "build": "npm run build:production && npm run build:server && npm run clean",
     "build:production": "atool-build --config scripts/webpack.config.production.js -o ./dist",
     "build:server": "atool-build --config scripts/webpack.config.production.server.js -o ./dist/server/ --no-compress",
