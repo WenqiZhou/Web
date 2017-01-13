@@ -18,14 +18,27 @@ class ModalContact extends Component {
       <Modal visible onClose={this.props.destroy} title="依依短租">
         <div className={Style.modal}>
           <p>
-            {`如需预定房源，请拨打${landlord.bigcode400 ? '' : '客服'}电话进行预订`}<br />
-            {landlord.bigcode400 ? `${landlord.bigcode400}${landlord.extension ? ` 转 ${landlord.extension}` : ''}` : '400-636-9633'}
+            聚会轰趴房还有2000套，拨打电话为您私人订制<br />400-636-9633
           </p>
           <button onClick={this.props.destroy} className="button">确定</button>
         </div>
       </Modal>
     )
   }
+  //render() {
+  //  const { landlord } = this.props;
+  //  return (
+  //    <Modal visible onClose={this.props.destroy} title="依依短租">
+  //      <div className={Style.modal}>
+  //        <p>
+  //          {`如需预定房源，请拨打${landlord.bigcode400 ? '' : '客服'}电话进行预订`}<br />
+  //          {landlord.bigcode400 ? `${landlord.bigcode400}${landlord.extension ? ` 转 ${landlord.extension}` : ''}` : '400-636-9633'}
+  //        </p>
+  //        <button onClick={this.props.destroy} className="button">确定</button>
+  //      </div>
+  //    </Modal>
+  //  )
+  //}
 }
 
 const initial = () => {
