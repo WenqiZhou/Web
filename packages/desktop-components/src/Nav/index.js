@@ -93,6 +93,7 @@ export default class Navigation extends Component {
           <li style={{ display: "none" }} className={Style.button}>
             <button className="ghost">免费成为房东</button>
           </li>
+          咨询电话:400-636-9633
         </ul>
       </nav>
     )
