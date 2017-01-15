@@ -20,7 +20,7 @@ module.exports = (webpackConfig) => {
       '11-common': 'components',
       '11-utils': 'utils',
       '11-mobile': 'mobile-components',
-      '11-desktop': 'desktop-components',
+      '11-desktop': 'desktop-components'
     });
   webpackConfig.resolve.modulesDirectories = webpackConfig.resolve.modulesDirectories || [];
   webpackConfig.resolve.modulesDirectories.push(join(__dirname, '../packages/'));
@@ -47,7 +47,7 @@ module.exports = (webpackConfig) => {
   webpackConfig.output.sourceMapFilename = '[name].map.js';
 
   webpackConfig.babel.plugins.push('lodash');
-  webpackConfig.babel.plugins.push('add-module-exports');
+  webpackConfig.babel.plugins.push('add-module-exports'); // 这个可能可以去掉
 
   webpackConfig.plugins.push(new LodashModuleReplacementPlugin());
 
