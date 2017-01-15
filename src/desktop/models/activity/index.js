@@ -52,7 +52,8 @@ export default class DesktopActivity extends Component {
   }
 
   setScroll = () => {
-    const headerHeight = Number(responsive.style(window.document.getElementsByTagName('nav')[0], 'height').replace(/px$/, '')) + Number(responsive.style(window.document.getElementsByClassName(Style.header)[0], 'height').replace(/px$/, ''));
+    // 本来是要加上Nav的高度,但是因为跟在nav后面置顶 高度抵消
+    const headerHeight = Number(responsive.style(window.document.getElementsByClassName(Style.header)[0], 'height').replace(/px$/, ''));
 
     window.onscroll = (e) => {
       if (window.document.body.scrollTop >= headerHeight && !this.state.navFixed) {
@@ -156,7 +157,7 @@ export default class DesktopActivity extends Component {
 
     return (
       <div className={classnames('lg-only', Style.activity)}>
-        <Nav search black className={classnames(Nav.Style.index, 'dashboard')} />
+        <Nav search black fixed className={classnames(Nav.Style.index, 'dashboard')} />
         <Header>
           {
             headers.map(this.renderHeader).filter(elem => !!elem).map((element, key) => cloneElement(element, {
