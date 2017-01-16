@@ -11,7 +11,14 @@ const rootReducer = require('../../dist/server/reducers');
 const createRoutes = require('../../dist/server/routers');
 const render = require('../libs/render');
 
-module.exports.render = async(ctx, next) => {
+const renderIe = async(ctx, next) => {
+  return {
+    status: 200,
+    data: render('', {})
+  }
+};
+
+const renderReact = async(ctx, next) => {
   const history = createMemoryHistory();
   const routes = createRoutes(history);
   const location = createLocation(ctx.request.url);
@@ -53,4 +60,14 @@ module.exports.render = async(ctx, next) => {
       return;
     });
   })
+};
+
+module.exports.render = async(ctx, next) => {
+  const ua = ctx.headers['user-agent'];
+  console.log(ua);
+  if (ua.match(/MSIE (9|8|7|6)/)) {
+    return await renderIe(ctx, next);
+  }
+
+  return await renderReact(ctx, next);
 };
