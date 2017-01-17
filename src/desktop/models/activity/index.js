@@ -56,11 +56,12 @@ export default class DesktopActivity extends Component {
     const headerHeight = Number(responsive.style(window.document.getElementsByClassName(Style.header)[0], 'height').replace(/px$/, ''));
 
     window.onscroll = (e) => {
-      if (window.document.body.scrollTop >= headerHeight && !this.state.navFixed) {
+      const scroll = Number(window.document.body.scrollTop) + Number(window.document.documentElement.scrollTop);
+      if (scroll >= headerHeight && !this.state.navFixed) {
         this.setNavFixed(true);
         return;
       }
-      if (window.document.body.scrollTop < headerHeight && this.state.navFixed) {
+      if (scroll < headerHeight && this.state.navFixed) {
         this.setNavFixed(false);
       }
     }
