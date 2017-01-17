@@ -110,7 +110,7 @@ export default class DesktopActivity extends Component {
         }
         {/*渲染房源列表*/}
         {
-          houses ? <ActivityHouses list={houses.houses.houses} showMore /> : ''
+          houses ? <ActivityHouses list={houses.houses.houses} ai={this.props.ai} showMore /> : ''
         }
       </Element>
     )

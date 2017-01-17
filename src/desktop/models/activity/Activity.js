@@ -29,7 +29,7 @@ export const ActivityHouse = (props) => {
     <HouseItem
       {...props}
       onClick={({ landlord = {} } = {}) => {
-        modal({ landlord });
+        modal({ landlord, ai: props.ai });
       }}
     />
   )
@@ -37,7 +37,12 @@ export const ActivityHouse = (props) => {
 
 export const ActivityMoreHouse = ({ disabled }) => (
   <div className={Style.more}>
-    <button className="page">查看更多房源</button>
+    <button
+      className="page"
+      onClick={() => {
+        modal({});
+      }}
+    >查看更多房源</button>
   </div>
 );
 
