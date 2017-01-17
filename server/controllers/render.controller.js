@@ -1,6 +1,6 @@
 /* eslint import/no-unresolved: 0 */
 const React = require('react');
-const { renderToString } = require('react-dom/server');
+const { renderToString, renderToStaticMarkup } = require('react-dom/server');
 const { createStore, compose, applyMiddleware, combineReducers } = require('redux');
 const { Provider } = require('react-redux');
 const { routerReducer, routerMiddleware } = require('react-router-redux');
@@ -45,7 +45,7 @@ const renderReact = async(ctx, next) => {
         ...rootReducer, routerReducer
       }), {}, compose(applyMiddleware(sagaMiddleware)));
 
-      const initialView = renderToString(
+      const initialView = renderToStaticMarkup(
         <div>
           <Provider store={store}>
             <RouterContext {...renderProps} />
@@ -55,7 +55,7 @@ const renderReact = async(ctx, next) => {
 
       recept({
         status: 200,
-        data: render(initialView, store.getState())
+        data: render(initialView, store.getState(), (ctx.headers['user-agent'] || '').match(/(MSIE|Trident)/))
       });
       return;
     });
@@ -63,7 +63,7 @@ const renderReact = async(ctx, next) => {
 };
 
 module.exports.render = async(ctx, next) => {
-  const ua = ctx.headers['user-agent'];
+  const ua = ctx.headers['user-agent'] || '';
   console.log(ua);
   if (ua.match(/MSIE (9|8|7|6)/)) {
     return await renderIe(ctx, next);
