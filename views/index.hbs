@@ -9,25 +9,20 @@
 </head>
 <body>
 
-<div id="root"></div>
+<div id="root">
+  {{serverRending}}
+</div>
 
+<script type="text/javascript">
+  window.__INITIAL_STATE__ = JSON.parse(decodeURIComponent('{{initialState}}'));
+</script>
 <script>
   if (window.document.getElementById('root').children.length === 0) {
     document.getElementById('root').loading().start();
   }
 </script>
 
-<link rel="stylesheet" href="/index.css" />
-<!--[if IE]>
-<script src="/node_modules/babel-polyfill/dist/polyfill.min.js"></script>
-<script src="/node_modules/es5-shim/es5-sham.min.js"></script>
-<script src="/node_modules/console-polyfill/index.js"></script>
-<script src="/dist/ie/common.js"></script>
-<script src="/dist/ie/index.js"></script>
-<![endif]-->
-<!--[if !IE]>
-<script src="/dist/common.js"></script>
-<script src="/dist/index.js"></script>
-<![endif]-->
+<link rel="stylesheet" href="/dist/index.css" />
+{{scripts}}
 </body>
 </html>
