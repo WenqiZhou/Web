@@ -27,8 +27,9 @@ export default class ActivityDetail extends Component {
 
   render() {
     const { activity_share, ains } = this.props.SEARCH;
+    const ai = this.props.params.id;
     const props = {
-      activity_share, ains
+      activity_share, ains, ai
     };
 
     return (
