@@ -40,7 +40,7 @@ export const ActivityMoreHouse = ({ disabled }) => (
     <button
       className="page"
       onClick={() => {
-        modal({});
+        location.assign('/');
       }}
     >查看更多房源</button>
   </div>

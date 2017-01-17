@@ -75,7 +75,7 @@ export default class Navigation extends Component {
         {
           this.props.search && false ? <Search /> : ''
         }
-        <ul className={classnames(Style.right, Style.list)}>
+        <ul className={classnames(Style.right, Style.list)} style={{ fontWeight: "bold" }}>
           {
             Object.keys(NavItems).map((key, index) => (
               <li
@@ -93,7 +93,7 @@ export default class Navigation extends Component {
           <li style={{ display: "none" }} className={Style.button}>
             <button className="ghost">免费成为房东</button>
           </li>
-            咨询电话:<span style={{ color: "#ffa900", fontWeight: "bold" }}>400-636-9633</span>
+            咨询电话:<span style={{ color: "#ffa900" }}>400-636-9633</span>
         </ul>
       </nav>
     )
