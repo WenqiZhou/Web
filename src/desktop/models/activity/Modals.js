@@ -13,7 +13,8 @@ class ModalContact extends Component {
   };
 
   render() {
-    const { landlord, ai } = this.props;
+    const { landlord } = this.props;
+    const ai = parseInt(location.pathname.substring(location.pathname.lastIndexOf('/') + 1), 10);
     if (ai && ai === 20170107) {
       return (
         <Modal visible onClose={this.props.destroy} title="依依短租">
@@ -43,7 +44,7 @@ class ModalContact extends Component {
       <Modal visible onClose={this.props.destroy} title="依依短租">
         <div className={Style.modal}>
           <p>
-            我们为您准备了10000+精品民宿，拨打400-636-9633，<br />依依民宿管家就在您的身边
+            同类精美民宿还有10000家，拨打电话为您私人订制，<br /><span style={{ color: '#ffa900' }}>400-636-9633</span>
           </p>
           <button onClick={this.props.destroy} className="button">确定</button>
         </div>
