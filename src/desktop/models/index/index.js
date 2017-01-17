@@ -35,7 +35,7 @@ export default class DesktopIndex extends Component {
     return (
       <div className="index lg-only">
         <Nav current="/" path={this.props.path} className={Nav.Style.index} />
-        <Header />
+        {typeof window === 'object' ? <Header /> : ''}
         <Search />
         <div className="banner no-padding">
           <Image src="/assets/images/image_desktop_index_registe.png" alt="banner" />

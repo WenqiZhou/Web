@@ -7,7 +7,7 @@ import Store from '11-store';
 import Routes from '$common/routers';
 import '../../views/index.html';
 
-const history = syncHistoryWithStore(process.env.NODE_ENV === 'production' || process.env.history === 'browserHistory' ? browserHistory : hashHistory, Store);
+const history = syncHistoryWithStore(browserHistory, Store);
 
 ReactDom.render((
   <Provider store={Store}>
