@@ -85,7 +85,7 @@ export class ActivityHouses extends Component {
               {
                 group.map((item, index) => (
                   <Col span={8} key={index}>
-                    <ActivityHouse data={item} />
+                    <ActivityHouse data={item} ai={this.props.ai} />
                   </Col>
                 ))
               }
