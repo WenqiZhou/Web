@@ -20,7 +20,8 @@ class ModalContact extends Component {
         <Modal visible onClose={this.props.destroy} title="依依短租">
           <div className={Style.modal}>
             <p>
-              聚会轰趴房还有2000套，拨打电话为您私人订制<br />400-636-9633
+              聚会轰趴房还有2000套，拨打电话为您私人订制<br />
+              <span style={{ color: '#ffa900' }}>400-636-9633</span>
             </p>
             <button onClick={this.props.destroy} className="button">确定</button>
           </div>
