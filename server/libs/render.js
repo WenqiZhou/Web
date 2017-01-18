@@ -5,7 +5,7 @@ const { resolve } = require('path');
 const { SafeString } = Handlebars;
 
 const ieScripts = new SafeString('' +
-  '<script src="/node_modules/babel-polyfill/dist/polyfill.min.js"></script>' +
+  '<!-- script src="/node_modules/babel-polyfill/dist/polyfill.min.js"></script -->' +
   '<script src="/node_modules/es5-shim/es5-sham.min.js"></script>' +
   '<script src="/node_modules/console-polyfill/index.js"></script>' +
   '<script src="/dist/ie/common.js"></script>' +
