@@ -27,13 +27,13 @@ class ModalContact extends Component {
         </Modal>
       )
     }
-    if (landlord) {
+    if (landlord && landlord.bigcode400) {
       return (
         <Modal visible onClose={this.props.destroy} title="依依短租">
           <div className={Style.modal}>
             <p>
-              {`如需预定房源，请拨打${landlord.bigcode400 ? '' : '客服'}电话进行预订`}<br />
-              {landlord.bigcode400 ? `${landlord.bigcode400}${landlord.extension ? ` 转 ${landlord.extension}` : ''}` : '400-636-9633'}
+              同类精美民宿还有10000家，拨打电话为您私人订制，<br />
+              <span style={{ color: '#ffa900' }}>{landlord.bigcode400} 转 {landlord.extension}</span>
             </p>
             <button onClick={this.props.destroy} className="button">确定</button>
           </div>
@@ -44,7 +44,8 @@ class ModalContact extends Component {
       <Modal visible onClose={this.props.destroy} title="依依短租">
         <div className={Style.modal}>
           <p>
-            同类精美民宿还有10000家，拨打电话为您私人订制，<br /><span style={{ color: '#ffa900' }}>400-636-9633</span>
+            同类精美民宿还有10000家，拨打电话为您私人订制，<br />
+            <span style={{ color: '#ffa900' }}>400-636-9633</span>
           </p>
           <button onClick={this.props.destroy} className="button">确定</button>
         </div>
