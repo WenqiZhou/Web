@@ -49,7 +49,7 @@ export default class Navigation extends Component {
   };
 
   goIndex = () => {
-    redirect.go('/');
+    //redirect.go('/');
   };
 
   render() {
