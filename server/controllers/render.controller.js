@@ -45,19 +45,39 @@ const renderReact = async(ctx, next) => {
         ...rootReducer, routerReducer
       }), {}, compose(applyMiddleware(sagaMiddleware)));
 
-      const initialView = renderToStaticMarkup(
-        <div>
-          <Provider store={store}>
-            <RouterContext {...renderProps} />
-          </Provider>
-        </div>
-      );
-
-      recept({
-        status: 200,
-        data: render(initialView, store.getState(), (ctx.headers['user-agent'] || '').match(/(MSIE|Trident)/))
+      const request = ({ key, ...options }) => new Promise((recept, reject) => {
+        store.dispatch({
+          type: 'REQUEST',
+          key,
+          ...options
+        });
       });
-      return;
+
+      const initialRender = () => {
+        const initialView = renderToStaticMarkup(
+          <div>
+            <Provider store={store}>
+              <RouterContext {...renderProps} />
+            </Provider>
+          </div>
+        );
+
+        recept({
+          status: 200,
+          data: render(initialView, store.getState(), (ctx.headers['user-agent'] || '').match(/(MSIE|Trident)/))
+        });
+      };
+
+      if(location.match(/activity\//)){
+        request({
+          key: SEARCH,
+          query: {
+            ai: this.props.params.id
+          }
+        }).then(initialRender);
+      } else {
+        initialRender();
+      }
     });
   })
 };
